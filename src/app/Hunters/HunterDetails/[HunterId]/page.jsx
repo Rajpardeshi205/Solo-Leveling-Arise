@@ -4,14 +4,11 @@ import { useParams } from "next/navigation";
 import { Plus, Sword, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Type } from "../../../../Components/gameData/Type";
-import { Elements } from "../../../../Components/gameData/Elements";
 import { Cinzel_Decorative } from "next/font/google";
 import Card from "../../card";
 import HunterDetailsSkeleton from "../../HunterDetailsSkeleton";
 import CommentsPage from "@/Components/CommentsPage ";
 import Cores from "../../Cores";
-import { Guild } from "@/Components/gameData/Guild";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "@/Firebase/FireBaseconfig";
 import Artifacts from "../../Artifacts";
@@ -36,6 +33,68 @@ export default function HunterDetailsPage() {
     Body: [],
     Spirit: [],
   });
+  const [elements, setElements] = useState({});
+  const [guilds, setGuilds] = useState({});
+  const [types, setTypes] = useState({});
+
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    const fetchTypes = async () => {
+      const snapshot = await getDocs(collection(db, "types"));
+
+      const data = {};
+
+      snapshot.forEach((docItem) => {
+        const typeData = docItem.data();
+
+        data[typeData.name] = typeData.img;
+      });
+
+      setTypes(data);
+    };
+
+    fetchTypes();
+  }, []);
+
+  useEffect(() => {
+    const fetchGuilds = async () => {
+      const snapshot = await getDocs(collection(db, "guilds"));
+
+      const data = {};
+
+      snapshot.forEach((docItem) => {
+        const guildData = docItem.data();
+
+        data[guildData.name] = guildData.img;
+      });
+
+      setGuilds(data);
+    };
+
+    fetchGuilds();
+  }, []);
+
+  useEffect(() => {
+    const fetchElements = async () => {
+      const elementNames = ["Wind", "Fire", "Dark", "Light", "Water"];
+
+      const data = {};
+
+      for (const name of elementNames) {
+        const docRef = doc(db, "elements", name);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+          data[name] = docSnap.data().img;
+        }
+      }
+
+      setElements(data);
+    };
+
+    fetchElements();
+  }, []);
 
   useEffect(() => {
     const fetchHunter = async () => {
@@ -210,13 +269,14 @@ export default function HunterDetailsPage() {
 
             {/* Element Icon */}
             <div className="absolute top-3 left-3">
-              {selectedHunter?.element && Elements[selectedHunter.element] && (
-                <img
-                  src={Elements[selectedHunter.element]}
-                  alt={selectedHunter.element}
-                  className="w-10 h-10 drop-shadow-[0_0_5px_black]"
-                />
-              )}
+              {selectedHunter?.element &&
+                elements?.[selectedHunter.element] && (
+                  <img
+                    src={elements[selectedHunter.element]}
+                    alt={selectedHunter.element}
+                    className="w-10 h-10 drop-shadow-[0_0_5px_black]"
+                  />
+                )}
             </div>
 
             {/* Hunter Image */}
@@ -280,6 +340,7 @@ export default function HunterDetailsPage() {
 
             <InfoCard label="Guild">
               {selectedHunter.guild?.replace(/_/g, " ")}
+
               <motion.div
                 key={`type-${selectedIndex}`}
                 className="relative flex items-center group drop-shadow-[0_0_15px_black]"
@@ -287,10 +348,10 @@ export default function HunterDetailsPage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.3, delay: 0.1 }}
               >
-                {selectedHunter.guild && Guild[selectedHunter.guild] && (
+                {selectedHunter.guild && guilds[selectedHunter.guild] && (
                   <>
                     <img
-                      src={Guild[selectedHunter.guild]}
+                      src={guilds[selectedHunter.guild]}
                       alt={selectedHunter.guild}
                       className="w-32 h-32 sm:w-40 sm:h-40 z-10"
                     />
@@ -304,9 +365,10 @@ export default function HunterDetailsPage() {
                 <span style={{ color: selectedHunter.color }}>
                   {selectedHunter.type}
                 </span>
-                {selectedHunter.type && Type[selectedHunter.type] && (
+
+                {selectedHunter.type && types[selectedHunter.type] && (
                   <img
-                    src={Type[selectedHunter.type]}
+                    src={types[selectedHunter.type] || "/placeholder.png"}
                     alt={selectedHunter.type}
                     className="w-8 h-8"
                   />

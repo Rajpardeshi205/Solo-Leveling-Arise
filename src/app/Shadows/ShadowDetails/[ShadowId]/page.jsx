@@ -1,7 +1,12 @@
-import React from "react";
-import { ShadowArmy } from "../../../../Components/gameData/Shadows";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import { Cinzel_Decorative } from "next/font/google";
 import ShadowWeaponCard from "../../ShadowWeaponCard";
+
+import { doc, getDoc } from "firebase/firestore";
+
+import { db } from "@/Firebase/FireBaseconfig";
 
 const cinzel = Cinzel_Decorative({
   subsets: ["latin"],
@@ -35,7 +40,7 @@ const formatText = (text, color = "#f7b655") => {
         return (
           <span
             key={i}
-            className="font-semibold  bg-gradient-to-r from-green-400 to-green-400 bg-clip-text text-transparent"
+            className="font-semibold bg-gradient-to-r from-green-400 to-green-400 bg-clip-text text-transparent"
           >
             {part}
           </span>
@@ -46,15 +51,29 @@ const formatText = (text, color = "#f7b655") => {
     });
 };
 
-export default async function Page({ params }) {
-  // ✅ Await params before accessing properties
-  const { ShadowId } = await params;
-  const shadow = ShadowArmy[ShadowId]; // lookup by key
+export default function Page({ params }) {
+  const { ShadowId } = React.use(params);
+
+  const [shadow, setShadow] = useState(null);
+
+  useEffect(() => {
+    const fetchShadow = async () => {
+      const docRef = doc(db, "shadows", ShadowId);
+
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setShadow(docSnap.data());
+      }
+    };
+
+    fetchShadow();
+  }, [ShadowId]);
 
   if (!shadow) {
     return (
       <div className="flex items-center justify-center h-screen bg-black">
-        <h1 className="text-red-500 text-3xl font-bold">Shadow not found!</h1>
+        <h1 className="text-white text-3xl font-bold">Loading...</h1>
       </div>
     );
   }
@@ -72,7 +91,7 @@ export default async function Page({ params }) {
               style={{
                 filter: "drop-shadow(0 0 20px rgba(185, 36, 235, 0.879))",
               }}
-              className="w-96 h-[40rem] object-cover rounded-2xl shadow-2xl border border-purple-600/40"
+              className="w-full max-w-[28rem] h-[40rem] object-cover rounded-2xl shadow-2xl border border-purple-600/40"
             />
           </div>
         </div>
@@ -87,21 +106,20 @@ export default async function Page({ params }) {
           </h1>
 
           <h6
-            className={`text-xl bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-100
- bg-clip-text text-transparent font-light tracking-wide -mt-5 ${cinzel.className}`}
+            className={`text-xl bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-100 bg-clip-text text-transparent font-light tracking-wide -mt-5 ${cinzel.className}`}
           >
             {shadow.nickname}
           </h6>
 
           <InfoCard label="Shadow's Rank">
-            <p className={`text-3xl text-teal-400  ${cinzel.className}`}>
+            <p className={`text-3xl text-teal-400 ${cinzel.className}`}>
               {formatText(shadow.rank)}
             </p>
           </InfoCard>
 
           {/* Authority */}
           <InfoCard label="Shadow's Authority">
-            <p className="text-gray-300 text-sm ">
+            <p className="text-gray-300 text-sm">
               {formatText(shadow.authority, "#a855f7")}
             </p>
           </InfoCard>
@@ -114,6 +132,7 @@ export default async function Page({ params }) {
                 weaponName={shadow.weaponName}
               />
             </div>
+
             <div className="flex items-center pt-8">
               <p className="text-gray-300 text-sm">
                 {formatText(shadow.weaponEffect, "#a855f7")}
@@ -127,6 +146,7 @@ export default async function Page({ params }) {
               <h2 className="text-white text-2xl font-bold mb-2">
                 Basic Skills
               </h2>
+
               <ul className="space-y-2">
                 {shadow.skills.basic.map((skill, index) => (
                   <li
@@ -138,10 +158,12 @@ export default async function Page({ params }) {
                       alt={skill.name}
                       className="w-10 h-10"
                     />
+
                     <div>
                       <p className="text-purple-300 font-semibold">
                         {skill.name}
                       </p>
+
                       <p className="text-gray-300 text-sm">
                         {formatText(skill.description, "#a855f7")}
                       </p>
@@ -153,16 +175,19 @@ export default async function Page({ params }) {
               <h2 className="text-white text-2xl font-bold mt-4 mb-2">
                 Special Skill
               </h2>
+
               <div className="bg-gray-800/50 p-2 rounded-lg flex items-center gap-2">
                 <img
                   src={shadow.skills.special.img}
                   alt={shadow.skills.special.name}
                   className="w-10 h-10"
                 />
+
                 <div>
                   <p className="text-purple-300 font-semibold">
                     {shadow.skills.special.name}
                   </p>
+
                   <p className="text-gray-300 text-sm">
                     {formatText(shadow.skills.special.description, "#a855f7")}
                   </p>
@@ -180,10 +205,10 @@ export default async function Page({ params }) {
             key={i}
             className="absolute w-1 h-1 bg-purple-300 rounded-full animate-pulse"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 3}s`,
-              animationDuration: `${2 + Math.random() * 2}s`,
+              left: `${(i * 13) % 100}%`,
+              top: `${(i * 17) % 100}%`,
+              animationDelay: `${i % 3}s`,
+              animationDuration: `${2 + (i % 2)}s`,
             }}
           ></div>
         ))}
@@ -195,6 +220,7 @@ export default async function Page({ params }) {
 const InfoCard = ({ label, children }) => (
   <div className="bg-gray-800/40 rounded-lg p-4 border border-gray-700 shadow-lg">
     {label && <div className="text-purple-400 text-sm mb-2">{label}</div>}
+
     <div className="text-lg sm:text-xl">{children}</div>
   </div>
 );

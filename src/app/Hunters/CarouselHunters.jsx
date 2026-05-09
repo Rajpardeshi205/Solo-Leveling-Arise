@@ -46,7 +46,7 @@ export default function CarouselHunters({
               } transition-all duration-300`}
             >
               <div
-                className={`w-25 h-40 relative ${
+                className={`w-25 h-40 bg-white relative ${
                   index === selectedIndex
                     ? `bg-gradient-to-br ${getTypeGradient(hunter.type)}`
                     : ""

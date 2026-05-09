@@ -1387,6 +1387,641 @@ Duration: 5 second(s)
 
 [Warrior's Talent] Stark Warrior's Talent Effect
 Deals damage equal to 1000% of the user's Max HP.`],
+51:[`Stage 1, Stage 2, and Stage 3 of Ordinary Offensive Magic (Zoltraak) - Multi-Hit activate consecutively
+Ordinary Offensive Magic (Zoltraak) - Multi-Hit Stage 3 activates Ordinary Offensive Magic (Zoltraak) - Concentrated once
+The [Mana Power Control and Defense Magic] effects activate when the user enters the stage.
+Ordinary Offensive Magic (Zoltraak) - Ultimate activates the [Mana Power Liberation] effect while it is active
+
+[Mana Power Control] Frieren Mana Power Control Effect
+Increases the user's Defense by 25%
+When the user has 50% or more of their MP, it increases their Defense by 25%.
+Skill Mana Consumption decreases by 20%.
+Duration: Infinite
+
+[Mana Power Liberation] Frieren Mana Power Liberation Effect
+Grants the [Defense Magic] effect on the entire team.
+Increases Critical Hit Rate by 100%.
+Removes the [Mana Power Control] effect.
+When the [Mana Power Liberation] effect is removed, the [Mana Power Control] effect is activated on the user.
+Duration: Infinite
+
+[Defense Magic] Frieren Defense Magic Effect
+Grants a [Shield] equal to 20% of Frieren's Defense.
+Decreases damage taken by 5%.
+Duration: 30 second(s)`,`When Ordinary Offensive Magic (Zoltraak) - Ultimate hits, the target's [Shield] is removed.
+When Frieren's [Defense Magic] is activated, it immediately restores HP equal to 20% of Frieren's Defense to the entire team (Cooldown: 10 second(s)).
+When Destructive Lightning Magic (Judradjim) hits, it activates the [Paralyze] effect on the target.
+When Hellish Flame Magic (Vollzanbel) hits, it activates the [Vollzanbel] effect on the target.
+
+[Paralyze] Paralyze Effect
+Interrupts the target
+Duration: 3 second(s)
+
+[Vollzanbel] Frieren Vollzanbel Effect
+Decreases Defense by 5%
+Increases their chance of receiving Critical Hit damage by 5%
+Increases Critical Hit damage taken by 5%
+Increases damage taken from Frieren by 35%
+Duration: 20 second(s)`,`The entire team's Attack, Defense, and HP increase by 9%.`,`The [Mana Power Control and Defense Magic] effects are enhanced.
+
+[Mana Power Control] Frieren Mana Power Control Effect
+Increases Defense by 50%
+When the user has 50% or more MP, their Defense increases by 50%
+Skill Mana Consumption decreases by 30%
+Duration: Infinite
+
+[Defense Magic] Frieren Defense Magic Effect
+Grants a [Shield] equal to 30% of Frieren's Defense
+Damage taken decreases by 10%
+Duration: 60 second(s)`,`The entire team's Critical Hit damage increases by 20%.`,`The [Vollzanbel] effects are enhanced.
+Using Destructive Lightning Magic (Judradjim) restores 80% of the user's Power Gauge
+
+[Vollzanbel] Frieren Vollzanbel Effect
+Decreases Defense by 10%.
+Increases their chance of receiving Critical Hit damage by 15%.
+Increases Critical Hit damage taken by 15%
+Increases damage taken from Frieren by 70%.
+Duration: 30 second(s)`],
+52:[`Using the Basic Attack initiates Stage 1, Stage 2, and Stage 3 attacks consecutively.
+Using the Basic Attack Stage 3, activates the user's Core Attack once
+The [Magical Prodigy and Mana Power Tracking] effects are activated when the user enters the stage.
+
+[Magical Prodigy] Fern Magical Prodigy Effect
+Increases Attack by 10%
+When the user has 50%of their MP or more, it increases their Attack by 10%
+Decreases Skill Mana Consumption by 5%
+Duration: Infinite
+
+[Mana Power Tracking] Fern Mana Power Tracking Effect
+Increases the user's damage dealt to bosses by 30%.
+Increases the user's Precision by 5%
+Duration: Infinite`,`The [Basic Quick Shot] effect is activaed when the user enters a stage.
+Using their Basic Skill 1 or Basic Skill 2 activates the [Basic Focus] effect.
+The [Magical Prodigy and Mana Power Tracking] effects are enhanced.
+
+[Basic Quick Shot] Fern Basic Quick Shot Effect
+Increases the Attack Speed of Basic Attack, Core Attack, Basic Skill 1, Basic Skill 2.
+Using the Basic Skill 1 or Basic Skill 2 activates the user's Core Attack once.
+Using the Core Attack decreases the cooldown of the user's Basic Skill 1 and Basic Skill 2 by 25%
+Using the Basic Skill 1 decreases the cooldown of the user's Basic Skill 1 and Basic Skill 2 by 25%.
+Using the Basic Skill 2 decreases the cooldown of the user's Basic Skill 1 and Basic Skill 2 by 25%.
+Duration: Infinite
+
+[Basic Focus] Fern Basic Focus Effect
+Using the Basic Skill 1 or Basic Skill 2 increases their MP Consumption by 12%.
+Using the Basic Skill 1 or Basic Skill 2 increases the damage of the user's Basic Skill by 25%
+Duration: 20 second(s) (stacks up to 4 times)
+
+[Magical Prodigy] Fern Magical Prodigy Effect
+Increases Attack by 20%
+When the user has 50%of their MP or more, it increases their Attack by 20%
+Decreases Skill Mana Consumption by 10%
+Duration: Infinite
+
+[Mana Power Tracking] Fern Mana Power Tracking Effect
+Increases the user's damage dealt to bosses by 60%.
+Increases the user's Precision by 10%
+Duration: Infinite`,`The user's Fire damage increases by 20%].
+Each time their Basic Skill 2 hits, it applies the [Fire Damage Taken Increase] effect.
+
+[Fire Damage Taken Increase] Fire Element Weakness
+Increases Fire damage taken by 0.3%.
+Duration: 30 second(s) (stacks up to 60 times)`,`The [True Sight] effects activates when the user enters a stage.
+The [Dispel Magic and Defense Magic] effects activate when the user [tags in] (Cooldown: 10 second(s))
+
+[True Sight] Fern True Sight Effect
+Increases Critical Hit Rate by 5% and Damage by 10%.
+Duration: Infinite
+
+[Dispel magic] Fern Dispel Magic Effect
+Removes debuffs from the entire team.
+
+[Defense Magic] Frieren Defense Magic Effect
+Grants a [Shield] equal to 20% of Fern's Attack.
+Decreases damage taken by Defense 20%
+Duration: 20 second(s)`,`The user's Critical hit Rate increases by 10%] and Critcal Hit Damage by 20%.
+The [Fire Damage Taken] effect that is applied each time the user's Basic Skill 2 hits changes from 0.3% to 0.5%.
+
+[Fire Damage Taken Increase] Fire Element Weakness
+Increases Fire damage taken by 0.5%.
+Duration: 30 second(s) (stacks up to 60 times)`,`When the user's Ultimate Skill hits, the user's Fire weakness damage hits regardless of the target's element.
+The [True Sight] effect is enhanced.
+
+[True Sight] Fern True Sight Effect
+Increases Critical Hit Rate by 10% and Damage by 20%.
+When the user's Basic Skill 1 or Basic Skill 2 hit, they activate the [Seismic Alert] effect (Activates only once when hit).
+Duration: Infinite
+
+[Seismic Alert] Fern Seismic Alert Effect
+Increases Fire damage by 10%.
+The [Seeker's Gaze] effect activates when it has stacked the maximum number of times
+Duration: 5 second(s) (stacks up to 6 times)
+
+[Seeker's Gaze] Fern Seeker's Gaze Effect
+The [Seismic Alert] effect is removed and cannot be activated.
+Increases Fire damage by 60%.
+Increases Defense Penetration by 10%
+Duration: 20 second(s)`],
+53:[`Using Checkpoiont activates the [Deadline] effect 1 time
+Using Corporate Escort or Apex Administrator when the entire team is comprised of Light team members grants the [Momentum] effect to the entire team
+Using Task Loop grants the [Scout] effect on Light team members
+
+[Momentum] Laura Walker Momentum Effect
+Increases Defense Penetration by 10%
+Decreases damage taken by 10%
+Duration: 60 second(s)
+
+[Scout] Laura Walker Scout Effect
+Continuously restores HP equal to 2% of Laura Walker's Attack every 3 second(s)
+Grants a [Shield] equal to 3% of Laura Walker's Attack every 3 second(s)
+When the [Shield] is active, it activates the [Assistant] effect
+Duration: 60 second(s)
+
+[Assistant] Laura Walker Assistant Effect
+Attack and Defense increases by 1%
+Duration: 10 second(s) (stacks up to 10 times)`,`When the user [tags out], it grants the [Business] effect to Light team members after 3.5 second(s), excluding Laura Walker
+Each time Deadline, Task Loop, or Off the Record hit, they inflict the [Cutoff] effect on the target
+Using Corporate Escort enhances the [Develop] effect
+
+[off the Record]
+Laura Walker appears and swings her whip.
+She deals Light elemental damage equal to 1000% of her Attack
+Using this skill removes debuffs from the entire team
+Counts as a Basic Skill
+
+[Business] Laura Walker Business Effect
+When a Light attack hits, it activates [Off the Record] (Cooldown: 5 second(s))
+
+[Cutoff] Laura Walker Cutoff Effect
+Increases the target's Light damage taken by 1%
+Duration: 60 second(s) (stacks up to 20 times)
+
+[Develop] Laura Walker Develop Effect
+Increases damage dealt by 30%
+Removes debuffs
+Duration: 30 second(s)`,`All team members' Attack and Defense increases by 9%]`,`The [Scout and Assistant] effects are enhanced
+Using Checkpoint restores 50% of the user's Power Gauge
+
+[Scout] Laura Walker Scout Effect
+Continuously restores HP equal to 4% of Laura Walker's Attack every 3 second(s)
+Grants a [Shield] equal to 6% of Laura Walker's Attack every 3 second(s)
+When the [Shield] is active, it activates the [Assistant] effect
+Duration: 60 second(s)
+
+[Assistant] Laura Walker Assistant Effect
+Attack and Defense increases by 1.7%
+Duration: 10 second(s) (stacks up to 10 times)`,`Light team members' damage dealt increases by 30%`,`The [Professional] effect is activated when the user enters the stage
+Enhances the [Cutoff and Momentum] effect
+
+[Professional] Laura Walker Professional Effect
+Increases the damage of Task Loop by 250%
+Increases damage dealt by 200%
+Using Task Loop grants the user a [Shield] equal to 10% of Laura Walker's Attack for 3 second(s)
+Duration: Infinite
+
+[Cutoff] Laura Walker Cutoff Effect
+Increases the target's Light damage taken by 1.5%
+Duration: 60 second(s) (stacks up to 20 times)
+
+[Momentum] Laura Walker Momentum Effect
+Increases Defense Penetration by 20%
+Decreases damage taken by 20%
+Duration: 60 second(s)`],
+54:[`Using Rising Star, Offensive Pass, Nitro Kick, or Foul Playcharges the user's [Spiritual Body Manifestation] Gauge
+Using Zero to a Hundred removes the [Spiritual Body Manifestation]
+When the [Spiritual Body Manifestation] Gauge reaches 100% charge it activates the user's Special Core Attack
+Using the Special Core Attack activates the [Spiritual Body Manifestation] effect
+Finishing Catch becomes available upon a successful Extreme Evasion
+When Rising Performance, Rapid Kick, or Zero to a Hundred hit, they inflict [Burn] on the target
+Using Nitro Kick or Foul Play while in [Team Fight] mode activates the [Touchdown] effect
+
+[Finishing Catch]
+The user catches a ball in front of the enemy and slams it down for a touchdown
+Deals Fire elemental damage equal to 1500% of the user's Defense
+Using this skill activates the [Touchdown] effect
+Counts as a Basic Skill
+(Cooldown: 15 second(s))
+
+[Spiritual Body Manifestation] Christopher Reed Spiritual Body Manifestation Effect
+Changes the user's Basic Attack, Core Attack, and Basic Skill to their enhanced skill and their cooldowns are reset
+The Fire [Elemental Accumulation] effect is enhanced by 25%
+Basic Attack, Core Attack, and Basic Skill damage increase by 150%
+The effect is removed upon using Zero to a Hundred
+Duration: 30 second(s)
+
+[Touchdown] Christopher Reed Touchdown Effect
+Increases Fire [Overload] damage by 15%
+The Fire [Elemental Accumulation] effect increases by 5%
+Duration: 60 second(s) (stacks up to 3 times)
+
+[Burn] Burn Effect
+Deals damage equal to 200% of the user's Defense every 3 second(s)
+Duration: 10 second(s)`,`If the Fire [Elemental Accumulation Immunity] effect is active on the target when the user hits with an attack, it charges the user's [Spiritual Body Manifestation] Gauge (Cooldown: 15 second(s))
+When Fire team members, including the user, use their Basic Skill or Ultimate Skill, it charges the user's [Spiritual Body Manifestation] Gauge
+Finishing Catch damage increases by 25% to targets inflicted by [Burn]`,`The Fire [Elemental Accumulation] effect increases by 20%`,`When the [Spiritual Body Manifestation] effect is activated, the user recovers 30% of their HP and gains a [Shield]
+When the user's attack hits a target inflicted by [Burn], the user gains the [Competitive Spirit] effect (Cooldown: 2 second(s))
+
+[Competitive Spirit] Christopher Reed Competitive Spirit Effect
+Increases Fire damage by 165%
+Increases Finishing Catch damage by 15%
+Duration: 15 second(s)
+
+[Shield] Shield Effect
+Grants a [Shield] equal to 100% of the user's Defense
+Duration: 20 second(s)`,`Fire team members' Fire damage increases by 5% for every Fire ally in the party`,`When Christopher Reed or an ally successfully trigger the [Fire] [Overload] effect, he recovers 20% of his Power Gauge charge and resets the cooldown of Zero to a Hundred (Cooldown: 30 second(s))
+When Christopher's attack hits a target inflicted with the [Fire] [Overload] effect, it inflicts [Blazing Shock] on the target (Cooldown: 30 second(s))
+When the [Spiritual Body Manifestation] effect is activated, the [Victor's Spirit] effect is activated
+
+[Blazing Shock] Christopher Reed Blazing Shock Effect
+Increases Fire [Overload] damage taken by 20%
+The [Unrecoverable] effect is activated
+Duration: 30 second(s)
+
+[Victor's Spirit] Christopher Reed Victor's Spirit Effect
+Increases Zero to a Hundred damage by 250%
+Effects are removed when using Zero to a Hundred
+(Ally QTE Skills cannot be auto used in [Hunter Mode] for 25 second(s))
+Duration: 60 second(s)`],
+55:[`Each time Royal Swordsmanship: Judgment, Royal Swordsmanship: Black Flash, or Royal Swordsmanship: Rush hit, they charge the [Flawless Swordsmanship] Gauge
+When [Flawless Swordsmanship] Gauge reaches 50% or more, it activates the [Crimson Sword Dance] effect
+When Royal Swordsmanship: Blach Flash or Royal Swordsmanship: Rush hit, they activate the [Crimson Fury] effect
+
+[Crimson Sword Dance] Sian Halat Crimson Sword Dance Effect
+Increases [Dark] [Elemental Accumulation] effect by 10%
+Increases Dark damage by 10%
+Increases Attack by 5%
+Duration: 15 second(s)
+
+[Crimson Fury] Sian Halat Crimson Fury Effect
+Instantly restores HP equal to 5% of Sian Halat's Attack
+Increases the HP Recovery Rate by 5%
+Duration: 5 second(s)`,`When the [Flawless Swordsmanship] Gauge reaches 50% or more, Royal Swordsmanship: Black Flash and Royal Swordsmanship: Rush become Royal Swordsmanship: Full Moon and Royal Swordsmanship: Bloodstorm, increasing their damage by 100%
+Using Royal Swordsmanship: Full Moon or Royal Swordsmanship: Bloodstorm removes 50% of the [Flawless Swordsmanship] Gauge
+When Royal Swordsmanship: Black Flash, Royal Swordsmanship: Rush, Royal Swordsmanship: Full Moon, or Royal Swordsmanship: Bloodstorm hit, they inflict the Scarlet Domination effect on the target
+The [Crimson Fury] effect that activates when Royal Swordsmanship: Black Flash or Royal Swordsmanship: Rush hit becomes [Undying Fury]
+When Royal Swordsmanship: Full Moon or Royal Swordsmanship: Bloodstorm hit, they activate the [Undying Fury] effect
+When Sian Halat has 1 or fewer HP, he becomes [Immortal] for 2 second(s)
+When the [Immortal] effect ends, he regains HP equal to 50% of his Attack
+This effect can only activate once during battle
+
+[Scarlet Domination] Sian Halat Scarlet Domination Effect
+Increases Dark damage taken by 5%
+Increases Dark Overload damage taken by 5%
+Duration: 10 second(s) (stacks up to 2 times)
+
+[Undying Fury] Sian Halat Undying Fury Effect
+Instantly restores HP equal to 10% of Sian Halat's Attack
+Increases the HP Recovery Rate by 10%
+Duration: 5 second(s)`,`The [Oath of Victory] effect is granted to the entire team at the start of the stage
+Increases Dark [Overload] effect by 20%
+
+[Oath of Victory] Sian Halat Oath of Victory Effect
+Increases damage dealt to [Dark] [Overload] targets by 20%
+Duration: Infinite`,`The [Crimson Sword Dance] effect is enhanced
+When Royal Swordsmanship: Black Flash, Royal Swordsmanship: Rush, Royal Swordsmanship: Full Moon, Royal Swordsmanship: Bloodstorm hit they activate the [Guardian's Resolve] effect
+
+[Crimson Sword Dance] Sian Halat Crimson Sword Dance Effect
+Increases [Dark] [Elemental Accumulation] effect by 20%
+Increases Dark damage by 10%
+Increases Attack by 10%
+Duration: 30 second(s)
+
+[Guardian's Resolve] Sian Halat Guardian's Resolve Effect
+Increases [Dark] [Elemental Accumulation] effect by 1%
+Increases Dark damage by 1.6%
+Increases Attack by 1%
+Duration: Infinite (stacks up to 20 times)`,`For every Dark ally in the party, Dark team members' Defense Penetration increases by 3%`,`The [Scarlet Domination and Undying Fury] effects are enhanced
+[Flawless Swordsmanship]'s Gauge charge rate increases by 100%
+When Royal Swordsmanship: Black Flash, Royal Swordsmanship: Rush, Royal Swordsmanship: Full Moon, or Royal Swordsmanship: Bloodstorm hit they restore 20% of the user's Power Gauge and decrease the cooldown of Knight's Pride by 3 second(s) (Cooldown: 0.5 second(s))
+When Knight's Pride hits it grants the [Zenith Sword] effect to Dark team members
+
+[Scarlet Domination] Sian Halat Scarlet Domination Effect
+Increases Dark damage taken by 10%
+Increases Dark Overload damage taken by 10%
+Duration: 20 second(s) (stacks up to 4 times)
+
+[Undying Fury] Sian Halat Undying Fury Effect
+Instantly restores HP equal to 20% of Sian Halat's Attack
+Increases the HP Recovery Rate by 20%
+Duration: 5 second(s)
+
+[Zenith Sword] Sian Halat Zenith Sword Effect
+Increases Dark Overload damage dealt by 30%
+Increases Defense Penetration by 10%
+Increases Attack by 15%
+Duration: 30 second(s)`],
+56:[`The [Battle Stance] effect is activated when the user enters a stage
+When an attack lands on a target with a [Break] Gauge, it activates the [Guard Stance] effect
+If Son Kihoon or an ally successfully puts the target in the [Break] state, it increases the [Break] duration by 3 second(s), restores 100% of Kihoon's Core Gauge and Power Gauge, and activates the [Battle Stance] effect
+
+[Battle Stance] Son Kihoon Battle Stance Effect
+Removes [Guard Stance]
+Increases Dark damage by 20%
+Increases Fierce Charge damage by 50%
+Duration: Infinite
+
+[Guard Stance] Son Kihoon Guard Stance Effect
+Removes [Battle Stance]
+Increaes damage dealt by 10%
+Increases [Break] effectiveness by 10%
+Duration: Infinite`,`Using Flag of Authroity or Fierce Charge activates the [Sturdy Shield] effect
+Using Flag of Authroity or Fierce Charge changes Drive to Fighting Spirit: Drive) and activates it
+Using Fighting Spirit: Drive restores 35% of the user's Power Gauge
+When the user tags out, they grant the [Righteous Spirit] effect to Dark Striker team members
+
+[Sturdy Shield] Son Kihoon Sturdy Shield Effect
+Gains a [Shield] equal to 30%of Kihoon's HP
+Duration: 30 second(s)
+
+[Righteous Spirit] Son Kihoon Righteous Spirit Effect
+When the user's Basic Skill hits they deal weak Break damage
+The user gains [Super Armor] whlie it's active
+When [Righteous Spirit] ends, 25% of the user's MP is restored
+Duration: 25 second(s) (Cooldown: 30 second(s))`,`The user's [Break] effectiveness increases by 10%`,`Deals heavy Break damage when Fighting Spirit: Drive hits
+Changes to almighty Break damage when Fierce Charge hits
+Enhances the [Weakened Fighting Spirit] effect
+
+[Weakened Fighting Spirit] Son Kihoon Weakened Fighting Spirit Effect
+The following effects are inflicted on targets that enter the zone
+Decreases Attack by 12.5%
+Increases Dark damage taken by 10%
+The [Unrecoverable] effect is activated`,`The entire team's Attack and HP increase by 10%`,`The [Strike Squad Leader] effect is granted to the entire team when the user enters a stage
+When Thrilling Fighting Spirit hits a target without a [Break] Gauge it activates the [Broken Spirit] effect and it grants the [Berserk Strike] effect to the user's entire team
+
+[Strike Squad Leader] Son Kihoon Strike Squad Leader Effect
+Increases Attack by 10%
+Increases HP by 10%
+Increases damage dealt by 10%
+Duration: Infinite
+
+[Broken Spirit] Son Kihoon Broken Spirit Effect
+Decreases Attack by 12.5%
+Increases their chance of receiving Critical Hit damage by 15%
+Duration: 60 second(s)
+
+[Berserk Strike] Son Kihoon Berserk Strike Effect
+Increases Critical Hit damage by 30%
+Increases Dark damage by 15%
+Duration: 60 second(s)`],
+57:[`[Pengqueen Normal Mode] activates at the start of the stage.
+The user's Power Gauge cannot be charged, but if the [Pengqueen Booster] Gauge reaches 100%, their Power Gauge charges 100%, and the cooldown of Frozen Drive is reset.
+When Grinding Rush hits, it inflicts 1 instance of [Winter Chill] on a target.
+When Ascending Slam hits a target affected by [Winter Chill], it activates [Memories of Winter]
+
+[Pengqueen Normal Mode] Meri Laine Pengqueen Normal Mode Effect
+Each time Ascending Slam or Blade Sweep hit, they charge the Pengqueen Booster Gauge.
+Using Frozen Drive removes [Pengqueen Normal Mode] and activates [Pengqueen Booster Mode]
+Duration: Infinite
+
+[Pengqueen Booster Mode] Meri Laine Pengqueen Booster Mode Effect
+Changes Blade Sweep to Raging Sweep and resets skill cooldown.
+The user can move while using Raging Sweep.
+Increases Raging Sweep and Frozen Drive damage dealt to targets affected by [Winter Chill] by 25%
+Increases Water Elemental Accumulation effect by 5%
+The user gains [Super Armor] while this is active
+[Pengqueen Normal Mode] activates when this duration ends
+Duration: 10 second(s)
+
+[Memories of Winter] Meri Laine Memories of Winter Effect
+Increases Water damage by 15%
+Increases Blade Sweep and Raging Sweep's damage by 15%
+Duration: 30 second(s)
+
+[Winter Chill] Winter Chill Effect
+Deals damage equal to 50% of the user's Max HP every 3 second(s).
+Duration: 30 second(s) (stacking up to 10 times)`,`When Grinding Rush hits, it changes to inflict 2 [Winter Chill] instances on the target.
+Each time Blade Sweep or Raging Sweep hits a target inflicted with [Winter Chill], it activates [Freezing Blood].
+Significantly increases Blade Sweep and Raging Sweep Attack Speed.
+Increases Raging Sweep hit count by 25%
+
+[Freezing Blood] Meri Laine Freezing Blood Effect
+Increases Water damage taken by 0.6%
+Increases Water Overload damage taken by 0.6%
+Duration: 30 second(s) stacks up to 70 times)`,`Increases Water Elemental Accumulation effect by 20%`,`The [Memories of Winter] effect is enhanced
+Using Frozen Drive activates the [Pengqueen Ice Cream] effect.
+
+[Memories of Winter] Meri Laine Memories of Winter Effect
+Increases Water damage by 30%
+Increases Blade Sweep and Raging Sweep's damage by 30%
+Duration: 30 second(s)
+
+[Pengqueen Ice Cream] Meri Laine Pengqueen Ice Cream Effect
+Increases the damage dealt to targets affected by [Winter Chill] by 20%
+Increases Water Overload damage by 10%
+Increases Water Elemental Accumulation effect by 10%
+Duration: 30 second(s)`,`For every Water ally in the party, Water team members' Defense Penetration increases by 5%`,`The [Pengqueen Booster Mode] and [Freezing Blood] effects are enhanced
+When Raging Sweep hits, it inflicts 3 [Winter Chill] instances on the target.
+
+[Pengqueen Booster Mode] Meri Laine Pengqueen Booster Mode Effect
+Blade Sweep becomes Raging Sweep, resetting skill cooldown.
+The user can move while using Raging Sweep.
+Raging Sweep and Frozen Drive damage to targets affected by [Winter Chill] increases by 50%
+Water Elemental Accumulation increases by 10%
+The user gains [Super Armor] while this is active
+[Pengqueen Normal Mode] activates when this duration ends
+Duration: 10 second(s)
+
+[Freezing Blood] Meri Laine Freezing Blood Effect
+Increases Water damage taken by 1%
+Increases Water Overload damage taken by 1%
+Duration: 45 second(s) stacks up to 70 times)
+
+[Winter Chill] Winter Chill Effect
+Deals damage equal to 50% of the user's Max HP every 3 second(s).
+Duration: 30 second(s) (stacking up to 10 times)`],
+58:[`[Sword-fighting] remains active and the [Sword-fighting] status is divided into three effects: [Initiation], [Acceleration], [Finale].
+[Initiation] is activated when the user enters a stage.
+Using Flash of Steel, Returning Edge, or Revolving Edge activates the [Flash Draw] effect.
+Using Unbroken Focus activates the [Sword Dance] effect.
+When Punisher hits, it inflicts the [Winter's Edge] effect on the target.
+When Eclipse Slash or Extinctino Blade hit, they inflict the [Winter's Edge] effect 2 times on the target.
+
+[Flash Draw] Sugimoto Reiji Flash Draw Effect
+Punisher, Eclipse Slash, and Extinction Blade becomes available and they remove 1 instance of [Flash Draw] when they are used.
+Duration: Infinite (stacks up to 3 times)
+
+[Initiation] Sugimoto Reiji Initiation Effect
+Using Punisher removes the [Initiation] effect and changes to the [Acceleration] effect.
+Duration: Infinite
+
+[Acceleration] Sugimoto Reiji Acceleration Effect
+Changes Flash of Steel to Returning Edge, increasing its damage by 50%.
+Changes Punisher to Eclipse Slash, increasing its damage by 50%.
+Using Eclipse Slash removes the [Acceleration] effect and changes to the [Finale] effect.
+Duration: Infinite
+
+[Finale] Sugimoto Reiji Finale Effect
+Changes Returning Edge to Revolving Edge, increasing its damage by 100%
+Changes Eclipse Slash to Extinction Blade, increasing its damage by 100%
+Using Extinction Blade removes the [Finale] effect and changes to the [Initiation] effect.
+Duration: Infinite
+
+[Sword Dance] Sugimoto Reiji Sword Dance Effect
+Using Quickblade - Origin restores the Core Gauge twice as fast.
+When [Extreme Evasion] is activated, the Core Attack activates.
+Duration: 15 second(s)
+
+[Winter's Edge] Winter's Edge Effect
+Deals damage equal to 50% of the user's Max HP every 3 second(s).
+Duration: 30 second(s) (stacks up to 10 times)`,`Using Unbroken Focus or Quickblade - Oblivion activates the [Flash Draw] effect and the user's Core Attack.
+Consuming the [Flash Draw] effect decreaes the cooldown of Quickblade - Oblivion by 10 second(s) and restores 35% of the user's Power Gauge charge.`,`Wind Elemental Accumulation effectiveness increases by 20%`,`When Sugimoto Reiji or an ally successfully inflicts the Wind Overload effect, it grants Sung Jinwoo and Wind team members the [Tempest Blade] effect.
+
+[Tempest Blade] Sugimoto Reiji Tempest Blade Effect
+Increases Defense Penetration by 18%
+Increases Wind Overload damage by 45%.
+Increases Wind QTE Skill damage by 100%
+Duration: 15 second(s)`,`The Critical Hit damage of Wind team members increases by 10% for every Wind ally.`,`Using Quickblade - Oblivion activates the [Stormflash] effect.
+The [Sword Dance] effect is enhanced.
+
+[Sword Dance] Sugimoto Reiji Sword Dance Effect
+Using Quickblade - Origin recharges the Core Gauge twice as fast.
+When Punisher, Eslipse Slash, or Extinction Blade are used and [Extreme Evasion] activates, they activate the user's Core Attack.
+Core Attack damage increases by 100%
+The Wind Elemental Accumulation effect increases by 20%
+Duration: 15 second(s)
+[Stormflash] Sugimoto Reiji Stormflash Effect
+Extinction Blade and Blossomfall damage increases by 300%.
+Duration: 30 second(s)`],
+59:[`Using Danse d'Argent activates Trahison d'Argent once.
+When Danse d'Argent hits, it inflicts 1 instance of the [Winter Chill] effect.
+Using Furie d'Argent grants the entire team the [Tide of Silver] effect.
+Using Éclat de Folie grants the entire team the [Obsession's Grasp] effect.
+
+[Tide of Silver] Elena Renault Tide of Silver Effect
+Increases Water damage by 10%.
+Increases Water Overload damage by 15%.
+Duration: 40 second(s)
+
+[Obsession's Grasp] Elena Renault Obsession's Grasp Effect
+Gain a [Shield] equal to 15% of Elena Renault's Defense
+HP equal to 2% of Elena Renault's Defense is continuously restored every 3 second(s).
+15 MP is restored every 3 second(s).
+Duration: 40 second(s)
+
+[Winter Chill] Winter Chill Effect
+Deals damage equal to 100% of the user's Defense every 3 second(s).
+Duration: 30 second(s) (stacks up to 10 times)`,`The entire team gains the [Feral Gaze] effect at the start of the stage.
+When an ally successfully inflicts Water Overload damage, it increases all Water team members' Water Overload damage by 15% for 40 second(s).
+Using Prison d'Argent restores the entire team's Power Gauge by 10%.
+When Furie d'Argent hits a target inflicted by [Winter Chill], it inflicts the target with the [Mercury Drip] effect.
+
+[Feral Gaze] Elena Renault Feral Gaze Effect
+Increases Critical Hit Rate by 5%.
+Increases Critical Hit damage by 10%.
+Duration: Infinite
+
+[Mercury Drip] Elena Renault Mercury Drip Effect
+Increases the target's Water damage taken by 10%.
+Increases the target's Water Overload damage taken by 15%.
+Duration: 40 second(s)`,`The entire team's Attack, Defense, and Max HP increases by 9%.`,`The [Tide of Silver and Obsession's Grasp] effects are enhanced.
+When Piège d'Argent hits, the effects change to inflict 2 instances of [Winter Chill].
+When the user or a Water team member uses their Core Attack or a Basic Skill, it restores 10% of Elena Renault's Power Gauge (Cooldown: 1 second(s)).
+
+[Tide of Silver] Elena Renault Tide of Silver Effect
+Increases Water damage by 20%.
+Increases Water Overload damage by 30%.
+Duration: 40 second(s)
+
+[Obsession's Grasp] Elena Renault Obsession's Grasp Effect
+Gain a [Shield] equal to 30% of Elena Renault's Defense
+HP equal to 5% of Elena Renault's Defense is continuously restored every 3 second(s).
+30 MP is restored every 3 second(s).
+Duration: 40 second(s)
+
+[Winter Chill] Winter Chill Effect
+Deals damage equal to 100% of the user's Defense every 3 second(s).
+Duration: 30 second(s) (stacks up to 10 times)`,`The entire team's Water Overload damage increases by 20%.`,`[Feral Gaze and Mercury Drip] effects are enhanced.
+When an ally successfuly inflicts Water Overload damage, it increases all Water team members' Water Overload damage by 30% for 40 second(s)
+80% of the user's Power Gauge is charged at the start of the stage.
+When Prison d'Argent hits, it inflicts 3 [Winter Chill] instances on the target.
+
+[Feral Gaze] Elena Renault Feral Gaze Effect
+Increases Critical Hit Rate by 25%.
+Increases Critical Hit damage by 32%.
+Duration: Infinite
+
+[Mercury Drip] Elena Renault Mercury Drip Effect
+Increases the target's Water damage taken by 15%.
+Increases the target's Water Overload damage taken by 20%.
+Duration: 40 second(s)`],
+60:[`The last hit of all skills, including the Core Attack, instantly restores HP to Light team members' equal to 2% of Antoine Martinez's Max HP.
+Using Light of Shattered Sorrow activates the [Mercy] effect.
+Hitting with Light of Shattered Sorrow activates 2 instances of the [Lightsunder] effect.
+When Unforgiving Blessed Light hits a target affected by [Lightsunder], it restores 40% of the user's Power Gauge.
+
+[Mercy] Antoine Martinez Mercy Effect
+Grants a [Shield] equal to 10% of Antoine Martinez's Max HP.
+Increases damage dealt by 10%.
+Duration: 10 second(s)
+
+[Lightsunder] Lightsunder Effect
+Deals damage equal to 50% of Antoine Martinez's Max HP every 3 seconds.
+Duration: 30 second(s) (stacks up to 10 times)`,`50% of the user's Power Gauge is filled when entering the stage.
+Using Light of Shattered Sorrow restores 100% of the user's Core Gauge.
+Using Unforgiving Blessed Light activates the [Exalted Manifestation] effect.
+Using The Angel's Stay activates the [Holy Barrier] effect on the Light team embers with the highest Total Power.
+
+[Exalted Manifestation] Antoine Martinez Exalted Manifestation Effect
+Light of Shattered Sorrow changes to Devourer of Sorrow, increasing its damage by 140%.
+Resets the cooldown of Devourer of Sorrow.
+Using Devourer of Sorrow activates the [Mercy] effect.
+Defense Penetration increases by 10%.
+Light Elemental Accumulation increases by 20%.
+Removes the [Exalted Manifestation] effect when tagging out.
+Duration: 15 second(s)
+
+[Mercy] Antoine Martinez Mercy Effect
+Grants a [Shield] equal to 10% of Antoine Martinez's Max HP.
+Increases damage dealt by 10%.
+Duration: 10 second(s)
+
+[Holy Barrier] Antoine Martinez Holy Barrier Effect
+Grants a [Shield] equal to 5% of Antoine Martinez's Max HP.
+Continuously heals equal to 5% of Antoine Martinez's Max HP every 3 seconds.
+Duration: 60 second(s)`,`Light Elemental Accumulation effect increases by 20%`,`Hitting with Light of Shattered Sorrow or Devourer of Sorrow activates the [Blessed Light] effect on the target.
+Using Judgment of Severed Fate acivates the [Karma] effect on Light team members.
+The [Mercy] effect is enhanced.
+
+[Blessed Light] Antoine Martinez Blessed Light Effect
+Increases the target's Light damage taken by 20%.
+Increases Light Overload damage by 20%.
+Duration: 10 second(s)
+
+[Karma] Antoine Martinez Karma Effect
+Defense Penetration increases by 10%.
+Light damage increases by 20%.
+Duration: 15 second(s)
+
+[Mercy] Antoine Martinez Mercy Effect
+Grants a [Shield] equal to 12% of Antoine Martinez's Max HP.
+Increases damage dealt by 15%.
+Decreases Mana Skill Consumption by 20%.
+Duration: 10 second(s)`,`Light team members' Light Overload damage increases by 10%.`,`The [Karma and Holy Barrier] effects are enhanced.
+Hitting with Light of Shattered Sorrow now applies 5 [Lightsunder] instances.
+Using Devourer of Sorrow activates the [Harmony] effect on Light team members.
+Decreases the cooldown of The Angel's Stay by 8 second(s) when Unforgiving Blessed Light, Light of Shattered Sorrow, or Judgement of Severed Fate hits.
+
+[Lightsunder] Lightsunder Effect
+Deals damage equal to 50% of Antoine Martinez's Max HP every 3 seconds.
+Duration: 30 second(s) (stacks up to 10 times)
+
+[Harmony] Antoine Martinez Harmony Effect
+Increases Basic Skill damage by 30%.
+Increases Light Overload damage by 30%.
+Duration: 15 second(s)
+
+[Karma] Antoine Martinez Karma Effect
+Increases Attack by 20%.
+Increases HP by 15%
+Light damage increases by 30%.
+Defense Penetration increases by 15%.
+Duration: 15 second(s)
+
+[Holy Barrier] Antoine Martinez Holy Barrier Effect
+Grants a [Shield] equal to 10% of Antoine Martinez's Max HP.
+Continuously heals equal to 7% of Antoine Martine'z Max HP every 3 seconds.
+Critical Hit damage increases by 30%
+Duration: 60 second(s)`],
     // Add other hunters by id or name similarly if needed
   };
   

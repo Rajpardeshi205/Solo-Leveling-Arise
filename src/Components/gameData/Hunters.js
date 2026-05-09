@@ -4,7 +4,7 @@ export const hunters = [
       id: 1,
       name: "Amamiya Mirei",
       element: "Wind",
-      type: "Assassin",
+      type: "Striker",
       ultimateSkill:
         "Kuroha's Sword Technique Lethal Move: Moonless Night Overture",
       weapon: "Katana",
@@ -26,7 +26,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ],  
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
+      Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
 
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtA0hm8AyxpuBvo-9bgw1CBnrH6CG5O-Ek_c_PnizkV28u1NUwtBT8__KXYd0Q-P39c9M&usqp=CAU",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/0ba932a645ce4ed1af7ec4cec1df732c.webp",
@@ -38,7 +38,7 @@ export const hunters = [
       id: 2,
       name: "Tawata Kanae",
       element: "Fire",
-      type: "Assassin",
+      type: "Striker",
       ultimateSkill: "Tsuchigumo",
       weapon: "Double Katana",
       weaponName: "The Path a Hero Must Take",
@@ -59,19 +59,19 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
+      Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
    
-      img1: "https://img.game8.co/4107716/a4766b56d447b06a05dd620d16a620fc.png/show",
+      img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/1c66efe9b26144fa872d9f82b45a02e6.webp",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/29a3d71a8738402cb03d538130e1f5c2.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/17148e2b7f244776a7846ab74c11b364.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/27ab6bab14604f2ca951f902c250e2bb.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/f5f9b03e5ba748229784149858d09ede.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/d5d43f698686407d932f5b75d6a20e30.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/b1f9b78247214c90959765a024128ccc.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/e1835773155749aa9daf4932e5d44500.webp"],
-      skin3:["https://resources.vortexgaming.io/upload/post/2025/07/12/21b0942e29744f9cb899dec2a8c0f79e.png"]
+      skin3:["https://resources.vortexgaming.io/upload/post/2025/07/12/21b0942e29744f9cb899dec2a8c0f79e.png","https://resources.vortexgaming.io/upload/post/2026/05/09/0d50f6db93c64eb298909690d7e63333.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0e659e3489ca4cea8e4a978c5523f302.webp"]
     },
     {
       id: 3,
       name: "Isla Wright",
       element: "Dark",
-      type: "Healer",
+      type: "Supporter",
       ultimateSkill: " Arcana: The World, Arcana: Death",
       weapon: "Cards",
       weaponName: "Unexpected Luck",
@@ -92,7 +92,7 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
+      Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
 
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZPB5Pw85mCgH-hYdw9XfOgbWHuKRtb6R2-A&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/3f6cf78991ee4792b2b87da049044b87.webp",
@@ -104,7 +104,7 @@ export const hunters = [
       id: 4,
       name: "Cha Hae-In, the Pure Sword Princess",
       element: "Water",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Sword of Destiny",
       weapon: "Sword",
       weaponName: "Valkyrie Guild's Oath",
@@ -125,19 +125,19 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Eyes of the Watcher","Limbs of the Watcher","Teeth of the Watcher	"],
-
-      img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYU2VJ-uO_tuAgVAGBD6nfS7bVjbgeCrCaGGFFueEjQlVWwLGuuRsk0Sozyl2csqD9jBQ&usqp=CAU",
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+      img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/05dee2c6d36341f1848966b0fd8c2600.webp",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/16fe3aefb01740f6a1795689ca9ee0d6.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/ed9880960582487a957bad809f8cae9a.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/64268e3103d949d5b57ee8d93bbd929d.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/4c5e3384ef4a40a284b4edccd6602f38.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/dde51b1154fa469ab2483d29fa2611d3.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/e06db0398c2445eb868be734741e5afd.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/09f47ce199e44b4285e75417099016a9.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/7a37b173e4b942d1917a4b3652e50cf4.webp"],
      
     },
     {
       id: 5,
       name: "Charlotte",
       element: "Dark",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Take This!",
       weapon: "Dolls",
       weaponName: "Prankster",
@@ -158,8 +158,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTib9DfhMEd48UCGG4dIR4Sr4plwXF2y7X1Pg&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/71418da53649463f96f47ba49e2d56af.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/53ad38e488834bb39ed89aad11811bed.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/23c011794dc84a65b3d30a7631c0aafe.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/144a6cdd8c074a95872d881149884182.webp"],
@@ -169,7 +168,7 @@ export const hunters = [
       id: 6,
       name: "Thomas Andre",
       element: "Light",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Ruler's Judgement",
       weapon: "Sunglasses",
       weaponName: "The True King",
@@ -179,7 +178,7 @@ export const hunters = [
         "A National Level hunter in America. He uses his overwhelming power and violence to get whatever he wants.",
       stats: { attack: 55, defense: 70, speed: 65, magic: 95 },
       affiliatedCountry: "USA",
-      rank: "S-Rank",
+      rank: "National Level",
       gender: "Male",
       age: 39,
       mainAbility:
@@ -191,18 +190,17 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Eyes of the Watcher","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA6B0ROL133OH2FLBpF7ByivGK0qxgSnXoEsJyFZvvuoRTI4BIoEQouph6dxl8gMDs0bo&usqp=CAU",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/210de509a39e47619e6c0db58b1527cd.webp",
-      skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/bc23e8d6fb5946f1a1aaff4bdcfe5d4b.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/8f8385650ddb4aaab7f2ef7411f7d15d.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/db601ab45e7e45fb8cef36b465e43022.webp"],
+      skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/bc23e8d6fb5946f1a1aaff4bdcfe5d4b.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/8f8385650ddb4aaab7f2ef7411f7d15d.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/db601ab45e7e45fb8cef36b465e43022.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/75b12acc29d44e739b5dbf4e43f1f6aa.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/7b525917b9654a60a2dc0e14c3b78d10.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/1e4d2e046e154a1ea26522754528d585.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/2959f53bb3c3417d82c485fd148e3960.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/6dd374012b0f4776bde2756040bc5d7e.webp"],
     },
     {
       id: 7,
       name: "Goto Ryuji",
       element: "Wind",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Devastate Prey",
       weapon: "Katana",
       weaponName: "Distorted Dreams",
@@ -223,18 +221,18 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWyZk2_vCz7tE-TIU0LUWJkFYED0Ckn5jSdw&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/3718177998f74110bb69a3ebf6d22607.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/f58111ac67b74d119a70604e706e1b0b.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/6a3e0f4d871442a1839697d6bc336e73.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/c7c623c5520d4819ab0013c39631f71d.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/060e4862a8d74da4aa1013226b7547f0.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/e41cace59fcf490d90fac8338021f9d3.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/cb9b0769e6a94cfd8649691368c24add.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/33d9f131d99845ed95debf8da04fb84e.webp"],
     },
     {
       id: 8,
       name: "Seorin",
       element: "Water",
-      type: "Ranger",
+      type: "Breaker",
       ultimateSkill: "Frost Chaser",
       weapon: "Gun",
       weaponName: "Melody of Iron and Blood",
@@ -255,18 +253,18 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqIS9s1jNZPwnCclwblMCeKPEj36Ko3WI8qQ&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/7a2949856404443abec98e3dba272e84.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/c250f8e8443c4f57a2c60fe7bcc75852.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/0518e59549b34a16a9ef0726dad90f34.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/9e28932f33194c88a5f5bbabf119e609.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/cb2c0a370d734e5dbcf66a7b718c7781.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/080aa56b8c604c239032b3d2f22ab9e2.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/7b7daff923b44483a53cbb49b690dd61.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/6b462ed778074db8a3163d487b404dd4.webp"],
     },
     {
       id: 9,
       name: "Esil Radiru",
       element: "Fire",
-      type: "Ranger",
+      type: "Breaker",
       ultimateSkill: "Foretold Victory",
       weapon: "Spear",
       weaponName: "Glorious Demise",
@@ -287,8 +285,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR77X5MxbVEZ5emNWIgq40Oooa6UzRHtlPlIdz44tYleAprtqg1RRWggdvvhtUY-DU7bak&usqp=CAU",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/a3aa15f68c30468999f5953a675d0a41.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/8c37dad69d8f4ad7b9d8fa1887b74174.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/94c3e991d650413a801f856f23b110b0.webp"],
@@ -298,7 +295,7 @@ export const hunters = [
       id: 10,
       name: "Go Gunhee",
       element: "Light",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Supernova",
       weapon: "jacket locket",
       weaponName: "A Conviction and a Calling",
@@ -319,8 +316,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRai44P57A64X2eQW-1GjAy-jfBDHuB84QEjQ&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/a1fe62b468ce405eafaffd6d84244e6f.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/4abb9e0a2c284de0a713d16803d4ed09.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/b88b1eef4cd949df952241bad3aed80d.webp"],
@@ -329,7 +325,7 @@ export const hunters = [
       id: 11,
       name: "Harper",
       element: "Dark",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Harper's Mjölnr",
       weapon: "Bag",
       weaponName: "Mischievous",
@@ -350,8 +346,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAPcoT2rKINlgxfxdjnYw6tpoS6sVcRE0h49RmZj0yZhvextcQKYuXjxOC0Wq1jTRgdhU&usqp=CAU",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/feb0811d298a40cf82db19266ca854da.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/2b0484cd705b4c11b330b7fe95a841ee.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/6b4a791be6824fdea222b4dde8dbe613.webp"],
@@ -361,7 +356,7 @@ export const hunters = [
       id: 12,
       name: "Shimizu Akari",
       element: "Light",
-      type: "Healer",
+      type: "Supporter",
       ultimateSkill: " Ring of Fire",
       weapon: "Axe",
       weaponName: "The Price of a Promise",
@@ -382,18 +377,18 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/e41e117c53fd497cb618c4908f919ca2.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/d572e8562626417aa817709a83a5741d.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/121da727e8f94bc5ba76b4b8e62d47ee.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/6099de3f667e43eb9bcd97e7557c3a34.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/2777bf2ee562441a972eeedf7f0f9de2.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/a1505f8007f844b29b6a40ec2da445d6.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/1ec12c28028d44538a397cceb8e95c3a.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/b36d8fc979d2420b95826d343cfcb16d.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/13b7893a678d4f98a3cabf19a7f9f461.webp"],
     },
     {
       id: 13,
       name: "Gina",
       element: "Fire",
-      type: "Mage",
+      type: "Supporter",
       ultimateSkill: "Liberation",
       weapon: "Orb",
       weaponName: "The Glamour of Self-worth",
@@ -414,18 +409,18 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBa_7nzcMWiResiGE_ggzVBxE6E_oKOXxzig&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/74a7d3178a9f4200ad8caea5db578e81.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/4c5da8679a2d459cb1b10aeb416a50ec.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/18ccd4170dd44c379aa5fc8c87f2f040.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/666a0707825e4f58970b1ccf1d397f20.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/b80658db7cfb4d338c04e41961727571.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/cafde56ec78849ff9ae2ecdb9cc7a3dc.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/68ad00835498483fa7970765ee86da83.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/ad3bd23cd84246c8b636b375a68a91f9.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/07a21935af97410bb7eacbd5e7a46f39.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/8afd4ec60857456e8342b5cf9a8eca6b.webp"],
     },
     {
       id: 14,
       name: "Han Se-Mi",
       element: "Wind",
-      type: "Healer",
+      type: "Supporter",
       ultimateSkill: "Vines of Vitality",
       weapon: "Magic Bag",
       weaponName: "Coming of Age",
@@ -446,8 +441,7 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStRHxu1NkRdxC1JndRByq-fQKNQ7Z1tFyS2g&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/39aa74ef5d294777886c21e6342d127c.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/b7abddb8e15f4b7fbe6170c9ab9685a3.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/8a374f34a2234f70b87524e022e96a68.webp"],
@@ -458,7 +452,7 @@ export const hunters = [
       id: 15,
       name: "Yoo Soohyun",
       element: "Fire",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Zeroed-in Blast",
       weapon: "Gun",
       weaponName: "Overdrive",
@@ -479,8 +473,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkiCR8Pl36CSxu7W7taGIR8c6OZA7v0NXVnw&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/2ddbe15bbbaa42c3a53e304849c58b11.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/a3fdcc6dc02f492384e3870a60eea1b8.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/10b7acc5c3bc4cc993a9f6e82ab736a0.webp"],
@@ -491,7 +484,7 @@ export const hunters = [
       id: 16,
       name: "Meilin Fisher",
       element: "Water",
-      type: "Healer",
+      type: "Supporter",
       ultimateSkill: "Big Meow!",
       weapon: "Fishing Stick",
       weaponName: "Hook, Line, and Sinker",
@@ -511,12 +504,8 @@ export const hunters = [
       guild: "The_Federal_Bureau_of_Hunters",
       releaseDate: "19 June 2024",
       Rarity:"SSR",
-      Artifacts: [
-        ["Palace Guard's Set (Guardian)", ["helmet", "bodyArmor", "gloves", "boots"]],
-        ["Peridot Set (Sylph's Blessing)", ["necklace", "bracelet", "ring", "earrings"]]
-      ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+     
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR10rgvxwsH9C1sY6dlcKn6o53wov9mQBVvVg&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/331db49261a9411fa820907acfe51fb0.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/17214190a04d4d00bf9fe281c92683eb.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/85cf41a54afe46ed92d04fac01202ffe.webp"],
@@ -526,7 +515,7 @@ export const hunters = [
       id: 17,
       name: "Alicia Blanche",
       element: "Water",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Absolute Zero",
       weapon: "Ice Stick",
       weaponName: "Ice Witch",
@@ -547,8 +536,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Eyes of the Watcher","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQT-Jzx1PE_8cdSIc7o-dWh3lgh78Gii5j66Q&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/5d17968d3eea4c2b83b0501145d32510.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/cdac4c98caf84293bf0eed8900f71290.webp","https://resources.vortexgaming.io/upload/post/2025/07/12/7a37e5756be34657b7b4c5034c640096.png"],
@@ -560,7 +548,7 @@ export const hunters = [
       id: 18,
       name: "Cha Hae-In",
       element: "Light",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Light of the End",
       weapon: "Sword",
       weaponName: "Sword of Light",
@@ -581,20 +569,19 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiGS5lYb6pqkMMdKPd1VkJNheM4iTN_aU8uQ&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/9272c99964064501b59b0713692a658e.png",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/5ccbc65e889542579cc4e561671ae260.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/4ff0bcb49bdc480ea0d4647db2bf2f44.webp"],
       skin2:["https://resources.vortexgaming.io/upload/post/2025/07/10/17926ab2514449249905bce6b7c295ee.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/7b2d8253528a4d76ba01d686c8e3744b.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/f1616fbc1025478e8144e58ee310e783.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/1f0aa5a846d5485491b90f3ab08500b1.webp"],
       skin3:["https://resources.vortexgaming.io/upload/post/2025/07/10/80999240332145c5824e9cadb44c4472.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/8e5b533d889540db80ec0d610867332b.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/dc0201df88b44df897062de9c602965c.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/fbbe9c9c9ae24290aad631ebe7beb143.webp"],
-      skin4:["https://resources.vortexgaming.io/upload/post/2025/07/10/95f6b05455be490fad85045cd6277aeb.webp"],
+      skin4:["https://resources.vortexgaming.io/upload/post/2025/07/10/95f6b05455be490fad85045cd6277aeb.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0b5c3fc880804e92b509fd456ffda782.webp"],
     },
     {
       id: 19,
       name: "Choi Jong-In",
       element: "Fire",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: " End of Days",
       weapon: "Ring",
       weaponName: "Equivalent Exchange",
@@ -615,8 +602,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/18bd257bafbd4ed0abf13623fcfd6a37.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/3db297ad2a98474da4dc5533cde13137.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/3db297ad2a98474da4dc5533cde13137.webp"]
@@ -625,7 +611,7 @@ export const hunters = [
       id: 20,
       name: "Silver Mane Baek Yoonho",
       element: "Dark",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Divinity",
       weapon: "Claw Gauntlet",
       weaponName: "Howling White Tiger's Soul",
@@ -647,7 +633,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/26f4ede1155f4697a14671e30d9742ec.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/17cf45c0a1d0401a9dff4f9fccab7ce8.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/17cf45c0a1d0401a9dff4f9fccab7ce8.webp"]
@@ -656,7 +642,7 @@ export const hunters = [
       id: 21,
       name: "Baek Yoonho",
       element: "Light",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: " Truth: White Flame Strike",
       weapon: "Gauntlet",
       weaponName: "Suppressed White Tiger's Soul",
@@ -677,8 +663,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/04414b69dd5a4afda8eebbcf354439a4.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/03d6688dc3c7417ba151bc121da48251.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/03d6688dc3c7417ba151bc121da48251.webp"]
@@ -687,7 +672,7 @@ export const hunters = [
       id: 22,
       name: "Emma Laurent",
       element: "Fire",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Burning Pride",
       weapon: "Sword",
       weaponName: "Night-Thoughts",
@@ -708,8 +693,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/2ce347521a4b4bdba3d5d21914a598db.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/2752fd0ab1714acb8f6ab0a8abbf516b.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/bd55f23108894d78918dffd693a58925.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/2a5cc55cfe5f4df4ad73d4ce4f9f7766.webp"],
@@ -719,7 +703,7 @@ export const hunters = [
       id: 23,
       name: "Hwang Dongsoo",
       element: "Wind",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Merciless",
       weapon: "Knuckledusters",
       weaponName: "A Gentle Touch",
@@ -740,8 +724,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/9d7eb23d5a4e40de8732f8370b815e22.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/755bae72d699413094ca94e1a9148131.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/755bae72d699413094ca94e1a9148131.webp"]
@@ -750,7 +733,7 @@ export const hunters = [
       id: 24,
       name: "Lee Bora",
       element: "Dark",
-      type: "Mage",
+      type: "Supporter",
       ultimateSkill: "Dark Charm: Meg",
       weapon: "Staff",
       weaponName: "Solid Logic",
@@ -771,8 +754,7 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/96e946785a414567b3a77149ae1acae7.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/ff00c467d76e46e8ac995f19352d80cf.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/ff00c467d76e46e8ac995f19352d80cf.webp"],
@@ -783,7 +765,7 @@ export const hunters = [
       id: 25,
       name: "Lim Tae-Gyu",
       element: "Dark",
-      type: "Ranger",
+      type: "Breaker",
       ultimateSkill: "Quick Attack: Typhoon Fire",
       weapon: "Bow",
       weaponName: "Intercept",
@@ -804,8 +786,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxCAC-hkFjJ5XpUkpLCEZ44mL04y0zenHJ3w&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/3e5dc0a03a56426581e9956a5a3b2536.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/3e5dc0a03a56426581e9956a5a3b2536.webp"]
@@ -814,7 +795,7 @@ export const hunters = [
       id: 26,
       name: "Min Byung-Gu",
       element: "Light",
-      type: "Healer",
+      type: "Supporter",
       ultimateSkill: "Heavenly Blessing",
       weapon: "Mace",
       weaponName: "Eternal Slumber",
@@ -835,8 +816,7 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/05feccefb0da482e8436b77fd2c1a4be.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/33c485ccf09e4e8784236cc1c6910fb5.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/33c485ccf09e4e8784236cc1c6910fb5.webp"]
@@ -845,7 +825,7 @@ export const hunters = [
       id: 27,
       name: "Seo Jiwoo",
       element: "Water",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Lethal Move: Water Dragon Transformation Strike",
       weapon: "Gauntlet",
       weaponName: "Unparalleled Bravery",
@@ -866,8 +846,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/33d940adbbf84a12a8bbc947d2a2b4af.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/d0072f96ff8343919a83192f9c82c048.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/ffc9f120c5d94d23950fb6abfcdb6c3d.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/5fdcd53307f349488f1c983e06572a39.webp"],
@@ -877,7 +856,7 @@ export const hunters = [
       id: 28,
       name: "Woo Jinchul",
       element: "Wind",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Energy Field",
       weapon: "The leather gloves",
       weaponName: "Another Level",
@@ -898,8 +877,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/0e327252f8254759944732bf8172b68e.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/4bec417ce1d740b4a6a1cc0ec68e43cb.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/4bec417ce1d740b4a6a1cc0ec68e43cb.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/fd12a70fcb2642b1ad9870db3acfd625.webp"]
@@ -908,7 +886,7 @@ export const hunters = [
       id: 29,
       name: "Anna Ruiz",
       element: "Water",
-      type: "Ranger",
+      type: "Breaker",
       ultimateSkill: "Poison Wave",
       weapon: "Pendant",
       weaponName: "Lonely Wanderer",
@@ -929,8 +907,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdEOE9-eCag3JOfexRUCxVa8iFz9xz8B0swA&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/9f5bbb910c8745728424546950e518ac.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/9f5bbb910c8745728424546950e518ac.webp"]
@@ -939,7 +916,7 @@ export const hunters = [
       id: 30,
       name: "Han Song-Yi",
       element: "Water",
-      type: "Assassin",
+      type: "Striker",
       ultimateSkill: "Rakshasa",
       weapon: "Daggers",
       weaponName: "First Bloom",
@@ -960,8 +937,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/04ccb9bf9f904a868cb09e1ac9dfc1ea.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/62c4f21906ae42b38cf75a8e3996f7de.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/62c4f21906ae42b38cf75a8e3996f7de.webp"]
@@ -970,7 +946,7 @@ export const hunters = [
       id: 31,
       name: "Hwang Dongsuk",
       element: "Dark",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Mighty Attack",
       weapon: "A Sword And Shield",
       weaponName: "Soul Plunderer",
@@ -991,8 +967,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/ec80218ec88c492ebde340c1d89c8aa2.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/f20beaf8bd694ad583995469730713e5.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/f20beaf8bd694ad583995469730713e5.webp"]
@@ -1001,7 +976,7 @@ export const hunters = [
       id: 32,
       name: "Jo Kyuhwan",
       element: "Light",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Laser Guidance",
       weapon: "Cloak",
       weaponName: "Sweet Life",
@@ -1022,8 +997,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1qs6heMpIuh5l_FxmzIOCYmcKWQFyKewnaJHuAhJGqOwyKzOX6ND77zvqeXkvoHlLG_s&usqp=CAU",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/3adea6d8185d41cc8a2a0f4f39cf4167.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/3adea6d8185d41cc8a2a0f4f39cf4167.webp"]
@@ -1032,7 +1006,7 @@ export const hunters = [
       id: 33,
       name: "Kang Taeshik",
       element: "Dark",
-      type: "Assassin",
+      type: "Striker",
       ultimateSkill: "Camouflage",
       weapon: "Dual Daggers",
       weaponName: "Unstoppable Frenzy",
@@ -1053,8 +1027,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/fe0bf65486a84cc092fe20ceb5f99c04.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/8fa880ecf16440f3b5ba936246c934d3.png",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/8fa880ecf16440f3b5ba936246c934d3.png"]
@@ -1063,7 +1036,7 @@ export const hunters = [
       id: 34,
       name: "Kim Chul",
       element: "Light",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "Faction of the Shield",
       weapon: "A Special Shield",
       weaponName: "A Guardian's Will",
@@ -1085,8 +1058,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/1c5ea374283d49898f2aed6b564931a3.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/da2a0a0549634c4e8318e6f836c29739.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/da2a0a0549634c4e8318e6f836c29739.webp"]
@@ -1095,7 +1067,7 @@ export const hunters = [
       id: 35,
       name: "Kim Sangshik",
       element: "Wind",
-      type: "Tank",
+      type: "Striker",
       ultimateSkill: "Sword of Wind",
       weapon: "Sword",
       weaponName: "Someone's Downfall",
@@ -1116,8 +1088,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXeNYHWysAi7twSH4tlOFanVKyhLAwTxrKJ_GPN2bEuhZwmP-FF0BOans1sQBvkBdKbl8&usqp=CAU",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/aec19634ccd3413ab2999944066a62db.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/aec19634ccd3413ab2999944066a62db.webp"]
@@ -1126,7 +1097,7 @@ export const hunters = [
       id: 36,
       name: "Lee Joohee",
       element: "Water",
-      type: "Healer",
+      type: "Supporter",
       ultimateSkill: "Energy Field",
       weapon: "Gloves",
       weaponName: "What Never Was",
@@ -1147,8 +1118,7 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/06/04/5641dfcb16344e95be21799d2492e061.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/34c13a3a639d4f62b4bb6d8f0df78647.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/34c13a3a639d4f62b4bb6d8f0df78647.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/c1a9d3bd903e4acfb85eeb0e2e69ff35.webp"],
@@ -1158,7 +1128,7 @@ export const hunters = [
       id: 37,
       name: "Nam Chae-Young",
       element: "Water",
-      type: "Ranger",
+      type: "Breaker",
       ultimateSkill: "Light-Freezing Arrow",
       weapon: "An Ice Arrow ",
       weaponName: "Slayer's Mercy",
@@ -1179,8 +1149,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKAXKCIcezG2kr2eFa72Wxq1BEUBefcHjVAA&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/8bb2283e0f9f4dadbec851678bf82d3b.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/8bb2283e0f9f4dadbec851678bf82d3b.webp"]
@@ -1189,7 +1158,7 @@ export const hunters = [
       id: 38,
       name: "Park Beom-Shik",
       element: "Wind",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Another Worldline",
       weapon: "A Blunt",
       weaponName: "Decisions",
@@ -1211,9 +1180,8 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
-      img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcWjDxR_oSnoAOI9rA9Gdj3Bo3uGFiFAFtJQ&s",
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+      img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/08521722e55d41d5877632a4f896d344.webp",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/5590e621d2ff48b3aac1364e6fed23c3.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/5590e621d2ff48b3aac1364e6fed23c3.webp"]
     },
@@ -1221,7 +1189,7 @@ export const hunters = [
       id: 39,
       name: "Park Heejin",
       element: "Wind",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Wind Storm",
       weapon: "A Staff",
       weaponName: "Intuition",
@@ -1241,8 +1209,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhF1GefVtLgtUgFwOiZbA_UtYq8o-xCNipA&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/688ecc7d26224b62bad11d8040cac923.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/688ecc7d26224b62bad11d8040cac923.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/13148fc64f84484cbb959988ea1b2260.webp"]
@@ -1251,7 +1218,7 @@ export const hunters = [
       id: 40,
       name: "Song Chiyul",
       element: "Fire",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Special Iaido: Fire Demon",
       weapon: "Sword",
       weaponName: "Still Got It",
@@ -1272,8 +1239,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpANQzsNJ4zcHgtZMH4Sga4U9x4mcAExRs9A&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/aa1e989f8f0a462cae4be2b1c0d0acfa.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/aa1e989f8f0a462cae4be2b1c0d0acfa.webp"]
@@ -1282,7 +1248,7 @@ export const hunters = [
       id: 41,
       name: "Yoo Jinho",
       element: "Light",
-      type: "Tank",
+      type: "Breaker",
       ultimateSkill: "I'll Protect You!",
       weapon: "Sword",
       weaponName: "Nice to Meet You",
@@ -1303,8 +1269,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkfmaeoCNOgLif6v_1_RGrKvT40V6LQbIjyw&s",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/230d6b517d5e4f0e85bb7f1933f28d9d.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/230d6b517d5e4f0e85bb7f1933f28d9d.webp"]
@@ -1314,7 +1279,7 @@ export const hunters = [
       id: 42,
       name: "Lennart Niermann",
       element: "Wind",
-      type: "Mage",
+      type: "Striker",
       ultimateSkill: "Todes-Symphonie",
       weapon: "Pocket Watch",
       weaponName: "The Weight of Responsibility",
@@ -1335,8 +1300,7 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
       img1: "https://resources.vortexgaming.io/upload/post/2025/07/10/dc8886001c684705916906abf0ea7e32.png",
       img2:"https://resources.vortexgaming.io/upload/post/2025/07/10/787cdbeb77424a748633aba43babec31.webp",
       skin1:["https://resources.vortexgaming.io/upload/post/2025/07/10/b3bdc3cb809e4a35af53e478c8b14a1d.webp","https://resources.vortexgaming.io/upload/post/2025/07/10/5109d133ef7a4d6b9843aa84fa139e2c.webp"],
@@ -1348,7 +1312,7 @@ export const hunters = [
       id: 43,
       name: "Miyeon",
       element: "Light",
-      type: "Fighter",
+      type: "Striker",
       ultimateSkill: "Star Recital",
       weapon: "One-Handed Sword",
       weaponName: "The Battlefield’s Guiding Star",
@@ -1369,19 +1333,18 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-
-      img1: "https://resources.vortexgaming.io/upload/post/2025/07/12/d0879e7c11e74af3b871bab7b9292178.png",
-      img2:"https://resources.vortexgaming.io/upload/post/2025/07/12/fa0ffdc44c7c4922a80e76067e26cc74.png",
-      skin1:["https://resources.vortexgaming.io/upload/post/2025/07/12/fa0ffdc44c7c4922a80e76067e26cc74.png","https://resources.vortexgaming.io/upload/post/2025/07/12/a5945fec3bc6440db4a4aeebe0044486.png"],
-      skin2:["https://resources.vortexgaming.io/upload/post/2025/07/12/411bb7e129b9437c835b0a17dd880061.png","https://resources.vortexgaming.io/upload/post/2025/07/12/26154c8be9d248b4944556a843a5c78f.png","https://resources.vortexgaming.io/upload/post/2025/07/12/7f6d356e0c134c2b9d6603d54f03610b.png","https://resources.vortexgaming.io/upload/post/2025/07/12/04bf8ed5e9cb497880d3b7cad697477f.png"],
-      skin3:["https://resources.vortexgaming.io/upload/post/2025/07/12/919dbe0bd38f42f99235df6702fcf604.png","https://resources.vortexgaming.io/upload/post/2025/07/12/2b4d6b9f92ea401699aed679e623c859.png","https://resources.vortexgaming.io/upload/post/2025/07/12/da189b77d03249a0be5fbaf5201dd54d.png","https://resources.vortexgaming.io/upload/post/2025/07/12/40bd961412ce4dc0b9799c5eccedf5d6.png"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+      img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/9268b37d17954a548e271a83af6c8985.webp",
+      img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/6bd94386dedb4e68979106847201b742.webp",
+      skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/6bd94386dedb4e68979106847201b742.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/00b8889b25f542d091e311ebacaa2fc7.webp"],
+      skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/65dfdd05d765428d929d692fdb8db791.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/78936bd591344145a93e9ce62d4fb76b.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/ceb77970f074499f928d067292b7a300.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/f34b53a5c86b4ba18bb670ad178e337b.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/9174dc58e44c44d29ada4fcfc37f1f72.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/6857ae9a1bbf456e9fd330c7c59b4391.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/e0b165a4fc7d4f42aa617f05d78c6791.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/8e5569db960e4c04a83fb24e105c15b5.webp"],
        },
     {
       id: 44,
       name: "Shuhua",
       element: "Water",
-      type: "Assassin",
+      type: "Striker",
       ultimateSkill: "Harmony Catharsis",
       weapon: "Energy Orbs",
       weaponName: "The Place Bathed in Moonlight",
@@ -1402,19 +1365,19 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-      Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-      img1: "https://resources.vortexgaming.io/upload/post/2025/07/12/a404441895ef459daa34d4cd8fbf973f.png",
-      img2:"https://resources.vortexgaming.io/upload/post/2025/07/12/d8bab66e582e43f49a7da961e43c1017.png",
-      skin1:["https://resources.vortexgaming.io/upload/post/2025/07/12/d8bab66e582e43f49a7da961e43c1017.png","https://resources.vortexgaming.io/upload/post/2025/07/12/093b8eafe38c4a75a25f732446f87be6.png"],
-      skin2:["https://resources.vortexgaming.io/upload/post/2025/07/12/2f31d576f468451f9d118238970f9b6b.png","https://resources.vortexgaming.io/upload/post/2025/07/12/0dee51b1904a4e069c5d29d91cfb40f5.png","https://resources.vortexgaming.io/upload/post/2025/07/12/d8a373f306f84d7ca07b823933822407.png","https://resources.vortexgaming.io/upload/post/2025/07/12/cc70dcb1532f4ecc8fae3892464e5bc5.png"],
-      skin3:["https://resources.vortexgaming.io/upload/post/2025/07/12/45cc14f093dc4f979aeb299f39fc5d30.png","https://resources.vortexgaming.io/upload/post/2025/07/12/4e1fd797d7bc4a829ef93e796757070d.png","https://resources.vortexgaming.io/upload/post/2025/07/12/f7ea76404fe34987887e5d668e4f2687.png","https://resources.vortexgaming.io/upload/post/2025/07/12/cda1d27901f54c728863748e192ade9d.png"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+      img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/6c1fc631f0fc4ccc897b037a5c4dd8d5.webp",
+      img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/995f5ff6e7e34a2a8b61339e5726ae35.webp",
+      skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/995f5ff6e7e34a2a8b61339e5726ae35.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/b481ff0d905940d794e274084ac00f22.webp"],
+      skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/89f921925b574a17a4f3a29b104e9f0a.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/4c1cde8e275d47f08710c0b5c11d01a6.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/69ccbc1f7d944321884d9f0f628524e6.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/ec611a1533224fcba15ec5f530100704.webp"],
+      skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/3a286d8476d346cda2f136ed13cd1fab.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/7fcf0f26783d485e90581c348844f116.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/8e53fd4d8bdd427abf86edc025c3a090.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/cd13304d6d1f4601a2e1bf5cfcb8cc74.webp"],
        },
 
        {
         id: 45,
         name: "Sung Jinah",
         element: "Wind",
-        type: "Mage",
+        type: "Supporter",
         ultimateSkill: "Stromwind Serenade",
         weapon: "Umbrella",
         weaponName: "Blue Monsoon",
@@ -1435,18 +1398,19 @@ export const hunters = [
         ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-        Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-        img1: "https://resources.vortexgaming.io/upload/post/2025/09/29/441d91af8ca14e0a93f0f781a3882bc0.png",
-        img2:"https://resources.vortexgaming.io/upload/post/2025/09/29/a364e96da91042cab6f0c4e9f8a587b3.png",
-        skin1:["https://resources.vortexgaming.io/upload/post/2025/09/29/a364e96da91042cab6f0c4e9f8a587b3.png","https://resources.vortexgaming.io/upload/post/2025/09/29/de939f15e8cb49c2aff7f61148d4372b.png"],
-        skin2:["https://resources.vortexgaming.io/upload/post/2025/09/29/25eccee637ca486ebdf79481cd2f42d0.png","https://resources.vortexgaming.io/upload/post/2025/09/29/0fee3feb24cc4fa6be7b2082f0c9eba0.png","https://resources.vortexgaming.io/upload/post/2025/09/29/c5e9c559caa443ba83e0c01e1170dfc2.png","https://resources.vortexgaming.io/upload/post/2025/09/29/4c2d70f896104d529f20567a7818ee94.png"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+        img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/f839f820f8f74d7d95925d69a4b5cc9b.webp",
+        img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/a3a0f80ca50b4c1280b73de61d96e56e.webp",
+        skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/a3a0f80ca50b4c1280b73de61d96e56e.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/4b2816c88a5e43cbb31a06599e43d7d6.webp"],
+        skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/99aa55481c194059a6aa5e3d32506bf0.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/7528a8b5e2e84aee991db12464255e62.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/6d145719bdd042b0b932c6ba9dc217b5.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0d72e198299f4d3d91131d9ee96fa4bb.webp"],
+        skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/547e63594a8c49bc9fb248c7e2bd54d1.webp"],
          },
 
          {
           id: 46,
           name: "Minnie",
           element: "Dark",
-          type: "Assassin",
+          type: "Striker",
           ultimateSkill: "Stromwind Serenade",
           weapon: "Axe",
           weaponName: "Purple Butterfly's Dream",
@@ -1467,18 +1431,19 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-          Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
           img1: "https://resources.vortexgaming.io/upload/post/2025/10/02/1870087511c44e888f41b4e1379cf548.png",
           img2:"https://resources.vortexgaming.io/upload/post/2025/09/29/02b2d2ef24864a7f8b0fb476b17cac14.png",
           skin1:["https://resources.vortexgaming.io/upload/post/2025/10/02/0425cb47b923431086adc3c4e2481307.png","https://resources.vortexgaming.io/upload/post/2025/09/29/41bce52b83904592918bb2ecb04e4476.png"],
           skin2:["https://resources.vortexgaming.io/upload/post/2025/09/29/7aae350184704e05976c904087775020.png","https://resources.vortexgaming.io/upload/post/2025/09/29/60dc6fababf64bfbaa9f13cb7b70a6a5.png","https://resources.vortexgaming.io/upload/post/2025/09/29/65433277aa1e4dbebbbeb5ad29678377.png","https://resources.vortexgaming.io/upload/post/2025/09/29/20a64bb7454146a3ba069a6de94b0b15.png"],
+          skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/e148de26c86a495391d54a47cb741263.webp"],
            },
 
            {
             id: 47,
             name: "Soyeon",
             element: "Wind",
-            type: "Ranger",
+            type: "Breaker",
             ultimateSkill: "Killing Verse",
             weapon: "Gun",
             weaponName: "Blazing Flash",
@@ -1499,18 +1464,19 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-            Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-            img1: "https://resources.vortexgaming.io/upload/post/2025/09/29/3b95f4f31cd14fd795a13423aa868aad.png",
-            img2:"https://resources.vortexgaming.io/upload/post/2025/09/29/a19678ee53d24435ad758ce2c36f68b0.png",
-            skin1:["https://resources.vortexgaming.io/upload/post/2025/09/29/a19678ee53d24435ad758ce2c36f68b0.png","https://resources.vortexgaming.io/upload/post/2025/09/29/79e464d02fce4842bc2c73dcf1105593.png"],
-            skin2:["https://resources.vortexgaming.io/upload/post/2025/09/29/916b43a867414f4f8e24d8ce8eaa212e.png","https://resources.vortexgaming.io/upload/post/2025/09/29/3e52c737c623479885aad13a9eff733f.png","https://resources.vortexgaming.io/upload/post/2025/09/29/b60e2809742f48a8b6372e5538a79f37.png","https://resources.vortexgaming.io/upload/post/2025/09/29/9d14ca6ceeec466199e4f7282d50f901.png"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+            img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/52d3fd0a8215493da15aead5c19d885d.webp",
+            img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/b93bb5d3e25d45969d1aee1d622d7665.webp",
+            skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/b93bb5d3e25d45969d1aee1d622d7665.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/a6f8168ddb81455a9a3bc2452e403e70.webp"],
+            skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/877919fb2dc4438585123912f0cad328.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/f8d2be3b49c1444aa024531b9729afb5.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/a6a8dc5d38a34b21b2432b0af6777f52.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/b6ca619484e9409c81cee76ef8cf69fe.webp"],
+            skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/f31f959196fb4505bf481f898660d812.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/c3161b1069b44b09821ce758eabd26fe.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/9fb3631e87644cce89933cbf5878e6ce.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/388f54e8f2634752bb26fa774174fd3a.webp"],
              },
 
              {
               id: 48,
               name: "Yuqi",
               element: "Fire",
-              type: "Tank",
+              type: "Breaker",
               ultimateSkill: "Kill The Stage",
               weapon: "Gauntlet",
               weaponName: "Righteous Sun",
@@ -1531,7 +1497,7 @@ export const hunters = [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-              Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
               img1: "https://resources.vortexgaming.io/upload/post/2025/09/29/a3aaaa9c636f40ac878c0d0a78d8fdac.png",
               img2:"https://resources.vortexgaming.io/upload/post/2025/09/29/cfe98b88e30046c7a22419a9f7caf838.png",
               skin1:["https://resources.vortexgaming.io/upload/post/2025/09/29/cfe98b88e30046c7a22419a9f7caf838.png","https://resources.vortexgaming.io/upload/post/2025/09/29/7cacce6e73d742aa8849acc508923543.png"],
@@ -1542,7 +1508,7 @@ export const hunters = [
               id: 49,
               name: "Sung Il-Hwan",
               element: "Dark",
-              type: "Assassin",
+              type: "Striker",
               ultimateSkill: "Apocalyptic Might",
               weapon: "Dagger",
               weaponName: "Unbreakable Will",
@@ -1563,42 +1529,363 @@ export const hunters = [
                 ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
                 ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
               ], 
-              Cores:["Ancient Wraith's Obession","Nameless Demon's Horn	","Teeth of the Watcher	"],
-              img1: "https://resources.vortexgaming.io/upload/post/2025/09/29/ac748727113e4049b043c67a0fdd5200.png",
-              img2:"https://resources.vortexgaming.io/upload/post/2025/09/29/6933a0a027004a6f8338958e4441e1a0.png",
-              skin1:["https://resources.vortexgaming.io/upload/post/2025/09/29/386947402f794a4193713f232b460191.png","https://resources.vortexgaming.io/upload/post/2025/09/29/e5ebbf2f49f3484fbf293bc73fa71c5d.png"],
-              skin2:["https://resources.vortexgaming.io/upload/post/2025/09/29/0f71e5d94d8840a6a63dc7caa9fe1524.png","https://resources.vortexgaming.io/upload/post/2025/09/29/4bc664bea4864327a8e37ac37bf94d36.png","https://resources.vortexgaming.io/upload/post/2025/09/29/1b9b8b50060c4d83b3f9199e714be131.png","https://resources.vortexgaming.io/upload/post/2025/09/29/5b49b83fd10f40df8ffb59cce31b219a.png"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/b20f8a4660d6478fa282391f41632b5f.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/385152849f8748d68e40e7734a025f2f.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/385152849f8748d68e40e7734a025f2f.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/78a7c7f5b74f4b1bb483bc9d4761f892.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/8cd3da581f84496d91bc346ff75dab1f.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/8f39fa4aae144a189cff70036d525cdb.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/7660d3cd3bad48289d5f9b46eb3b18d8.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/1e224c22bd7743b2bd388e1079d66d6c.webp"],
                },
                {
               id: 50,
               name: "Stark",
               element: "Fire",
-              type: "Tank",
+              type: "Breaker",
               ultimateSkill: " Lightning Strike - Annihilation",
               weapon: "Axe",
               weaponName: "Stark's Axe",
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/08/dc2445829abe46f49586497148f8bd9e.webp","https://resources.vortexgaming.io/upload/post/2026/05/08/dc2445829abe46f49586497148f8bd9e.webp"],
               color: "#FF4500",
               description:
-                "Stark is a playable Hunter in Solo Leveling: ARISE within the Solo Leveling: ARISE x Frieren: Beyond Journey's End Collaboration. He is a Breaker-class warrior who focuses on high sustained damage and durability, using his strength to overwhelm enemies in close combat. Unlike typical breakers, his buffs mainly apply to himself, allowing him to grow stronger as he fights, chain attacks, and break enemies while maintaining pressure in battle. A cowardly warrior carrying on his master's will.",
+                "A cowardly warrior carrying on his master's will.",
               stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
               affiliatedCountry: "Unknown",
               rank: "A-Rank",
               gender: "Male",
               age: "Unknown",
               mainAbility: "Lightning Strike",
-              guild: "Journey Companions",
+              guild: "Journey_Companions",
               releaseDate: "23 October 2025",
               Rarity:"SSR",
                Artifacts: [
         ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
         ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
       ],
-              Cores:["Ferocious Protector's Desire","Nameless Demon's Horn	","Teeth of the Watcher	"],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
               img1: "https://resources.vortexgaming.io/upload/post/2026/05/08/262ddabd655e47c89174dab8ce3b1949.webp",
               img2:"https://resources.vortexgaming.io/upload/post/2026/05/08/c23b1a318e7e46fea08d09a163b80b32.webp",
               skin1:["https://resources.vortexgaming.io/upload/post/2026/05/08/c23b1a318e7e46fea08d09a163b80b32.webp"],
               skin2:["https://resources.vortexgaming.io/upload/post/2026/05/08/8440491a142946b7a2c7e89462a01ee5.webp"],
+              
+               },
+               {
+              id: 51,
+              name: "Frieren",
+              element: "Water",
+              type: "Supporter",
+              ultimateSkill: "Ordinary Offensive Magic (Zoltraak) - Ultimate",
+              weapon: "Staff",
+              weaponName: "Frieren's Staff",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/9f9a571012294bf1b282de4280bccb48.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/9f9a571012294bf1b282de4280bccb48.webp"],
+              color: "#00BFFF",
+              description:
+                "An elf who is on a journey to travel the world and to better understand humans. She is a mage known for slaying demons.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "Unknown",
+              rank: "S-Rank",
+              gender: "Female",
+              age: "Unknown",
+              mainAbility: "Destructive Lightning Magic (Judradjim)",
+              guild: "Journey_Companions",
+              releaseDate: "23 October 2025",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/a31cc83a1c9c489abc498329e0b3eacf.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/54e48a8331d141f089b44a20990fafd7.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/54e48a8331d141f089b44a20990fafd7.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/bbc1f93aae2c487799170c3250dc00a8.webp"],
+              
+               },
+               {
+              id: 52,
+              name: "Fern",
+              element: "Fire",
+              type: "Striker",
+              ultimateSkill: "Demon-killing Magic (Zoltraak) - Mighty",
+              weapon: "Staff",
+              weaponName: "Fern's Staff",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/941c0ec748ff47bdb5ce274ac3ee12e4.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/941c0ec748ff47bdb5ce274ac3ee12e4.webp"],
+              color: "#FF4500",
+              description:
+                "A female human mage raised by a priest, who is now journeying with an elf.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "Unknown",
+              rank: "A-Rank",
+              gender: "Female",
+              age: "Unknown",
+              mainAbility: "Demon-killing Magic (Zoltraak) - Barrage",
+              guild: "Journey_Companions",
+              releaseDate: "23 October 2025",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of The Architect's Blue Poison", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of The Architect's Blue Poison", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/1db059675d2040ceb40f79c1df4fcbde.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/782c48b5d013481c8f297115d3484a0d.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/782c48b5d013481c8f297115d3484a0d.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/fd0b863fd8a3436193f4e51216f57adc.webp"],
+              
+               },
+               {
+              id: 53,
+              name: "Laura Walker",
+              element: "Light",
+              type: "Supporter",
+              ultimateSkill: "Apex Administrato",
+              weapon: "Whip",
+              weaponName: "Night-cleaving Flash",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/d48fad4d71544657b83b4d89142b455e.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/d48fad4d71544657b83b4d89142b455e.webp"],
+              color: "#FFD700",
+              description:
+                "The Scavenger Guild's unspoken second-in-command. She summons bolts of black lightning and resrtains her enemies with a long whip.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "USA",
+              rank: "S-Rank",
+              gender: "Female",
+              age: "28",
+              mainAbility: "Black Lightning",
+              guild: "Scavenger_Guild",
+              releaseDate: "20 November 2025",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/791e2954abc34460a52603633f4b4bbb.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/59f27c41a405438b8138bd8f88b913c9.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/59f27c41a405438b8138bd8f88b913c9.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/da042633e84d467a974e6b8a07c8d2d9.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/39a17f2f769d4c15a964857f2bc6b188.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/7860cf2962764c109529a02f02e35430.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/cfe1ab01f1bb4d51beb2de0c0f878e67.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/761568f1897f4caf85d56b190b73ca90.webp"],
+              
+               },
+               {
+              id: 54,
+              name: "Christopher Reed",
+              element: "Fire",
+              type: "Elemental Stacker",
+              ultimateSkill: "Zero to a Hundred",
+              weapon: "Gauntlet",
+              weaponName: "Strategy for Victory",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/52fca2717fd44e3f9ca6891f4f58991d.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/52fca2717fd44e3f9ca6891f4f58991d.webp"],
+              color: "#FF4500",
+              description:
+                "An American National Level hunter. With exceptional, physical abilities and brilliant strategies, he overwhelms his enemies.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "USA",
+              rank: "National Level",
+              gender: "Male",
+              age: "38",
+              mainAbility: "Body Enchancement / Telekinesis / Golden Flames",
+              guild: "The_Federal_Bureau_of_Hunters",
+              releaseDate: "18 December 2025",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Kamish's Obession", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Kamish's Obession", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/d080d9986555407ea89291bb78894c3a.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/06fe6d635f25485bba39bc1c4276ea9f.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/06fe6d635f25485bba39bc1c4276ea9f.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/e70a94503edd44d7b0a96b81d434d1cf.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/7b3dcd09f4694cc79e3fde9e84dc2b39.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/2dca0b0cc68049b0858bcbae2d2805a9.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/6942d4ed8df7455eadbaa6fc0ef719bf.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/3a6c7d0769cc4ce8b9aa9fa2295d7a0d.webp"],
+              
+               },
+               {
+              id: 55,
+              name: "Sian Halat",
+              element: "Dark",
+              type: "Elemental Stacker",
+              ultimateSkill: "Knight's Pride",
+              weapon: "Sword",
+              weaponName: "Crimson Shadow",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/0f38e8fca3fa4df2948ddc7c79298751.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0f38e8fca3fa4df2948ddc7c79298751.webp"],
+              color: "#9b5de5",
+              description:
+                "A famed swordsman from another world who strikes down enemies with lightning-fast blade skills.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "Unknown",
+              rank: "S-Rank",
+              gender: "Male",
+              age: "Unknown",
+              mainAbility: "Body Enhancement / Swordsmanship",
+              guild: "Ahjin_Guild",
+              releaseDate: "15 January 2026",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Kamish's Obession", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Kamish's Obession", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/5d4eabe3160a4f13acee5f60236896c3.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/196bfe60383b48f4a5fe80a1c88691c7.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/196bfe60383b48f4a5fe80a1c88691c7.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/37b677bfe494402f90bc590dfc3aeb55.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/28204aaf986244ccb7e66a57fcbd99d9.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/52847c57259240eeab85ec83cd8c33da.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/2e624cb4fe4f47109c9e3a29357739d5.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/28949a07be6c4513917b639eea20ed7f.webp"],
+              skin3:["https://resources.vortexgaming.io/upload/post/2026/05/09/dc8e78d793fe43c293769b2d1d291a9f.webp"],
+              
+               },
+               {
+              id: 56,
+              name: "Son Kihoon",
+              element: "Dark",
+              type: "Breaker",
+              ultimateSkill: " Thrilling Fighting Spirit",
+              weapon: "Sword & Shield",
+              weaponName: "Iron Resolve",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/aeeea251ec404555befe499bfc1f2c82.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/aeeea251ec404555befe499bfc1f2c82.webp"],
+              color: "#9b5de5",
+              description:
+                "The strike squad leader of the Hunters Guild B-Team. He's a warm-hearted leader who trusts and supports his squad members.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "Korea",
+              rank: "S-Rank",
+              gender: "Male",
+              age: "28",
+              mainAbility: "Outstanding Physical Ability / Advanced Sword & Shield Techniques",
+              guild: "Hunters_Guild",
+              releaseDate: "15 January 2026",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Glorious Arrogance", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Glorious Arrogance", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/0c4a049219e441728c717d86abbccba9.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/e8e80be6a11d448db81e329884f30997.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/e8e80be6a11d448db81e329884f30997.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/658bf0bc43e245838491f50aad4b4969.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/5980118ee4094cff906dd5ea205be513.webp"],
+              
+               },
+               {
+              id: 57,
+              name: "Meri Laine",
+              element: "Water",
+              type: "Elemental Stacker",
+              ultimateSkill: " Frozen Drive",
+              weapon: "Blade",
+              weaponName: "Winterbreaker",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/11004415fda04e2b91be6bff10f2220a.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/11004415fda04e2b91be6bff10f2220a.webp"],
+              color: "#00BFFF",
+              description:
+                "A rookie hunter of the Richter Guild. Despite her slender frame, she wields a massive saw-type weapon.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "Germany",
+              rank: "A-Rank",
+              gender: "Female",
+              age: "18",
+              mainAbility: "Outstanding physical ability / Ice Magic",
+              guild: "Richter_Guild",
+              releaseDate: "12 February 2026",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Kamish's Obession", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Kamish's Obession", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/609dd3c84fb14bb78ce75c1371886e37.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/04357323f8bb470db6700fd88fd8b7b7.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/04357323f8bb470db6700fd88fd8b7b7.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/e33a0b7c57a44531bd331ae7cd74960c.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/c91f23e23780407cbc36e678d340dcae.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/d23eabe5b3594daaa4f10af2aaf59ede.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/3c1a9f396c9a4212b0b5b2339c7005ae.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/22fc3bbed3984dea8760e165be7a8cae.webp"],
+              
+               },
+               {
+              id: 58,
+              name: "Sugimoto Reiji",
+              element: "Wind",
+              type: "Elemental Stacker",
+              ultimateSkill: " Quickblade - Oblivion",
+              weapon: "Katana",
+              weaponName: "Etched to the Bone",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/0d3a79f0f8af4a25a2d40670ee3be53f.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0d3a79f0f8af4a25a2d40670ee3be53f.webp"],
+              color: "#32CD32",
+              description:
+                "The new guild master of the Blade Guild. He's a responsible leader who strives to lead the Blade Guild honorably without being swayed by the Hunters Association's influence.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "Japan",
+              rank: "S-Rank",
+              gender: "Male",
+              age: "28",
+              mainAbility: "Swift Swordsmanship / Iaido",
+              guild: "Blade_Guild",
+              releaseDate: "12 March 2026",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Kamish's Obession", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Kamish's Obession", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/79b323fddd8949ca98ab1547b61e8374.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/bdbb05f78bef484d9b0fba35f13ce97e.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/bdbb05f78bef484d9b0fba35f13ce97e.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/2cc6a9d4069f4504bdd0e5ca9e183747.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/6502896fd7ea43a99c1de0756d3a8dad.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/fa39c4037ee94d2b804a1c4b531a2cd9.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/a4e5d72043cd47478fbf09e6d57ade73.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/210899b596864c7f8bf34af0cabbb39a.webp"],
+              
+               },
+               {
+              id: 59,
+              name: "Elena Renault",
+              element: "Water",
+              type: "Supporter",
+              ultimateSkill: "Prison d'Argent",
+              weapon: "Sword",
+              weaponName: "The Embodiment of Obsession",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/41e423e352ec49a690745160753a5444.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/41e423e352ec49a690745160753a5444.webp"],
+              color: "#00BFFF",
+              description:
+                "The vice gild master of the Justitia guild, France's top guild. Though once a D-Rank, she has reawakened as an A-Rank hunter.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "France",
+              rank: "A-Rank",
+              gender: "Female",
+              age: "20",
+              mainAbility: "Body Enhancement / Mercury Magic",
+              guild: "The_Justitia_Guild",
+              releaseDate: "9 April 2026",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Noble Flesh", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Noble Flesh", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/66f7b5c8a9304164b36546abc20319ac.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/629af1fbd4cf44bbabfd3d40ce22a163.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/629af1fbd4cf44bbabfd3d40ce22a163.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/f936e12d78f7406b9bad7828ded4245d.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/61a3cb2a225d41e9af359741f058018e.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/9278c8901ff341749012d327c96d5d2d.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/fa41803c96dd4d1faefe9fcae1d6a1b0.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/1d93fc599c44422093ae368c4705280e.webp"],
+              
+               },
+               {
+              id: 60,
+              name: "Antoine Martinez",
+              element: "Light",
+              type: "Elemental Stacker",
+              ultimateSkill: "The Angel's Stay",
+              weapon: "Double Axe",
+              weaponName: "Saint's Benediction",
+              weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/0f2ab6254d2a45acb0a987d61d60e58c.png","https://resources.vortexgaming.io/upload/post/2026/05/09/0f2ab6254d2a45acb0a987d61d60e58c.png"],
+              color: "#FFD700",
+              description:
+                "A National Level hunter from France. A retired champion strongman.",
+              stats: { attack: 87, defense: 55, speed: 77, magic: 96 },
+              affiliatedCountry: "France",
+              rank: "National Level",
+              gender: "Male",
+              age: "48",
+              mainAbility: "Superhuman Strength / Body Enhancement / Healing Spells",
+              guild: "The_Federal_Bureau_of_Hunters",
+              releaseDate: "7 May 2026",
+              Rarity:"SSR",
+               Artifacts: [
+        ["Set of Kamish's Obession", ["helmet", "bodyArmor", "gloves", "boots"]],
+        ["Set of Kamish's Obession", ["necklace", "bracelet", "ring", "earrings"]]
+      ],
+Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watcher	"],
+              img1: "https://resources.vortexgaming.io/upload/post/2026/05/09/0972941af4f646e985e8ecf913692b80.webp",
+              img2:"https://resources.vortexgaming.io/upload/post/2026/05/09/cca8941611954fae80d53c145c45124b.webp",
+              skin1:["https://resources.vortexgaming.io/upload/post/2026/05/09/cca8941611954fae80d53c145c45124b.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/1fdb8203c4b446ad840fa27d48b4124a.webp"],
+              skin2:["https://resources.vortexgaming.io/upload/post/2026/05/09/8ee9bc2e9b35485db45005619404f90a.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/bed3cf2f03464707ba295856c0c84334.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/98c4f588a9b34367bc3cd26ffe31ebb9.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/895c541650084662b9f8047c71d84e09.webp"],
               
                },
   ];

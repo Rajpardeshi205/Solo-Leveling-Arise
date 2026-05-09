@@ -1,12 +1,7 @@
 export const Type = {
-    Assassin:
-      "https://resources.vortexgaming.io/upload/post/2025/07/11/5437c800a8b645bc8631fde59a06cb10.png",
-    Tank: "https://resources.vortexgaming.io/upload/post/2025/07/11/3b6b2d31e2ef450cbd9d06c46a4548d6.png",
-    Mage: "https://resources.vortexgaming.io/upload/post/2025/07/11/6a941f1a81f04030bd30f34b1d68744d.png",
-    Healer:
-      "https://resources.vortexgaming.io/upload/post/2025/07/11/dfa57c3fcea74252a10726dd07ea225c.png",
-    Ranger:
-      "https://resources.vortexgaming.io/upload/post/2025/07/11/c71f9bbed0ee4cf8ad836d8e30765c05.png",
-    Fighter:
-      "https://resources.vortexgaming.io/upload/post/2025/07/11/bed298bec36540ffb1764f4dd631ab00.png",
+      Elemental_Stacker:"https://resources.vortexgaming.io/upload/post/2026/05/09/19e2aaabe6cf4fe8bc7d326ac5c037e0.webp",
+      Supporter:"https://resources.vortexgaming.io/upload/post/2026/05/09/8e0e5eb471344a6dae56b698a79e38cc.webp",
+      Breaker:"https://resources.vortexgaming.io/upload/post/2026/05/09/b5793501300441c89122169d4b7fe8d5.webp",
+      Striker:"https://resources.vortexgaming.io/upload/post/2026/05/09/3d91faabb7234d74b59163fc7bdd14c1.webp",
+      Burster:"",
   };

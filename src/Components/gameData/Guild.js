@@ -12,6 +12,7 @@ export const Guild = {
     Valkyrie_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/e1513e0f3d514dc8b7e7098ce9aeb5e3.webp",
     Richter_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/72a325471fa64920b2a9467b0df3df4f.webp",
     Hunters_Association:"https://resources.vortexgaming.io/upload/post/2025/07/11/7e215c03a8e34abcaee824b526d57af2.webp",
-    Forever:"https://resources.vortexgaming.io/upload/post/2025/07/12/8c27f476a8f64d86884548d25a6108a0.png",
-    Unknown:"https://resources.vortexgaming.io/upload/post/2025/09/29/ddea472a20604b4bb9736e33ae4fbc78.png",
+    Forever:"https://resources.vortexgaming.io/upload/post/2026/05/09/9dabe68ef66e44319c8c764f67c564f6.webp",
+    Unknown:"https://resources.vortexgaming.io/upload/post/2026/05/09/f50faff8fb9c4010b35e9f96fc9751ec.webp",
+    Journey_Companions:"https://resources.vortexgaming.io/upload/post/2026/05/09/2b68ce3e8bcc4665b56e139ab32b109b.webp",
   };

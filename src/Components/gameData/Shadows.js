@@ -3,7 +3,7 @@ export const ShadowArmy = {
     id: 1,
     name: "Blades",
     nickname: "Cold-Blooded Figher",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/9c3b9983c21441d3af86873456a30da1.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/d1484593cb8c4a958038959f7fc6d991.webp",
     weaponName: "Baruka's Dagger : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/b0d28b028e0d44348c8328cdb5f30803.webp",
     weaponEffect: "The Shadow's Attack Increases by 5% And Their Defense Penetration Increases by 5%.",
@@ -57,7 +57,7 @@ Duration: 1 second(s)`}
     id: 2,
     name: "Kaisel",
     nickname: "Wyvern",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/7187ee5c83f5433e88206cba20c5868a.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/386d89bf8c724405a699242cd665634f.webp",
     weaponName: "Skadi : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/9ca890f0cb124c0fba47c5ce7644d2df.webp",
     weaponEffect: "The Shadow's Critical Hit Damage Increases by 16% And Their Damage To Bosses Increases by 20%.",
@@ -104,7 +104,7 @@ Damage: 854.18-1709.04% of the user's Attack`}
     id: 3,
     name: "Cerberus (Cerbie)",
     nickname: "The Gatekeeper",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/30d4a1a7c72943e495d9938c124712f7.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/833ef2bf606a41138808c286b6343541.webp",
     weaponName: "Lycan Slayer : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/5a2772041e8e4a7b95176ac42673357b.webp",
     weaponEffect: "When Cerbie Hits A Target With The [Combustion] Effect Applied His Skill Damage Increases by 40% for 10 second(s).",
@@ -165,7 +165,7 @@ Duration: Infinite` }
     id: 4,
     name: "Iron",
     nickname: "Musclebound Menace",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/925afa0d157f4e0694fed6da8713836c.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/2d58cbeec5734b3b818ccf8bd9a6f266.webp",
     weaponName: "A Guardian's Will : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/332ea96b4abb430ea65771bcae6f30f1.webp",
     weaponEffect: "The Shadow's HP increases by 24%. The Shadow's Shield Acquisition Chance increases by 36%.",
@@ -222,7 +222,7 @@ Duration: 10 second(s)`}
     id: 5,
     name: "Bigrock",
     nickname: "The Blue Spirit",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/0573b362f6fe460d88a5185c4ec3fb4b.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/b7449ea0e0424b179f04cf6280e16976.webp",
     weaponName: "Rock Golem Hammer : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/6881a0bd35234ff9a42414caa2dc8836.webp",
     weaponEffect: "When the Shadow is hit the target's Attack decreases by 15% for 5 second(s). When the Shadow is hit the attacker's Defense is decreased by 5% for 5 second(s).",
@@ -259,7 +259,7 @@ Damage: 389.62-779.55% of the user's Attack` }
     id: 6,
     name: "Tank",
     nickname: "Leader of the Snowy Mountain",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/36e730ca0fc44a1b972c938953335183.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/3206c4874ba8489f9382c498ce5d7ed9.webp",
     weaponName: "Frostbite Falchion : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/046c59c6f8084dd8af350e1a8ccab027.webp",
     weaponEffect: "The Shadow's Defense Penetration increases by 15%. The Shadow's damage dealt to Normal monsters increases by 50%.",
@@ -306,7 +306,7 @@ Damage: 507.24-1014.89% of the user's Attack` }
     id: 7,
     name: "Skull",
     nickname: "The King Of The Dead",
-    img: "https://resources.vortexgaming.io/upload/post/2025/10/01/b7cdd6392c3c47d79b7520fb47a22b98.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/803bce8181ac4927a1a2043bab199c38.webp",
     weaponName: "Grave Keeper's Scythe : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/b8b1b097bade413d93d82955c8cb66b9.webp",
     weaponEffect: "When Attacking A Target With Skull's [Death Flame], The User's Damage Dealt Increases By 24% For 10 second(s).",
@@ -381,7 +381,7 @@ Decreases Defense by 5% Duration: 20 second(s)` }
     id: 8,
     name: "Jima",
     nickname: "Recluse Of The Deep Sea",
-    img: "https://resources.vortexgaming.io/upload/post/2025/10/01/a9c02b57afb04f53a21eb71d70f53544.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/3dcdaeee510d428bbb0ff993f4b18c46.webp",
     weaponName: "Naga Guardian Dragon's Trident : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/8fcf193fb420408fbe7ebf75e133321e.webp",
     weaponEffect: "When a [Shield] Is Activated It Triggers The [Attack Increase] Effect    [Attack Increase] Increases Attack By 20%   Duration: 15 second(s).",
@@ -428,7 +428,7 @@ Duration: 20 second(s)` }
     id: 9,
     name: "Igris",
     nickname: "His First Shadow",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/beeaecc79e1d487984b3512da1d42403.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/908d24739d1343ef8775c87bde7ec33e.webp",
     weaponName: "Demon King's Longsword : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/77a263caa6ec4feaa5039a365645d2e5.webp",
     weaponEffect: "The Shadow's Critical Hit Rate and Critical Hit damage increases by 15%.",
@@ -485,7 +485,7 @@ Duration: 1 second(s)` }
     id: 10,
     name: "Beste",
     nickname: "Ice Witch",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/2961d5a49a8749ca80e7fec7db0d317f.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/31ec825686b6409bbd64bfb46cb69ac2.webp",
     weaponName: "Thetis' Grimoire : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/50405ebe4f3e4ad28f9610af87ac01b8.webp",
     weaponEffect: "The Shadow's Attack increases by 24%. The Shadow's Basic Skill damage increases by 15%.",
@@ -532,7 +532,7 @@ Damage: 339.98-680.23% of the user's Attack` }
     id: 11,
     name: "Tusk",
     nickname: "Almighty Shaman",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/4e155f4c29c64ee6a123d1f10677398d.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/973f06629e2246d8b58d9916fb01d487.webp",
     weaponName: "Orb of Avarice : Replic",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/7e65d336737d4a8abf6fbaa45de559ee.webp",
     weaponEffect: "Enemies with 50% or less HP take 50% more damage when they are hit by the Shadow.",
@@ -579,7 +579,7 @@ Duration: 30 second(s)` }
     id: 12,
     name: "Beru",
     nickname: "Ant King",
-    img: "https://resources.vortexgaming.io/upload/post/2025/07/16/a18c2207c3234cd2a34cb833fc962572.png",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/a6e8f20c816c4dcc8474050dda4d8849.webp",
     weaponName: "Shadow Scythe : Replica",
     weaponImg: "https://resources.vortexgaming.io/upload/post/2025/10/01/505a5c7b2704420db9b4dc94d81d44d2.webp",
     weaponEffect: "The Shadow's Healing Given increases by 90% and their Defense Penetration increases by 15%.",
@@ -625,4 +625,98 @@ Duration: 20 second(s)` }
     authority: "The entire team's Attack and Critical Hit Damage increases by 5%." ,
     rank:"General",
   }, 
+
+  	Uros: {
+    id: 13,
+    name: "Uros",
+    nickname: "Doomed Berserker",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/a7cd011daa2c4a4882276cff6ee0f749.webp",
+    weaponName: "Zeke's Fragment: Replica",
+    weaponImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/67f7d85e2f5e4193b4b438c7d67ce572.webp",
+    weaponEffect: "The user's Defense Penetration increases by 24%",
+    skills: {
+      basic: [
+        { name: "Basic Attack", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/8693166e160a48a2a244fd24301859ec.webp", description:`The user swings the axe twice, slams it down, then spins to strike.
+
+Damage: 533.86-1068.15% of the user's Attack` },
+        { name: "Basic Attack", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/2bc2d01e67464ba38d98b91c6d44598a.webp", description: `The user throws a returning axe forward to attack.
+
+Damage: 338.58-677.43% of the user's Attack`},
+        { name: "Decisive Strike", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/318621d5b71247fe996626826d2a84c7.webp", description: `The user leaps forward and attacks with a powerful downward strike.
+
+Damage: 380.91-762.12% of the user's Attack
+・When this skill hits, it activates the [Defense Decrease] effect.
+
+[Defense Decrease] Defense Decrease Effect
+Decreases Defense by 20%
+Duration: 15 second(s)` },
+        { name: "Thunder Strike", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/e94b28e693fe47c29b127359584d9d74.webp", description: `The user lifts their front foot and attacks with a powerful stomp.
+
+Damage: 396.75-793.82% of the user's Attack`},
+        { name: "Echoing Earth", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/0d5df97219ad4868bd967c0faaa6f4d7.webp", description: `The user attacks by striking the earth with an axe, unleashing electricity that moves along the ground.
+
+Damage: 332.4-665.07% of the user's Attack` },
+        { name: "Wild Roar", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/4fcb305a4d7b437c9823f9e386df2619.webp", description:`The user roars loudly and emits electricity in all directions to attack.
+
+Damage: 302.7-605.64% of the user's Attack
+・When this skill hits, it activates the [Paralyze] effect.
+
+[Paralyze] Paralyze Effect
+This skill interrupts the target.
+Duration: 2 second(s)`}
+      ],
+      special: { name: "Armament Skill ", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/a359d536da434425a8ead874694a86f7.webp", description: `The user rushes forward and performs a downward slam, releasing a shockwave to attack.
+
+Damage: 476.94-954.26% of the user's Attack
+・When this skill hits, it activates the [Defense Decrease] effect.
+
+[Defense Decrease] Defense Decrease Effect
+Decreases Defense by 20%
+Duration: 15 second(s)` }
+    },
+    authority: "	Increase Dark damage of all team members" ,
+    rank:"General",
+  }, 
+  	Brute: {
+    id: 14,
+    name: "Brute",
+    nickname: "The Butcher",
+    img: "https://resources.vortexgaming.io/upload/post/2026/05/09/297eaafbcbae4c859cfe3055344417a8.webp",
+    weaponName: "Orc's Broadsword: Replica",
+    weaponImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e5c44efd08654c0e8498ec4a65265294.webp",
+    weaponEffect: "The user's Critical Hit Rate and Critical Hit damage increases by 18%",
+    skills: {
+      basic: [
+        { name: "Basic Attack ", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/471b914d19584f53bdca3b4d9be0a0bf.webp", description:`The user leaps backward while swinging their broadsword horizontally
+
+Damage: 390.81-781.93% of the user's Attack` },
+        { name: "Basic Attack ", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/99724d8d57d14a7f8d1898aa5ca397b5.webp", description: `The user delivers a downward strike in front of themself with their broadsword.
+
+Damage: 319.04-638.34% of the user's Attack`},
+        { name: "Decisive Strike", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/b81212b5aa66477d97868a0b82809cd3.webp", description: `The user delivers a diagonal downward strike, following by upward diagonal slash.
+
+Damage: 380.91-762.12% of the user's Attack` },
+        { name: "Thunder Strike", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/67033b41ace849ddabac3c5e88d22405.webp", description: `After leaping, the user slams their broadsword into the ground.
+
+Damage: 282.41-565.05% of the user's Attack`},
+        { name: "Echoing Earth", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/1ecbcc9c5fe9470f91bd78cf72532fcc.webp", description: `The user strikes the ground with their broadsword, releasing a shockwave across it.
+
+Damage: 388.58-777.47% of the user's Attack` },
+        { name: "Raging Incursion", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/08e8a9e6303d4448b8acb5d34ea9587e.webp", description:`The user spins to slash nearby enemies, then slams their broadsword down to release a powerful shockwave.
+
+Damage: 551.69-1103.82% of the user's Attack`}
+      ],
+      special: { name: "Armament Skill", img: "https://resources.vortexgaming.io/upload/post/2026/05/09/4dfef6ad0c974ca5b9cb26d4df1fb5a9.webp", description: `The user gives a mighty roar, releasing a powerful shockwave.
+
+Damage: 439.57-879.49% of the user's Attack
+・The [Attack Increase] effect is applied to the entire team while this skill is used.
+
+[Attack Increase] Attack Increase Effect
+Increases Attack by 20%
+Duration: 10 second(s)` }
+    },
+    authority: "Increase Water damage of all team members" ,
+    rank:"General",
+  }, 
+  
 };

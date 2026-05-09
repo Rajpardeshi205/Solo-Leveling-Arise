@@ -5535,9 +5535,1048 @@ Power Gauge Consumption: 100%
     ],
 
 
-    //hunter 51:???
+    //hunter 51: Frieren 
 
     51: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Ordinary Offensive magic (Zoltraak) - Multi-Hit",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/009b8a910a0b43cfae89b68b0aeb8a80.webp",
+            description: `Frieren unleashes blasts of Zoltraak consecutively
+
+Stage 1 Damage: 257-385.5% of the user's Defense
+Stage 2 Damage: 266-399% of the user's Defense
+Stage 3 Damage: 270-405% of the user's Defense
+・Deals Water elemental damage.`
+          },
+          {
+            skillName: "Ordinary Offensive magic (Zoltraak) - Concentrated (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/516293af442a4814ac6b304df1471886.webp",
+            description: `Frieren unleashes a blast of Zoltraak infused with concentrated mana power.
+
+Damage: 1515-2272.5% of the user's Defense
+・Deals Water elemental damage.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Destructive Lightning Magic (Judradjim)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/c6c60ca257274a5ea3d9dc2e3093647f.webp",
+            description: `Frieren uses magic that unleashes destructive lightning.
+
+Damage: 3020-4530% of the user's Defense
+Cooldown: 16 sec
+MP Consumption: 150
+・Deals Water elemental damage.
+・When the final hit lands it inflicts the [Airborne] effect.`
+          },
+          {
+            skillName: " Hellish Flame Magic (Vollzanbel)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/fcc7299e23f94dfd9d4dd1630b780c08.webp",
+            description: `Frieren uses magic to unleash hellfire.
+
+Damage: 3542-5313% of the user's Defense
+Cooldown: 16 sec
+MP Consumption: 200
+・Deals Water elemental damage.
+・When the final hit lands it inflicts the [Airborne] effect.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Defense Magic (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/c61a64f631554dcf95caa99e4d1f42a5.webp",
+            description: `Frieren uses Defense Magic.
+
+Cooldown: 25 sec
+・If the entire team, excluding Sung Jinwoo, consists of [Water] team members, Sung Jinwoo's Attack and Defense increase by 15-20%
+・Using this skill grants the [Defense Magic] effect on the entire team
+
+[Defense Magic] Frieren Defense Magic Effect
+Grants a [Shield] equal to 20% of Frieren's Defense
+Decreases damage taken by 5%
+Duration: 30 second(s)`
+          },
+          {
+            skillName: " Ordinary Offensive Magic (Zoltraak) - Penetration (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/4f9421171a4a4f1d89a87f45c593e0d2.webp",
+            description: `Frieren moves at high speed and unleashes a Zoltraak blast.
+
+Damage: 2254-3381% of the user's Defense
+Cooldown: 20 sec
+Usage Condition: Extreme Evasion, Core Attack, Ultimate Skill, skills that inflict the [Stun] or [Bind] effects, or a Shadow Skill
+・Deals Water elemental damage.
+・When this skill hits it inflicts the [Airborne] effect.`
+          },
+          {
+            skillName: " Ordinary Offensive Magic (Zoltraak) - Ultimate (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/623d2062e1754be5817af860248b2bf1.webp",
+            description: `Frieren releases mana power to unleash a massive Zoltraak blast.
+
+Damage: 4366-6549% of the user's Defense
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Water elemental damage.
+・When this skill hits it inflicts the [Airborne] effect.`
+          }
+        ]
+      }
+    ],
+
+    //hunter 52: Fern 
+
+    52: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Demon-killing Magic (Zoltraak) - Weak",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/36013c3d17ed42779c6a5726d8813d38.webp",
+            description: `Fern unleashes multiple Zoltraak blasts in bullet form
+
+Stage 1 Damage: 150-225% of the user's Attack
+Stage 2 Damage: 160-240% of the user's Attack
+Stage 3 Damage: 164-246% of the user's Attack
+・Deals Fire elemental damage.`
+          },
+          {
+            skillName: " Demon-killing Magic (Zoltraak) - Balanced (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/f3aa28e89b0a48d9917e8101859f936a.webp",
+            description: `Fern unleashes a Zoltraak blast that pierces enemies ahead.
+
+Damage: 1060-1590% of the user's Attack
+・Deals Fire elemental damage.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: " Demon-killing Magic (Zoltraak) - Barrage",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e1a887f09b4c4124a73d2787233ddec7.webp",
+            description: `Fern creates multiple divination circles around the target and unleashes a Zoltraak blast.
+
+Damage: 1866-2799% of the user's Attack
+Cooldown: 8 sec
+MP Consumption: 300-396
+・Deals Fire elemental damage.
+・When this skill hits, it [Knocks Down] the target.`
+          },
+          {
+            skillName: "Demon-killing Magic (Zoltraak) - Rapid Fire",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/07008c7750ca451f8a56973d56b03b75.webp",
+            description: `Fern unleashes multiple Zoltraak blasts forward.
+
+Damage: 1962-2943% of the user's Attack
+Cooldown: 12 sec
+MP Consumption: 300-396
+・Deals Fire elemental damage.
+・When the final hit lands, it inflicts the [Airborne] effect.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: " Demon-killing Magic (Zoltraak) - Burst (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/1d4330c58281478abfdf44215ff30045.webp",
+            description: `Fern simultaneously unleashes multiple Zoltraak blasts in all directions.
+
+Damage: 2282-4690.78% of the user's Attack
+Cooldown: 25 sec
+・Deals Fire elemental damage.
+・When this skill hits, it inflicts the [Airborne] effect.`
+          },
+          {
+            skillName: "Demon-killing Magic (Zoltraak) - Chain Attack (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/b7fcdc61c59049ed904ed2eaf968303d.webp",
+            description: `Fern launches several Zoltraak blasts that attack the enemy.
+
+Damage: 1836-2754% of the user's Attack
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Fire elemental damage.
+・When this skill hits, it inflicts the [Airborne] effect.`
+          },
+          {
+            skillName: " Demon-killing Magic (Zoltraak) - Mighty (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/38e3c7e9339f4552a5a5459ca382db48.webp",
+            description: `Fern concentrates her mana power to launch a massive Zoltraak, devasting the area in front of her.
+
+Damage: 3566-5349% of the user's Attack
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Fire elemental damage
+・When this skill hits, it [Knocks Down] the target.`
+          }
+        ]
+      }
+    ],
+
+        //hunter 53: Laura Walker 
+
+    53: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Workflow",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/1298a8f6510a41ab8a17e0bddaf50d8c.webp",
+            description: `Laura swings her whip and uses the end of it to deliver a powerful stab.
+
+Stage 1 Damage: 146-219% of the user's Attack
+Stage 2 Damage: 210-315% of the user's Attack
+Stage 3 Damage: 216-324% of the user's Attack
+・Deals Light elemental damage.`
+          },
+          {
+            skillName: "Deadline (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/9dd68606e8ab4236a99b370ec274a991.webp",
+            description: `Laura delivers a powerful downward whip strike.
+
+Damage: 874-1311% of the user's Attack
+・Deals Light elemental damage.
+・When this skill hits it [Knocks Down] the target.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Checkpoint",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/033f6e9a47414f59928287d5c303b429.webp",
+            description: `Laura strikes down with her whip to summon lightning.
+
+Damage: 940-1410% of the user's Attack
+Cooldown: 8 sec
+MP Consumption: 150-198
+・Deals Light elemental damage.
+・When this skill hits it [Knocks Down] the target.`
+          },
+          {
+            skillName: "Task Loop",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/ac0ecf07ecf745efa03cb2d8ce170f53.webp",
+            description: `Laura swings her whip repeatedly while the Skill Button is held down.
+
+Damage: 2028-3042% of the user's Attack
+Cooldown: 12 sec
+MP Consumption: 200-264
+・Deals Light elemental damage.
+・When the last attack in the combo hits it [Knocks Down] the target.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: " Corporate Escort (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/ec07b4ce8bae42a5b627777b3a13948c.webp",
+            description: `After a short jump, Laura swings her whip repeatedly in midair.
+
+Damage: 615-1264.17% of the user's Attack
+Cooldown: 25 sec
+・Deals Light elemental damage.
+・When this skill hits it inflicts the [Airborne] effect on the target.
+・When this skill hits it inflicts the [Paralyze] effect on the target.
+・Using this skill grants the [Develop] effect to the user's entire team.
+
+[Paralyze] Paralyze Effect
+Interrupts the target
+Duration: 3 second(s)
+
+[Develop] Laura Walker Develop Effect
+Increases damage dealt by 15%
+Removes debuffs
+Duration: 30 second(s)`
+          },
+          {
+            skillName: " Conference Call (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e99a37ad25664948a5a3df61ef5966d0.webp",
+            description: `Laura Swings her whip repeatedly while in midair.
+
+Damage: 930-1395% of the user's Attack
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Light elemental damage.
+・When the final hit lands it [Knocks Down] the target.`
+          },
+          {
+            skillName: " Apex Administrator (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/69a592b59a4943e9a8963377ca9c1ade.webp",
+            description: `Laura manifests a giant leopard enveloped in lightning.
+
+Damage: 3022-4533% of the user's Attack
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Light elemental damage
+・When this skill hits it inflicts the [Airborne] effect on the target.`
+          }
+        ]
+      }
+    ],
+
+            //hunter 54: Christopher Reed
+
+    54: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Rising Star",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/d10ba79cfc1e419fb4345ba2f2ce56dd.webp",
+            description: `Christopher delivers multiple punches, then finishes with a kick.
+
+Stage 1 Damage: 187-280.5% of the user's Attack
+Stage 2 Damage: 240-360% of the user's Attack
+Stage 3 Damage: 300-450% of the user's Attack
+・Deals Fire elemental damage.
+・Applies [Elemental Accumulation] effect
+・When this skill hits it inflicts the [Airborne] effect`
+          },
+          {
+            skillName: " Offensive Pass/Special Core Attack  (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/c258cbf4b5b44f04b78d03acc229bb10.webp",
+            skillImg2:"https://resources.vortexgaming.io/upload/post/2026/05/09/2b08c93900dc42bd90b216018ca2f4c1.webp",
+            description: `Christopher gathers mana and fires a magic bullet.
+
+Damage: 1047-1570.5% of the user's Attack
+・Deals Fire elemental damage.
+・Applies [Elemental Accumulation] effect
+・The user gains [Super Armor] while using this skill`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Nitro Kick",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/b0ef4645132c46debbb7d341256f273f.webp",
+            description: `After a knee kick, Christopher spins once in the air and slams down with a powerful kick.
+
+Damage: 2720-4080% of the user's Attack
+Cooldown: 15 sec
+MP Consumption: 75-99
+・Deals Fire elemental damage.
+・Applies [Medium Elemental Accumulation] effect
+・When the first attack hits it inflicts the [Airborne] effect
+・When the final hit lands it [Knocks Down] the target
+・The user gains [Super Armor] while using this skill`
+          },
+          {
+            skillName: " Foul Play",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/335148922f3a4adda2f5c7d37670f669.webp",
+            description: `Christopher gathers mana power and attacks the enemy with a large magic sphere.
+
+Damage: 3364-5046% of the user's Attack
+Cooldown: 18 sec
+MP Consumption: 100-132
+・Deals Fire elemental damage.
+・Applies [Medium Elemental Accumulation] effect
+・When the final hit lands it inflicts the [Airborne] effect
+・The user gains [Super Armor] while using this skill`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Rapid Kick (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/fe236255aa784ebebebff3bc63466c9d.webp",
+            description: `After a knee kick, Christopher spins once in the air and slams down a powerful kick.
+
+Damage: 630-1295% of the user's Attack
+Cooldown: 25 sec
+・Deals Fire elemental damage
+・Applies [Heavy Elemental Accumulation] effect
+・When the first attack hits it inflicts the [Airborne] effect
+・When the final hit lands it [Knocks Down] the target`
+          },
+          {
+            skillName: "Rising Performance/Finishing Touch (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/dbce035f811149d086e8181b9e847f2d.webp",
+            skillImg2:"https://resources.vortexgaming.io/upload/post/2026/05/09/ac648b179a7f44bcbd2e2dd24ae588ae.webp",
+            description: `Christopher leaps into the air and strikes downward with his elbow.
+
+Damage: 2290-3435% of the user's Attack
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Fire elemental damage.
+・Applies [Weak Elemental Accumulation] effect
+・When this skill hits it inflicts the [Airborne] effect`
+          },
+          {
+            skillName: " Zero to a Hundred (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/0efaac2177b94cfda6d8f5a9ae88138f.webp",
+            description: `Christopher rises into the air and hurls a massive, meteor-like concentrated ball of magic to attack.
+
+Damage: 4610-6915% of the user's Attack
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Fire elemental damage
+・Applies [Heavy Elemental Accumulation] effect
+・When the first attack hit it inflicts the [Airborne] effect on the target.
+・When the final hit lands it [Knocks Down] the target`
+          }
+        ]
+      }
+    ],
+
+//hunter 55: Sian Halat
+
+    55: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Royal Swordsmanship: Chain Attack",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/5d715ebc530d4517a2b72790122951e0.webp",
+            description: `Sian swings his broadsword quickly to attack enemies.
+
+Stage 1 Damage: 196-294% of the user's Attack
+Stage 2 Damage: 214-321% of the user's Attack
+Stage 3 Damage: 177-265.5% of the user's Attack
+・Deals Dark elemental damage.
+・Applies Weak Elemental Accumulation effect`
+          },
+          {
+            skillName: " Royal Swordsmanship: Judgment (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/5b1f22d75e524957945e755e08b2f5bb.webp",
+            description: `Sian spins to slash enemies, then leaps and slams his broadsword downward towards the front.
+
+Damage: 1020-1530% of the user's Attack
+・Deals Dark elemental damage.
+・Applies Weak Elemental Accumulation effect
+・When the final hit lands it [Knocks Down] the target
+・The user gains [Super Armor] while using this skill`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Royal Swordsmanship: Black Flash/Royal Swordsmanship: Full Moon",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/b93ff50c409e4c45a5c9169ec728200c.webp",
+            skillImg2:"https://resources.vortexgaming.io/upload/post/2026/05/09/dabf49b9ab64482ca092b080c43eb436.webp",
+            description: `Sian attacks by unleashing a razor-sharp strike of concentrated mana from his sword.
+
+Damage: 2290-3435% of the user's Attack
+Cooldown: 10 sec
+MP Consumption: 75-99
+・Deals Dark elemental damage.
+・Applies Medium Elemental Accumulation effect
+・When the final hit lands it inflicts the [Airborne] effect
+・The user gains [Super Armor] while using this skill`
+          },
+          {
+            skillName: "Royal Swordsmanship: Rush/Royal Swordsmanship: Bloodstorm",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/38673ba86c684e50b17330299dbbc494.webp",
+            skillImg2:"https://resources.vortexgaming.io/upload/post/2026/05/09/3657eef210814518a048b6d15c914428.webp",
+            description: `Sian swiftly slashes across a wide area and delivers a powerful strike, destroying the enemy's formation.
+
+Damage: 3132-4698% of the user's Attack
+Cooldown: 22 sec
+MP Consumption: 100-132
+・Deals Dark elemental damage.
+・Applies Medium Elemental Accumulation effect
+・When the final hit lands it inflicts the [Airborne] effect
+・The user gains [Super Armor] while using this skill`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Royal Swordsmanship: Scarlet Moon (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/ccc1125cc83441b4bfc6c43f102cb2e6.webp",
+            description: `Sian unleashes sword energy shaped like a giant crescent moon to attack enemies.
+
+Damage: 1815-3730.83% of the user's Attack
+Cooldown: 25 sec
+・Deals Dark elemental damage
+・Applies Heavy Elemental Accumulation effect
+・When the first attack hits it inflicts the [Airborne] effect
+・When this skill hits it inflicts the [Airborne] effect on the target`
+          },
+          {
+            skillName: "Royal Swordsmanship: Judgment Strike (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/34b21142404b40878074e3cfe491525b.webp",
+            description: `Sian rushes into the battlefield and strikes at the enemy's weak point.
+
+Damage: 1902-2853% of the user's Attack
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Dark elemental damage.
+・Applies Medium Elemental Accumulation effect
+・When this skill hits it inflicts the [Airborne] effect`
+          },
+          {
+            skillName: "Knight's Pride (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e34c209b439f4471a427b62123dd8e42.webp",
+            description: `Sian channels his inner strength into his broadsword and performs a powerful strike towards the front, leading the battlefield to victory.
+
+Damage: 5190-7785% of the user's Attack
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Dark elemental damage
+・Applies Heavy Elemental Accumulation effect
+・When this skill hits it inflicts the [Airborne] effect on the target.`
+          }
+        ]
+      }
+    ],
+
+    //hunter 56: Son Kihoon
+
+    56: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Valiant Sword Strike",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/9f9cbcaa90a14355a5792077e5d17500.webp",
+            description: `Kihoon attacks enemies in front of him using his sword and shield.
+
+Stage 1 Damage: 246-369% of the user's Max HP
+Stage 2 Damage: 260-390% of the user's Max HP
+Stage 3 Damage: 274-411% of the user's Max HP
+・Deals Dark elemental damage.
+・Deals weak Break damage`
+          },
+          {
+            skillName: "Drive/Fighting Spirit: Drive (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/7a35aee13478400a992da240fd968cc7.webp",
+            skillImg2:"https://resources.vortexgaming.io/upload/post/2026/05/09/c823f4130e8c43d2b379c47a299a9224.webp",
+            description: `Kihoon swings his shield forward to attack enemies.
+
+Damage: 870-1305% of the user's Max HP
+・Deals Dark elemental damage.
+・Deals weak Break damage
+・When the final hit lands it inflicts the [Stun] effect
+
+[Stun] Stun Effect
+Immobilizes the target
+Duration: 3 second(s)`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: " Flag of Authority",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/0c8c0dc56c8841959e06729907741e75.webp",
+            description: `Kihoon summons a flag in the air and drives it into the ground with great force.
+
+Damage: 2688-4032% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 75-99
+・Deals Dark elemental damage.
+・Deals medium Break damage
+・When this skill hits it [Knocks Down] the target
+・Using this skill places a [Weakened Fighting Spirit Zone] for 30 second(s)
+
+[Weakened Fighting Spirit] Son Kihoon Weakened Fighting Spirit Effect
+The following effects are inflicted on targets that enter the zone
+Increases Dark damage taken by 5%
+The [Unrecoverable] effect is activated`
+          },
+          {
+            skillName: " Fierce Charge",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/dc43ef86ea66415f8878526cfaa89b8a.webp",
+            description: `Kihoon scrapes the ground with his sword and performs a powerful upward slash.
+
+Damage: 3730-5595% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 100-132
+・Deals Dark elemental damage.
+・Deals medium Break damage
+・When this skill hits it inflicts the [Airborne] effect`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Flag of Domination (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e58fb28080844e7b957d498de0f5de02.webp",
+            description: `Kihoon summons a flag in the air and drives it into the ground with great force.
+
+Damage: 1200-2466.67% of the user's Max HP
+Cooldown: 25 sec
+・Deals Dark elemental damage
+・Deals medium Break damage
+・When this skill hits it [Knocks Down] the target
+・Using this skill places a [Fighting Spirit Abatement] zone for 30 second(s)
+
+[Fighting Spirit Abatement] Son Kihoon Fighting Spirit Abatement Effect
+The following effects are inflicted on targets that enter the zone
+Decreases Attack by 25%
+Increases Dark damage taken by 30%
+The [Unrecoverable] effect is activated`
+          },
+          {
+            skillName: "Fierce Pursuit (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/0237bb8a97984387b16f33b94f6b3858.webp",
+            description: `Kihoon appears in a crouching stance and swings his sword and shield to attack.
+
+Damage: 1016-1524% of the user's Max HP
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Dark elemental damage.
+・Deals weak Break damage
+・When this skill hits it inflicts the [Airborne] effect`
+          },
+          {
+            skillName: "Thrilling Fighting Spirit (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/cb5c05f00f7a4206902704fb1ab7ade2.webp",
+            description: `A powerful fighting spirit will spread to those nearby.
+
+Damage: 5074-7611% of the user's Max HP
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Dark elemental damage
+・Deals almighty Break damage`
+          }
+        ]
+      }
+    ],
+
+//hunter 57: Meri Laine
+
+    57: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Shredding Up",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/6d1d1dd4226c4d4dbbc6a85275a72f20.webp",
+            description: `After slashing enemies multiple times, Meri jumps and performs a powerful downward strike.
+
+Stage 1 Damage: 238-357% of the user's Max HP
+Stage 2 Damage: 248-372% of the user's Max HP
+Stage 3 Damage: 258-387% of the user's Max HP
+・Deals Water elemental damage.
+・Applies the Weak Elemental Accumulation effect.`
+          },
+          {
+            skillName: "Ascending Slam (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/731f2afc52244a999ef24b78572c1183.webp",
+            description: `Meri leaps lightly forward to slash enemies in front with precision.
+
+Damage: 967-1450.5% of the user's Max HP
+・Deals Water elemental damage.
+・Applies the Weak Elemental Accumulation effect.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Grinding Rush",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/f774cbe4d2394b53aecee79c1cf2c19b.webp",
+            description: `Meri quickly charges forward, then performs an upward slash in an instant.
+
+Damage: 1648-2472% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 150-198
+・Deals Water elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When the final hit lands, it inflicts the [Airborne] effect.`
+          },
+          {
+            skillName: "Blade Sweep",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/b2688c8afc49493fa44a994f6c38b2fb.webp",
+            description: `Meri spins to strike nearby enemies.
+
+Damage: 2262-3393% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 150-198
+・Deals Water elemental damage.
+・Applies the Medium Elemental Accumulation effect.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Cyclone Spin (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/c049a3e520204f118ffb2493be7beb6d.webp",
+            description: `Meri spins multiple times to strike nearby enemies.
+
+Damage: 1080-2220% of the user's Max HP
+Cooldown: 25 sec
+・Deals Water elemental damage.
+・Applies the Heavy Elemental Accumulation effect.`
+          },
+          {
+            skillName: "Aerial Cutter (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/06a51786c17c4bf99721c1fc05fff1d5.webp",
+            description: `Meri perform s forward aerial spin, slashing enemies multiple times.
+
+Damage: 916-1374% of the user's Max HP
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Water elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When this skill hits, it [Knocks Down] the target.`
+          },
+          {
+            skillName: "Frozen Drive (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/511f8b498a1d4b168431f9f997c9f54c.webp",
+            description: `Meri spins her ice saw's blade at extremely high speed, summoning a blizzard and cutting down enemies with devastating force.
+
+Damage: 4884-7326% of the user's Max HP
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Water elemental damage.
+・Applies the Heavy Elemental Accumulation effect.
+・When this skill hits it, inflicts the [Airborne] effect.
+・When this skill hits, it inflicts the [Freeze] effect.
+
+[Freeze] Freeze Effect
+This skill interrupts the target.
+Duration: 3 second(s)`
+          }
+        ]
+      }
+    ],
+
+    //hunter 58: Sugimoto Reiji
+
+    58: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Quickblade - Origin",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/b2ddcb9f2fd04343839e4225cd74bb70.webp",
+            description: `Reiji draws his blade and swiftly cuts down his enemy with elegance.
+
+Stage 1 Damage: 245-367.5% of the user's Max HP
+Stage 2 Damage: 291-436.5% of the user's Max HP
+Stage 3 Damage: 323-484.5% of the user's Max HP
+・Deals Wind elemental damage.
+・Applies the Weak Elemental Accumulation effect.`
+          },
+          {
+            skillName: "Flash of Steel/Returning Edge/Revolving Edge (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/634ca01eed5346f688b304a6a45689ab.webp",
+            skillImg2: "https://resources.vortexgaming.io/upload/post/2026/05/09/6c2ff38b7cbc4e31a9d84490d1b192c1.webp",
+            skillImg3: "https://resources.vortexgaming.io/upload/post/2026/05/09/ff0085d5361244268708c6335ca78ae3.webp",
+            description: `Reiji performs a flash-draw, slashing his enemies as he passes before his blade returns to its sheath.
+
+Damage: 1027-1540.5% of the user's Max HP
+・Deals Wind elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・The user gains [Super Armor] while using this skill.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Punisher/Eclipse Slash/Extinction Blade",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e816995c4c0e448a984ec1e7d79455a1.webp",
+            skillImg2: "https://resources.vortexgaming.io/upload/post/2026/05/09/6612ff53e43643b3b75a70de16ac5148.webp",
+            skillImg3: "https://resources.vortexgaming.io/upload/post/2026/05/09/09ea4a8313324442ade28180a6961212.webp",
+            description: `Reiji channels power into his blade to summon wind that pulls enemies closer.
+
+Damage: 1404-2106% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 150-198
+・Deals Wind elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・The user gains [Super Armor] while using this skill.`
+          },
+          {
+            skillName: "Unbroken Focus",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/fb405c4d29644a93b98450cf10a201db.webp",
+            description: `Reiji calms his mind and adjusts his stance, readying for battle.
+
+Damage: 2695-4042.5% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 200-264
+・Deals Wind elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・The user gains [Super Armor] while using this skill.
+・If the user is hit while in this skills's stance, [Extreme Evasion] is activated.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Quickblade - Zenith (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/42a8c35e7a7a4be2b2e0521e7d65bec3.webp",
+            description: `Reiji slashes through enemies at a blinding speed, then disengages.
+
+Damage: 1030-2117.22% of the user's Max HP
+Cooldown: 25 sec
+・Deals Wind elemental damage.
+・Applies the Heavy Elemental Accumulation effect.
+・When the final hit lands, it inflicts the [Airborne] effect on the target.`
+          },
+          {
+            skillName: "Blossomfall (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/f7fc77eeed584f1abb81d8fc678dc020.webp",
+            description: `With blinding speed that leaves behind afterimages, Reiji cuts down his enemies.
+
+Damage: 1076-1614% of the user's Max HP
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Wind elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When the final hit lands, it inflicts the [Airborne] effect on the target.`
+          },
+          {
+            skillName: " Quickblade - Oblivion (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/d35a80f83892409a8ab2682028d6bc1c.webp",
+            description: `Too fast to be seen, Reiji strikes enemies in the path.
+
+Damage: 3453-5179.5% of the user's Max HP
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Wind elemental damage.
+・Applies the Heavy Elemental Accumulation effect.
+・When the final hit lands, it [Knocks Down] the target.`
+          }
+        ]
+      }
+    ],
+
+        //hunter 59: Elena Renault
+
+    59: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Danse d'Argent",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/3c4373bad176472598515d01e41f6014.webp",
+            description: `Elena attacks enemies in front with her mercury.
+
+Stage 1 Damage: 220-330% of the user's Defense
+Stage 2 Damage: 240-360% of the user's Defense
+Stage 3 Damage: 246-369% of the user's Defense
+・Deals Water elemental damage.`
+          },
+          {
+            skillName: " Trahison d'Argent (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/e397f48898b64f6d9ab919aa2da80e66.webp",
+            description: `Elena slashes the enemy, then moves behind her target and creates an additional mercury sword to strike again.
+
+Damage: 1096-1644% of the user's Defense
+・Deals Water elemental damage.
+・The user gains [Super Armor] while using this skill.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Piège d'Argent",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/a190309fdc5140799c88a89596b67222.webp",
+            description: `Elena Elena leaps at the enemy and strikes downward, causing mercury droplets to splash upward and explode, damaging nearby enemies.
+
+Damage: 970-1455% of the user's Defense
+Cooldown: 8 sec
+MP Consumption: 150-198
+・Deals Water elemental damage.
+・The user gains [Super Armor] while using this skill.
+・When the final hit lands, it inflicts the [Airborne] effect.`
+          },
+          {
+            skillName: " Furie d'Argent",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/453fdff2745e4370a0f558f03be26bfa.webp",
+            description: `Elena quickly slashes the enemy multiple times then steps back and throws a mercury sword.
+
+Damage: 1901-2851.5% of the user's Attack
+Cooldown: 12 sec
+MP Consumption: 200-264
+・Deals Water elemental damage.
+・The user gains [Super Armor] while using this skill.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Triple Estoc (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/d03a0a1a515e4a8ea0eba69a4ad3e991.webp",
+            description: `Elena moves swiftly, stabs the enemy twice, then finishes with a powerful jab.
+
+Damage: 767-1576.61% of the user's Defense
+Cooldown: 25 sec
+・Deals Water elemental damage.
+・When this skill hits, it inflicts the [Airborne] effect.
+・Using this skill grants the [Fatal Obsession] effect to the entire team.
+
+[Fatal Obesession] Elena Renault Fatal Obesession Effect
+Increases Water damage by 15%.
+Increases Water Overload damage by 20%.
+Grants a [Shield] equal to 30% of Elena Renault's Defense.
+Restores 10% of the user's Power Gauge.
+Duration: 30 second(s)`
+          },
+          {
+            skillName: " Éclat de Folie (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/8b31954eeaa04bd0afaaf09ef97ef01c.webp",
+            description: `Elena creates a mercury shield in front of herself, then detonates it to damage nearby enemies.
+
+Damage: 1015-1522.5% of the user's Defense
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Water elemental damage.
+・When the final hit lands, it inflicts [Airborne] effect.`
+          },
+          {
+            skillName: "Prison d'Argent (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/a2e0ce7324fc420f86e8576de6ddae00.webp",
+            description: `Elena manifests her inner emotions as mercury, trapping enemies with the constructs before detonating them to deal damage.
+
+Damage: 3628-5442% of the user's Defense
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Water elemental damage
+・When the final hit lands, it inflicts the [Airborne] effect.`
+          }
+        ]
+      }
+    ],
+//hunter 60: Antoine Martinez
+
+    60: [
+      {
+        category: "Basic Attacks",
+        skills: [
+          {
+            skillName: "Shattered Equilibrium",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/29ecf771ae744e74a40ed231644e06a9.webp",
+            description: `Antoine swings his axe powerfully.
+
+Stage 1 Damage: 293-439.5% of the user's Max HP
+Stage 2 Damage: 293-439.5% of the user's Max HP
+Stage 3 Damage: 338-507% of the user's Max HP
+・Deals Light elemental damage.
+・Applies the Weak Elemental Accumulation effect.`
+          },
+          {
+            skillName: "Unforgiving Blessed Light (Core Attack)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/af31d3c8bf0f41768381bd9e86754269.webp",
+            description: `Antoine does a cross-body maneuver with his axes to attack enemies in front of him.
+
+Damage: 1092-1638% of the user's Max HP
+・Deals Light elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When the final hit lands, it [Knocks Down] the target
+・The user gains [Super Armor] while using this skill.`
+          }
+        ]
+      },
+      {
+        category: "Basic Skills",
+        skills: [
+          {
+            skillName: "Light of Shattered Sorrow/Devourer of Sorrow",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/1a5c3087b13c4323b0fba88ef606a208.webp",
+            skillImg2: "https://resources.vortexgaming.io/upload/post/2026/05/09/732309843c2b4110b05b46467aeb97fa.webp",
+            description: `Antoine brings both axes down toward the enemy to attack.
+
+Damage: 2473-3709.5% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 150-198
+・Deals Light elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When the final hit lands, it [Knocks Down] the target.
+・The user gains [Super Armor] while using this skill.`
+          },
+          {
+            skillName: " Judgement of Severed Fate",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/ff42106c6fd749f488977ba39099315e.webp",
+            description: `Antoine throws an axe at the enemy, catches it as it returns, and follows up with a powerful upward slash.
+
+Damage: 4698-7047% of the user's Max HP
+Cooldown: 15 sec
+MP Consumption: 200-264
+・Deals Light elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When the final hit lands, it inflicts the [Airborne] effect on the target.
+・The user gains [Super Armor] while using this skill.`
+          }
+        ]
+      },
+      {
+        category: "Special Skills",
+        skills: [
+          {
+            skillName: "Calamity's Retribution (Support)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/666258daaf0141a8933b9fc6337799e2.webp",
+            description: `Antoine leaps swiftly and throws his axe at the enemy to attack.
+
+Damage: 1080-2220% of the user's Max HP
+Cooldown: 25 sec
+・Deals Light elemental damage.
+・Applies the Heavy Elemental Accumulation effect.
+・When this skill hits, it [Knocks Down] the target.
+・Using this skill activates the [Supreme Incarnation] effect on the entire team.
+
+[Supreme Incarnation] Antoine Martinez Supreme Incarnation Effect
+Increases Light Overload damage by 20%.
+Increases damage dealt by 20%.
+Duration: 30 second(s)`
+          },
+          {
+            skillName: "Tragedy Cleaver (QTE)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/c11d1ae77f1c413eb174f66a78e027ff.webp",
+            description: `Antoine leaps swiftly and throws his axe at the enemy to attack.
+
+Damage: 1648-2472% of the user's Max HP
+Cooldown: 20 sec
+Usage Conditions: Extreme Evasion, Core Attack, Ultimate Skill, skill that inflict the [Stun] or [Blind] effects, or a Shadow Skill
+・Deals Light elemental damage.
+・Applies the Medium Elemental Accumulation effect.
+・When this skill hits, it [Knocks Down] the target.`
+          },
+          {
+            skillName: "The Angel's Stay (Ultimate)",
+            skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/09/363273c7b3724af79cecdd17ffdb39ac.webp",
+            description: `Antoine's axe is empowered before being slammed into the ground, unleashing shockwaves that spread outward.
+
+Damage: 5495-8242.5% of the user's Max HP
+Cooldown: 45 sec
+Power Gauge Consumption: 100%
+・Deals Light elemental damage.
+・Applies the Heavy Elemental Accumulation effect.
+・When this skill hits, it inflicts [Airborne] effect on the target.`
+          }
+        ]
+      }
+    ],
+    //hunter 61: ???
+61: [
       {
         category: "Basic Attacks",
         skills: [
