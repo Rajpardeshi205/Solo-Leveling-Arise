@@ -1,0 +1,17 @@
+export const Guild = {
+    Fiend_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/bbc51341455f403eb01a9a6964e66a20.webp",
+    White_Tiger_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/f04cdf39871e42bea7ae85796a328adb.webp",
+    The_Justitia_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/d33dafebf1d640bb94483e6a4d1f7b14.webp",
+    The_Federal_Bureau_of_Hunters:"https://resources.vortexgaming.io/upload/post/2025/07/11/1dfb0686b4c24c32be1825b64a144e8f.webp",
+    Japanese_Hunters_Association:"https://resources.vortexgaming.io/upload/post/2025/07/11/c13559bdf85243338f71b8f35d49a4f5.webp",
+    Hunters_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/7e329131b55e45799ecc1c9e0911c698.webp",
+    Helpers_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/d6903bd08b654246a265387facc14c55.webp",
+    Scavenger_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/8b89b0fe5e4d498fa59d742dfa78aa45.webp",
+    Ahjin_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/14bd4d9cdf144086af326f2ae1ee7152.webp",
+    Blade_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/9bfd0de9b5d34e2b95431a617cf1897f.webp",
+    Valkyrie_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/e1513e0f3d514dc8b7e7098ce9aeb5e3.webp",
+    Richter_Guild:"https://resources.vortexgaming.io/upload/post/2025/07/11/72a325471fa64920b2a9467b0df3df4f.webp",
+    Hunters_Association:"https://resources.vortexgaming.io/upload/post/2025/07/11/7e215c03a8e34abcaee824b526d57af2.webp",
+    Forever:"https://resources.vortexgaming.io/upload/post/2025/07/12/8c27f476a8f64d86884548d25a6108a0.png",
+    Unknown:"https://resources.vortexgaming.io/upload/post/2025/09/29/ddea472a20604b4bb9736e33ae4fbc78.png",
+  };
