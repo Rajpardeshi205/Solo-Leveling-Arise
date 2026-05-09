@@ -12,7 +12,7 @@ import HunterDetailsSkeleton from "../../HunterDetailsSkeleton";
 import CommentsPage from "@/Components/CommentsPage ";
 import Cores from "../../Cores";
 import { Guild } from "@/Components/gameData/Guild";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "@/Firebase/FireBaseconfig";
 import Artifacts from "../../Artifacts";
 
@@ -80,6 +80,51 @@ export default function HunterDetailsPage() {
   useEffect(() => {
     if (!selectedHunter) return;
 
+    const fetchArtifacts = async () => {
+      const artifactData = selectedHunter.Artifacts || [];
+      const results = [];
+
+      for (let rawItem of artifactData) {
+        const item = rawItem?.value || rawItem;
+
+        if (!Array.isArray(item)) continue;
+
+        const setName = item[0]?.replace(/\s+/g, " ").trim();
+
+        if (!setName) continue;
+
+        console.log("🔥 Looking for:", setName);
+
+        const snapshot = await getDocs(collection(db, "artifacts"));
+
+        const foundDoc = snapshot.docs.find((d) => {
+          const dbName = d.id.replace(/\s+/g, " ").trim().toLowerCase();
+
+          const hunterName = setName.replace(/\s+/g, " ").trim().toLowerCase();
+
+          return dbName === hunterName;
+        });
+
+        if (foundDoc) {
+          console.log("✅ FOUND:", foundDoc.id);
+
+          results.push(foundDoc.data());
+        } else {
+          console.log("❌ NOT FOUND:", setName);
+        }
+      }
+
+      console.log("✅ FINAL ARTIFACTS:", results);
+
+      setArtifacts(results);
+    };
+
+    fetchArtifacts();
+  }, [selectedHunter]);
+
+  useEffect(() => {
+    if (!selectedHunter) return;
+
     const fetchSkills = async () => {
       const docRef = doc(db, "skills", selectedHunter.id.toString());
       const docSnap = await getDoc(docRef);
@@ -122,40 +167,6 @@ export default function HunterDetailsPage() {
     };
 
     fetchAdvancement();
-  }, [selectedHunter]);
-
-  useEffect(() => {
-    if (!selectedHunter) return;
-
-    const fetchArtifacts = async () => {
-      const artifactData = selectedHunter.Artifacts || [];
-      const results = [];
-
-      for (let item of artifactData) {
-        // ✅ safety checks
-        if (!Array.isArray(item)) continue;
-        if (!item[0]) continue;
-
-        const setName = item[0].trim();
-
-        try {
-          const docRef = doc(db, "artifacts", setName);
-          const docSnap = await getDoc(docRef);
-
-          if (docSnap.exists()) {
-            results.push(docSnap.data());
-          } else {
-            console.log("❌ Artifact not found:", setName);
-          }
-        } catch (error) {
-          console.log("❌ Artifact fetch error:", error);
-        }
-      }
-
-      setArtifacts(results);
-    };
-
-    fetchArtifacts();
   }, [selectedHunter]);
 
   if (!selectedHunter) {
