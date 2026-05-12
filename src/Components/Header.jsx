@@ -24,6 +24,9 @@ export default function Header() {
           <Link href="/Hunters" className="hover:text-primary">
             Hunters
           </Link>
+          <Link href="/Jinwoo" className="hover:text-primary">
+            Jinwoo
+          </Link>
           <Link href="/Shadows" className="hover:text-primary">
             Shadows
           </Link>

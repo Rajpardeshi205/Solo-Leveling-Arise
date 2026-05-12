@@ -12,7 +12,7 @@ export default function CarouselHunters({
   cardRefs,
   getTypeGradient,
 }) {
-  if (!hunters || !hunters.length) return null; // ✅ safety fix
+  if (!hunters || !hunters.length) return null;
 
   return (
     <div className="fixed  bottom-0 left-0 right-0 bg-gray-900/95 backdrop-blur-sm border-t border-gray-700 z-50">
@@ -34,7 +34,7 @@ export default function CarouselHunters({
         >
           {hunters.map((hunter, index) => (
             <motion.div
-              key={hunter.id} // ✅ stable key
+              key={hunter.id}
               ref={(el) => (cardRefs.current[index] = el)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

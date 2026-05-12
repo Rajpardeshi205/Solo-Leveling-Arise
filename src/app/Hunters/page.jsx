@@ -207,7 +207,7 @@ export default function HunterPage() {
 
   if (loading) return <SkeletonHunterPage />;
   return (
-    <Background>
+    <Background className="fixed">
       {" "}
       <div className="h-auto pt-20 overflow-hidden  text-white flex flex-col">
         <div className="flex-1 flex items-center justify-center relative px-4 md:px-8">

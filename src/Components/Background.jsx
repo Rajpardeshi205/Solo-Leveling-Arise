@@ -22,14 +22,14 @@ const Background = ({ children, className = "" }) => {
             Math.random() > 0.7
               ? "diamond"
               : Math.random() > 0.5
-              ? "square"
-              : "circle",
+                ? "square"
+                : "circle",
           color:
             Math.random() > 0.6
               ? "blue"
               : Math.random() > 0.3
-              ? "purple"
-              : "cyan",
+                ? "purple"
+                : "cyan",
         });
       }
       setParticles(newParticles);
@@ -94,7 +94,7 @@ const Background = ({ children, className = "" }) => {
 
   return (
     <div
-      className={`fixed inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden ${className}`}
+      className={`w-full inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 overflow-hidden ${className}`}
     >
       {/* Geometric Particles */}
       {particles.map(renderParticle)}
