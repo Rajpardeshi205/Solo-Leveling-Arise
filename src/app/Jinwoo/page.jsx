@@ -3,6 +3,7 @@
 import Blessings from "./Blessings";
 import JinwooSkins from "./JinwooSkins";
 import Runes from "./Runes";
+import Weapons from "./Weapons";
 
 export default function Page() {
   return (
@@ -13,13 +14,18 @@ export default function Page() {
       </section>
 
       {/* RUNES SECTION */}
-      <section className="relative  z-20 ">
+      <section className="relative z-20 ">
         <Runes />
       </section>
 
       {/* BLESSINGS SECTION */}
       <section className="relative  z-20 ">
         <Blessings />
+      </section>
+
+      {/* WEAPONS SECTION */}
+      <section className="relative  z-20 ">
+        <Weapons />
       </section>
     </div>
   );
