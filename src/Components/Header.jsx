@@ -30,8 +30,8 @@ export default function Header() {
           <Link href="/Shadows" className="hover:text-primary">
             Shadows
           </Link>
-          <Link href="#weapons" className="hover:text-primary">
-            Weapons
+          <Link href="/WeeklyContent" className="hover:text-primary">
+            Weekly Content
           </Link>
         </nav>
         <button className="bg-primary text-white px-4 py-2 rounded-md hover:brightness-110 transition">
