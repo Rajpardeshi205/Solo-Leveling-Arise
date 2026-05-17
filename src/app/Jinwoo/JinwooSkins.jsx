@@ -31,8 +31,8 @@ export default function JinwooSkins() {
   const next = () => setActiveSkin((p) => (p >= skins.length - 1 ? 0 : p + 1));
 
   return (
-    <Background className="fixed">
-      <div className="pt-16 sm:pt-20 md:pt-24 text-white flex flex-col min-h-screen">
+    <Background>
+      <div className="pt-16 sm:pt-20 md:pt-24 text-white flex flex-col">
         <main className="flex-1 flex flex-col items-center justify-between px-4 sm:px-6 pb-6 gap-4">
           {/* Character Image */}
           <div className="flex-1 w-full flex items-start justify-center">
