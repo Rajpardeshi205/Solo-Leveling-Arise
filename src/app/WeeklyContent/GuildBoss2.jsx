@@ -1,17 +1,15 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { db } from "@/Firebase/FireBaseconfig";
 import Background from "@/Components/Background";
+import { db, auth } from "@/Firebase/FireBaseconfig";
 import { onAuthStateChanged } from "firebase/auth";
-
 import { collection, getDocs, setDoc, getDoc, doc } from "firebase/firestore";
-import { auth } from "@/Firebase/FireBaseconfig";
 // ─── ImageSelect ──────────────────────────────────────────────────────────────
 const ImageSelect = ({
   label,
   placeholder,
-  border = "border-cyan-500",
+  border = "border-yellow-500",
   items = [],
   keyFn,
   labelFn,
@@ -87,9 +85,7 @@ const ImageSelect = ({
                   onChange(key);
                   setOpen(false);
                 }}
-                className={`flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-white/5 transition-colors ${
-                  isActive ? "bg-white/10 text-white" : "text-gray-300"
-                }`}
+                className={`flex items-center gap-3 px-3 py-2 cursor-pointer hover:bg-white/5 transition-colors ${isActive ? "bg-white/10 text-white" : "text-gray-300"}`}
               >
                 {imgFn?.(item) ? (
                   <img
@@ -105,7 +101,7 @@ const ImageSelect = ({
                 </span>
                 {isActive && (
                   <svg
-                    className="w-4 h-4 ml-auto text-cyan-400 flex-shrink-0"
+                    className="w-4 h-4 ml-auto text-yellow-400 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -128,7 +124,7 @@ const ImageSelect = ({
 };
 
 // ─── InfoCard ─────────────────────────────────────────────────────────────────
-const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
+const InfoCard = ({ label, children, accent = "yellow", className = "" }) => {
   const borderColor =
     {
       cyan: "border-cyan-500/20",
@@ -139,7 +135,11 @@ const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
       blue: "border-blue-500/20",
       orange: "border-orange-500/20",
       pink: "border-pink-500/20",
-    }[accent] || "border-cyan-500/20";
+      amber: "border-amber-500/20",
+      lime: "border-lime-500/20",
+      teal: "border-teal-500/20",
+      sky: "border-sky-500/20",
+    }[accent] || "border-yellow-500/20";
 
   const labelColor =
     {
@@ -151,7 +151,11 @@ const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
       blue: "text-blue-400",
       orange: "text-orange-400",
       pink: "text-pink-400",
-    }[accent] || "text-cyan-400";
+      amber: "text-amber-400",
+      lime: "text-lime-400",
+      teal: "text-teal-400",
+      sky: "text-sky-400",
+    }[accent] || "text-yellow-400";
 
   return (
     <div
@@ -173,7 +177,7 @@ const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
 const ItemSlot = ({
   src,
   label,
-  accent = "cyan",
+  accent = "yellow",
   size = "md",
   empty = "?",
 }) => {
@@ -182,7 +186,6 @@ const ItemSlot = ({
     md: "w-12 h-12 sm:w-16 sm:h-16",
     lg: "w-14 h-14 sm:w-20 sm:h-20",
   }[size];
-
   const borderColor =
     {
       cyan: "border-cyan-500/60",
@@ -193,8 +196,11 @@ const ItemSlot = ({
       orange: "border-orange-500/60",
       pink: "border-pink-500/60",
       blue: "border-blue-500/60",
-    }[accent] || "border-cyan-500/60";
-
+      amber: "border-amber-500/60",
+      lime: "border-lime-500/60",
+      teal: "border-teal-500/60",
+      sky: "border-sky-500/60",
+    }[accent] || "border-yellow-500/60";
   const glowColor =
     {
       cyan: "shadow-cyan-500/20",
@@ -202,7 +208,8 @@ const ItemSlot = ({
       red: "shadow-red-500/20",
       yellow: "shadow-yellow-500/20",
       green: "shadow-green-500/20",
-    }[accent] || "shadow-cyan-500/20";
+      orange: "shadow-orange-500/20",
+    }[accent] || "shadow-yellow-500/20";
 
   return (
     <div className="flex flex-col items-center gap-1">
@@ -225,7 +232,7 @@ const ItemSlot = ({
 };
 
 // ─── ArtifactPiecesGrid ───────────────────────────────────────────────────────
-const ArtifactPiecesGrid = ({ artifact }) => {
+const ArtifactPiecesGrid = ({ artifact, accent = "yellow" }) => {
   const pieces = artifact?.pieces || {};
   const slots = [
     { key: "helmet", label: "Helmet" },
@@ -237,21 +244,33 @@ const ArtifactPiecesGrid = ({ artifact }) => {
     { key: "ring", label: "Ring" },
     { key: "earrings", label: "Earrings" },
   ];
+  const nameColor =
+    {
+      yellow: "text-yellow-300",
+      cyan: "text-cyan-300",
+      orange: "text-orange-300",
+      amber: "text-amber-300",
+      lime: "text-lime-300",
+      green: "text-green-300",
+      teal: "text-teal-300",
+      sky: "text-sky-300",
+      blue: "text-blue-300",
+    }[accent] || "text-yellow-300";
   return (
-    <InfoCard label="Artifact Set" accent="cyan">
+    <InfoCard label="Artifact Set" accent={accent}>
       <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
         {slots.map(({ key, label }) => (
           <ItemSlot
             key={key}
             src={pieces[key]}
             label={label}
-            accent="cyan"
+            accent={accent}
             size="sm"
           />
         ))}
       </div>
       {artifact?.name && (
-        <p className="text-cyan-300 text-xs font-bold mt-2 text-center">
+        <p className={`${nameColor} text-xs font-bold mt-2 text-center`}>
           {artifact.name}
         </p>
       )}
@@ -260,32 +279,152 @@ const ArtifactPiecesGrid = ({ artifact }) => {
 };
 
 // ─── CorePanel ────────────────────────────────────────────────────────────────
-const CorePanel = ({ coreBody, coreMind, coreSpirit }) => (
+const CorePanel = ({ coreBody, coreMind, coreSpirit, size = "sm" }) => (
   <InfoCard label="Cores" accent="red">
     <div className="flex justify-around gap-2 sm:gap-4">
       <ItemSlot
         src={coreBody?.img}
         label={coreBody?.name || "Body"}
         accent="red"
-        size="sm"
+        size={size}
         empty="⬡"
       />
       <ItemSlot
         src={coreMind?.img}
         label={coreMind?.name || "Mind"}
         accent="blue"
-        size="sm"
+        size={size}
         empty="⬡"
       />
       <ItemSlot
         src={coreSpirit?.img}
         label={coreSpirit?.name || "Spirit"}
         accent="purple"
-        size="sm"
+        size={size}
         empty="⬡"
       />
     </div>
   </InfoCard>
+);
+
+// ─── JinwooEquipPanel ─────────────────────────────────────────────────────────
+const JinwooEquipPanel = ({
+  weapon,
+  weapon2,
+  artifact,
+  rune,
+  rune2,
+  coreBody,
+  coreMind,
+  coreSpirit,
+  qteSkills,
+  ultimate,
+  survivalBlessings,
+  empowermentBlessings,
+}) => (
+  <div className="space-y-3">
+    {/* Weapons */}
+    <InfoCard label="Weapons" accent="red">
+      <div className="flex gap-3 sm:gap-4 flex-wrap">
+        <ItemSlot
+          src={weapon?.weaponImg?.[0] || weapon?.weaponImg2?.[0]}
+          label={weapon?.weaponName || "Weapon 1"}
+          accent="red"
+          size="lg"
+        />
+        <ItemSlot
+          src={weapon2?.weaponImg?.[0] || weapon2?.weaponImg2?.[0]}
+          label={weapon2?.weaponName || "Weapon 2"}
+          accent="red"
+          size="lg"
+        />
+      </div>
+    </InfoCard>
+
+    {/* Artifact */}
+    <ArtifactPiecesGrid artifact={artifact} accent="cyan" />
+
+    {/* Rune Stones */}
+    <InfoCard label="Rune Stones" accent="purple">
+      <div className="flex gap-3 sm:gap-4 flex-wrap">
+        <ItemSlot
+          src={rune?.data?.[0]?.Runes?.[0]?.skillImg}
+          label={rune?.data?.[0]?.Skills || "Rune 1"}
+          accent="purple"
+          size="md"
+        />
+        <ItemSlot
+          src={rune2?.data?.[0]?.Runes?.[0]?.skillImg}
+          label={rune2?.data?.[0]?.Skills || "Rune 2"}
+          accent="purple"
+          size="md"
+        />
+      </div>
+    </InfoCard>
+
+    {/* Cores */}
+    <CorePanel
+      coreBody={coreBody}
+      coreMind={coreMind}
+      coreSpirit={coreSpirit}
+      size="md"
+    />
+
+    {/* QTE Skills & Ultimate */}
+    <InfoCard label="QTE Skills & Ultimate" accent="yellow">
+      <div className="flex gap-2 sm:gap-3 flex-wrap">
+        {(qteSkills || [null, null, null]).map((skill, i) => (
+          <ItemSlot
+            key={i}
+            src={skill?.data?.[0]?.Runes?.[0]?.skillImg}
+            label={skill?.data?.[0]?.Skills || `QTE ${i + 1}`}
+            accent="yellow"
+            size="md"
+          />
+        ))}
+        <ItemSlot
+          src={ultimate?.data?.[0]?.Runes?.[0]?.skillImg}
+          label={ultimate?.data?.[0]?.Skills || "Ultimate"}
+          accent="orange"
+          size="md"
+        />
+      </div>
+    </InfoCard>
+
+    {/* Survival Blessings */}
+    <InfoCard label="Survival Blessings" accent="green">
+      <div className="flex gap-2 sm:gap-3 flex-wrap">
+        {(survivalBlessings || [null, null, null, null])
+          .filter(Boolean)
+          .map((item, i) => (
+            <ItemSlot
+              key={i}
+              src={item?.Runes?.[0]?.img}
+              label={item?.Blessing || `Blessing ${i + 1}`}
+              accent="green"
+              size="md"
+            />
+          ))}
+      </div>
+    </InfoCard>
+
+    {/* Empowerment Blessings */}
+    <InfoCard label="Empowerment Blessings" accent="pink">
+      <div className="flex gap-2 sm:gap-3 flex-wrap">
+        {(empowermentBlessings || [null, null, null, null])
+          .filter(Boolean)
+          .map((item, i) => (
+            <ItemSlot
+              key={i}
+              src={item?.Runes?.[0]?.img}
+              label={item?.Blessing || `Blessing ${i + 1}`}
+              accent="pink"
+              size="md"
+            />
+          ))}
+      </div>
+    </InfoCard>
+  </div>
 );
 
 // ─── HunterEquipPanel ─────────────────────────────────────────────────────────
@@ -295,6 +434,7 @@ const HunterEquipPanel = ({
   coreBody,
   coreMind,
   coreSpirit,
+  accent = "yellow",
 }) => {
   if (!hunter) return null;
   return (
@@ -314,7 +454,7 @@ const HunterEquipPanel = ({
           )}
         </div>
       </InfoCard>
-      <ArtifactPiecesGrid artifact={artifact} />
+      <ArtifactPiecesGrid artifact={artifact} accent={accent} />
       <CorePanel
         coreBody={coreBody}
         coreMind={coreMind}
@@ -324,239 +464,103 @@ const HunterEquipPanel = ({
   );
 };
 
-// ─── JinwooEquipPanel ─────────────────────────────────────────────────────────
-const JinwooEquipPanel = ({
-  weapon,
-  weapon2,
-  artifact,
-  rune,
-  rune2,
-  selectedCoreBody,
-  selectedCoreMind,
-  selectedCoreSpirit,
-  qteSkills,
-  ultimate,
-  survivalBlessings,
-  empowermentBlessings,
-}) => (
-  <div className="space-y-3">
-    <InfoCard label="Weapons" accent="red">
-      <div className="flex gap-3 sm:gap-4 flex-wrap">
-        <ItemSlot
-          src={weapon?.weaponImg?.[0] || weapon?.weaponImg2?.[0]}
-          label={weapon?.weaponName || "Weapon 1"}
-          accent="red"
-          size="lg"
-        />
-        <ItemSlot
-          src={weapon2?.weaponImg?.[0] || weapon2?.weaponImg2?.[0]}
-          label={weapon2?.weaponName || "Weapon 2"}
-          accent="red"
-          size="lg"
-        />
-      </div>
-    </InfoCard>
-
-    <ArtifactPiecesGrid artifact={artifact} />
-
-    <InfoCard label="Rune Stones" accent="purple">
-      <div className="flex gap-3 sm:gap-4 flex-wrap">
-        <ItemSlot
-          src={rune?.data?.[0]?.Runes?.[0]?.skillImg}
-          label={rune?.data?.[0]?.Skills || "Rune 1"}
-          accent="purple"
-          size="md"
-        />
-        <ItemSlot
-          src={rune2?.data?.[0]?.Runes?.[0]?.skillImg}
-          label={rune2?.data?.[0]?.Skills || "Rune 2"}
-          accent="purple"
-          size="md"
-        />
-      </div>
-    </InfoCard>
-
-    <InfoCard label="Cores" accent="red">
-      <div className="flex justify-around gap-2 sm:gap-4">
-        <ItemSlot
-          src={selectedCoreBody?.img}
-          label={selectedCoreBody?.name || "Body"}
-          accent="red"
-          size="md"
-          empty="⬡"
-        />
-        <ItemSlot
-          src={selectedCoreMind?.img}
-          label={selectedCoreMind?.name || "Mind"}
-          accent="blue"
-          size="md"
-          empty="⬡"
-        />
-        <ItemSlot
-          src={selectedCoreSpirit?.img}
-          label={selectedCoreSpirit?.name || "Spirit"}
-          accent="green"
-          size="md"
-          empty="⬡"
-        />
-      </div>
-    </InfoCard>
-
-    <InfoCard label="QTE Skills & Ultimate" accent="yellow">
-      <div className="flex gap-2 sm:gap-3 flex-wrap">
-        {(qteSkills || [null, null, null]).map((skill, i) => (
-          <ItemSlot
-            key={i}
-            src={skill?.data?.[0]?.Runes?.[0]?.skillImg || "/placeholder.png"}
-            label={skill?.data?.[0]?.Skills || `QTE ${i + 1}`}
-            accent="yellow"
-            size="md"
-          />
-        ))}
-        <ItemSlot
-          src={ultimate?.data?.[0]?.Runes?.[0]?.skillImg || "/placeholder.png"}
-          label={ultimate?.data?.[0]?.Skills || "Ultimate"}
-          accent="orange"
-          size="md"
-        />
-      </div>
-    </InfoCard>
-
-    <InfoCard label="Survival Blessings" accent="green">
-      <div className="flex gap-2 sm:gap-3 flex-wrap">
-        {survivalBlessings
-          ?.filter((item) => item?.Runes?.[0]?.type === "Survival")
-          .slice(0, 4)
-          .map((item, i) => (
-            <ItemSlot
-              key={i}
-              src={item?.Runes?.[0]?.img || "/placeholder.png"}
-              label={item?.Blessing || `Blessing ${i + 1}`}
-              accent="green"
-              size="md"
-            />
-          ))}
-      </div>
-    </InfoCard>
-
-    <InfoCard label="Empowerment Blessings" accent="pink">
-      <div className="flex gap-2 sm:gap-3 flex-wrap">
-        {empowermentBlessings
-          ?.filter((item) => item?.Runes?.[0]?.type === "Empowerment")
-          .slice(0, 4)
-          .map((item, i) => (
-            <ItemSlot
-              key={i}
-              src={item?.Runes?.[0]?.img || "/placeholder.png"}
-              label={item?.Blessing || `Blessing ${i + 1}`}
-              accent="pink"
-              size="md"
-            />
-          ))}
-      </div>
-    </InfoCard>
-  </div>
-);
-
-// ─── CharacterCard ────────────────────────────────────────────────────────────
-const CharacterCard = ({ name, imgSrc, isEmpty, emptyLabel }) => (
-  <div className="relative rounded-2xl overflow-hidden border border-cyan-500/30 bg-black/40 h-[160px] sm:h-[260px] md:h-[340px] lg:h-[420px]">
-    {!isEmpty ? (
-      <>
-        <img
-          src={imgSrc}
-          className="w-full h-full object-cover object-top"
-          alt={name}
-        />
-        <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-black/90 to-transparent">
-          <h2 className="text-white font-bold text-xs sm:text-base truncate">
-            {name}
-          </h2>
-        </div>
-      </>
-    ) : (
-      <div className="h-full flex items-center justify-center text-gray-600 text-xs sm:text-sm text-center px-2">
-        {emptyLabel}
-      </div>
-    )}
-  </div>
-);
-
 // ─── SectionLabel ─────────────────────────────────────────────────────────────
-const SectionLabel = ({ color = "text-cyan-400", children }) => (
+const SectionLabel = ({ color = "text-yellow-400", children }) => (
   <p className={`text-xs ${color} font-black uppercase tracking-widest mb-2`}>
     {children}
   </p>
 );
 
-// ─── Main BOT Component ───────────────────────────────────────────────────────
-export default function BOT({ fireToast }) {
+// ─── Palette for 6 hunter slots ───────────────────────────────────────────────
+const HUNTER_ACCENTS = ["yellow", "amber", "lime", "green", "teal", "sky"];
+const HUNTER_BORDERS = [
+  "border-yellow-500",
+  "border-amber-500",
+  "border-lime-500",
+  "border-green-500",
+  "border-teal-500",
+  "border-sky-500",
+];
+const HUNTER_BORDER_CLS = [
+  "border-yellow-500/30",
+  "border-amber-500/30",
+  "border-lime-500/30",
+  "border-green-500/30",
+  "border-teal-500/30",
+  "border-sky-500/30",
+];
+const HUNTER_LABEL_COLORS = [
+  "text-yellow-400",
+  "text-amber-400",
+  "text-lime-400",
+  "text-green-400",
+  "text-teal-400",
+  "text-sky-400",
+];
+const SLOTS = 6;
+
+// ─── Main GuildBoss Component ─────────────────────────────────────────────────
+export default function GuildBoss2({ fireToast }) {
   const [hunters, setHunters] = useState([]);
   const [shadows, setShadows] = useState([]);
-  const [weapons, setWeapons] = useState([]);
   const [artifacts, setArtifacts] = useState([]);
-  const [cores, setCores] = useState([]);
-  const [runes, setRunes] = useState([]);
-  const [blessings, setBlessings] = useState([]);
-  const [qteSkillsList, setQteSkillsList] = useState([]);
-  const [ultimatesList, setUltimatesList] = useState([]);
-
-  const [selectedCoreBody, setSelectedCoreBody] = useState(null);
-  const [selectedCoreMind, setSelectedCoreMind] = useState(null);
-  const [selectedCoreSpirit, setSelectedCoreSpirit] = useState(null);
-
   const [bodyCores, setBodyCores] = useState([]);
   const [mindCores, setMindCores] = useState([]);
   const [spiritCores, setSpiritCores] = useState([]);
 
-  const [selectedQteSkills, setSelectedQteSkills] = useState([
-    null,
-    null,
-    null,
-  ]);
-  const [selectedUltimate, setSelectedUltimate] = useState(null);
-  const [selectedWeapon, setSelectedWeapon] = useState(null);
-  const [selectedWeapon2, setSelectedWeapon2] = useState(null);
-  const [selectedArtifact, setSelectedArtifact] = useState(null);
-  const [selectedRune, setSelectedRune] = useState(null);
-  const [selectedRune2, setSelectedRune2] = useState(null);
-  const [selectedSurvivalBlessings, setSelectedSurvivalBlessings] = useState([
-    null,
-    null,
-    null,
-    null,
-  ]);
-  const [selectedEmpowermentBlessings, setSelectedEmpowermentBlessings] =
-    useState([null, null, null, null]);
+  // ── Jinwoo base ──
+  const [jinwooWeapons, setJinwooWeapons] = useState([]);
+  const [runes, setRunes] = useState([]);
+  const [blessings, setBlessings] = useState([]);
 
-  const [selectedHunters, setSelectedHunters] = useState([null, null, null]);
-  const [hunterArtifacts, setHunterArtifacts] = useState([null, null, null]);
-  const [hunterCoreBody, setHunterCoreBody] = useState([null, null, null]);
-  const [hunterCoreMind, setHunterCoreMind] = useState([null, null, null]);
-  const [hunterCoreSpirit, setHunterCoreSpirit] = useState([null, null, null]);
-  const [selectedHunterSkins, setSelectedHunterSkins] = useState([
+  // ── Jinwoo selections ──
+  const [jinwooWeapon, setJinwooWeapon] = useState(null);
+  const [jinwooWeapon2, setJinwooWeapon2] = useState(null);
+  const [jinwooArtifact, setJinwooArtifact] = useState(null);
+  const [jinwooRune, setJinwooRune] = useState(null);
+  const [jinwooRune2, setJinwooRune2] = useState(null);
+  const [jinwooCoreBody, setJinwooCoreBody] = useState(null);
+  const [jinwooCoreMind, setJinwooCoreMind] = useState(null);
+  const [jinwooCoreSpirit, setJinwooCoreSpirit] = useState(null);
+  const [jinwooQteSkills, setJinwooQteSkills] = useState([null, null, null]);
+  const [jinwooUltimate, setJinwooUltimate] = useState(null);
+  const [jinwooSurvivalBlessings, setJinwooSurvivalBlessings] = useState([
+    null,
     null,
     null,
     null,
   ]);
-  const [selectedShadows, setSelectedShadows] = useState([null, null, null]);
+  const [jinwooEmpowermentBlessings, setJinwooEmpowermentBlessings] = useState([
+    null,
+    null,
+    null,
+    null,
+  ]);
+
+  // ── Shadow ──
+  const [selectedShadow, setSelectedShadow] = useState(null);
+
+  // ── 6 Hunters ──
+  const [selectedHunters, setSelectedHunters] = useState(
+    Array(SLOTS).fill(null),
+  );
+  const [hunterArtifacts, setHunterArtifacts] = useState(
+    Array(SLOTS).fill(null),
+  );
+  const [hunterCoreBody, setHunterCoreBody] = useState(Array(SLOTS).fill(null));
+  const [hunterCoreMind, setHunterCoreMind] = useState(Array(SLOTS).fill(null));
+  const [hunterCoreSpirit, setHunterCoreSpirit] = useState(
+    Array(SLOTS).fill(null),
+  );
+  const [selectedHunterSkins, setSelectedHunterSkins] = useState(
+    Array(SLOTS).fill(null),
+  );
+
   const [userRole, setUserRole] = useState(null);
+
   const [currentUser, setCurrentUser] = useState(null);
+
   const [saving, setSaving] = useState(false);
-  // ─── Fetch Cores ─────────────────────────────────────────────────────────
-  const fetchCores = async () => {
-    try {
-      const snapshot = await getDocs(collection(db, "cores"));
-      snapshot.docs.forEach((doc) => {
-        const data = doc.data();
-        if (doc.id === "Body") setBodyCores(data.items || []);
-        if (doc.id === "Mind") setMindCores(data.items || []);
-        if (doc.id === "Spirit") setSpiritCores(data.items || []);
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -585,156 +589,181 @@ export default function BOT({ fireToast }) {
     return () => unsubscribe();
   }, []);
 
+  // ─── Fetch ────────────────────────────────────────────────────────────────
   useEffect(() => {
+    const fetchCores = async () => {
+      const snapshot = await getDocs(collection(db, "cores"));
+      snapshot.docs.forEach((doc) => {
+        const data = doc.data();
+        if (doc.id === "Body") setBodyCores(data.items || []);
+        if (doc.id === "Mind") setMindCores(data.items || []);
+        if (doc.id === "Spirit") setSpiritCores(data.items || []);
+      });
+    };
     const fetchData = async () => {
-      try {
-        const snap = async (col) => {
-          const s = await getDocs(collection(db, col));
-          return s.docs.map((doc) => ({ firestoreId: doc.id, ...doc.data() }));
-        };
-        setHunters(await snap("hunters"));
-        setShadows(await snap("shadows"));
-        setWeapons(await snap("jinwooWeapons"));
-        setArtifacts(await snap("artifacts"));
-        setRunes(await snap("runes"));
-        setBlessings(await snap("blessings"));
-        setQteSkillsList(await snap("qteSkills"));
-        setUltimatesList(await snap("ultimates"));
+      const snap = async (col) => {
+        const s = await getDocs(collection(db, col));
+        return s.docs.map((doc) => ({ firestoreId: doc.id, ...doc.data() }));
+      };
+      setHunters(await snap("hunters"));
+      setShadows(await snap("shadows"));
+      setArtifacts(await snap("artifacts"));
+      setJinwooWeapons(await snap("jinwooWeapons"));
+      setRunes(await snap("runes"));
+      setBlessings(await snap("blessings"));
+      // ─── Load Saved Guild Boss ─────────────────────
+      const guildRef = doc(db, "GuildBoss", "Main2");
 
-        const coreSnap = await getDocs(collection(db, "cores"));
-        const coreData = [];
-        coreSnap.docs.forEach((doc) => {
-          const data = doc.data();
-          if (Array.isArray(data.items)) {
-            data.items.forEach((item, index) => {
-              coreData.push({ firestoreId: `${doc.id}-${index}`, ...item });
-            });
-          }
-        });
-        setCores(coreData);
-        // ─── Load Saved BOT Setup ─────────────────────
-        const botRef = doc(db, "BOT", "Jinwoo Mode");
+      const guildSnap = await getDoc(guildRef);
 
-        const botSnap = await getDoc(botRef);
+      if (guildSnap.exists()) {
+        const data = guildSnap.data();
 
-        if (botSnap.exists()) {
-          const data = botSnap.data();
+        // Shadow
+        setSelectedShadow(data.shadow || null);
 
-          // Shadows
-          if (data.shadows) {
-            setSelectedShadows(data.shadows);
-          }
+        // Jinwoo
+        if (data.jinwoo) {
+          setJinwooWeapon(data.jinwoo.weapon1 || null);
 
-          // Jinwoo
-          if (data.jinwoo) {
-            setSelectedWeapon(data.jinwoo.weapon1 || null);
+          setJinwooWeapon2(data.jinwoo.weapon2 || null);
 
-            setSelectedWeapon2(data.jinwoo.weapon2 || null);
+          setJinwooArtifact(data.jinwoo.artifact || null);
 
-            setSelectedArtifact(data.jinwoo.artifact || null);
+          setJinwooRune(data.jinwoo.rune1 || null);
 
-            setSelectedRune(data.jinwoo.rune1 || null);
+          setJinwooRune2(data.jinwoo.rune2 || null);
 
-            setSelectedRune2(data.jinwoo.rune2 || null);
+          setJinwooCoreBody(data.jinwoo.bodyCore || null);
 
-            setSelectedCoreBody(data.jinwoo.bodyCore || null);
+          setJinwooCoreMind(data.jinwoo.mindCore || null);
 
-            setSelectedCoreMind(data.jinwoo.mindCore || null);
+          setJinwooCoreSpirit(data.jinwoo.spiritCore || null);
 
-            setSelectedCoreSpirit(data.jinwoo.spiritCore || null);
+          setJinwooQteSkills(data.jinwoo.qteSkills || [null, null, null]);
 
-            setSelectedQteSkills(data.jinwoo.qteSkills || [null, null, null]);
+          setJinwooUltimate(data.jinwoo.ultimate || null);
 
-            setSelectedUltimate(data.jinwoo.ultimate || null);
+          setJinwooSurvivalBlessings(
+            data.jinwoo.survivalBlessings || [null, null, null, null],
+          );
 
-            setSelectedSurvivalBlessings(
-              data.jinwoo.survivalBlessings || [null, null, null, null],
-            );
-
-            setSelectedEmpowermentBlessings(
-              data.jinwoo.empowermentBlessings || [null, null, null, null],
-            );
-          }
-
-          // Hunters
-          if (data.hunters) {
-            setSelectedHunters(data.hunters.map((h) => h.hunter || null));
-
-            setHunterArtifacts(data.hunters.map((h) => h.artifact || null));
-
-            setHunterCoreBody(data.hunters.map((h) => h.bodyCore || null));
-
-            setHunterCoreMind(data.hunters.map((h) => h.mindCore || null));
-
-            setHunterCoreSpirit(data.hunters.map((h) => h.spiritCore || null));
-
-            setSelectedHunterSkins(data.hunters.map((h) => h.skin || null));
-          }
+          setJinwooEmpowermentBlessings(
+            data.jinwoo.empowermentBlessings || [null, null, null, null],
+          );
         }
-      } catch (error) {
-        console.error(error);
+
+        // Hunters
+        if (data.hunters) {
+          setSelectedHunters(data.hunters.map((h) => h.hunter || null));
+
+          setHunterArtifacts(data.hunters.map((h) => h.artifact || null));
+
+          setHunterCoreBody(data.hunters.map((h) => h.bodyCore || null));
+
+          setHunterCoreMind(data.hunters.map((h) => h.mindCore || null));
+
+          setHunterCoreSpirit(data.hunters.map((h) => h.spiritCore || null));
+
+          setSelectedHunterSkins(data.hunters.map((h) => h.skin || null));
+        }
       }
     };
     fetchCores();
     fetchData();
   }, []);
 
-  // ─── Helpers ─────────────────────────────────────────────────────────────
-  const setHunterSlot = (slot, id) => {
-    const updated = [...selectedHunters];
-    updated[slot] = hunters.find((h) => h.firestoreId === id) || null;
-    setSelectedHunters(updated);
+  // ─── Helpers ──────────────────────────────────────────────────────────────
+  const updateSlot = (arr, setArr, i, val) => {
+    const u = [...arr];
+    u[i] = val;
+    setArr(u);
   };
-  const setHunterArtifactSlot = (slot, id) => {
-    const updated = [...hunterArtifacts];
-    updated[slot] = artifacts.find((a) => a.firestoreId === id) || null;
-    setHunterArtifacts(updated);
+  const setHunterSlot = (i, id) =>
+    updateSlot(
+      selectedHunters,
+      setSelectedHunters,
+      i,
+      hunters.find((h) => h.firestoreId === id) || null,
+    );
+  const setHunterArtifactSlot = (i, id) =>
+    updateSlot(
+      hunterArtifacts,
+      setHunterArtifacts,
+      i,
+      artifacts.find((a) => a.firestoreId === id) || null,
+    );
+  const setHunterCoreBodySlot = (i, name) =>
+    updateSlot(
+      hunterCoreBody,
+      setHunterCoreBody,
+      i,
+      bodyCores.find((c) => c.name === name) || null,
+    );
+  const setHunterCoreMindSlot = (i, name) =>
+    updateSlot(
+      hunterCoreMind,
+      setHunterCoreMind,
+      i,
+      mindCores.find((c) => c.name === name) || null,
+    );
+  const setHunterCoreSpiritSlot = (i, name) =>
+    updateSlot(
+      hunterCoreSpirit,
+      setHunterCoreSpirit,
+      i,
+      spiritCores.find((c) => c.name === name) || null,
+    );
+
+  const setJinwooQteSlot = (slot, id) => {
+    const updated = [...jinwooQteSkills];
+    updated[slot] = runes.find((r) => r.firestoreId === id) || null;
+    setJinwooQteSkills(updated);
   };
-  const setHunterCoreBodySlot = (slot, name) => {
-    const updated = [...hunterCoreBody];
-    updated[slot] = bodyCores.find((c) => c.name === name) || null;
-    setHunterCoreBody(updated);
-  };
-  const setHunterCoreMindSlot = (slot, name) => {
-    const updated = [...hunterCoreMind];
-    updated[slot] = mindCores.find((c) => c.name === name) || null;
-    setHunterCoreMind(updated);
-  };
-  const setHunterCoreSpiritSlot = (slot, name) => {
-    const updated = [...hunterCoreSpirit];
-    updated[slot] = spiritCores.find((c) => c.name === name) || null;
-    setHunterCoreSpirit(updated);
-  };
-  const setSurvival = (slot, id) => {
-    const updated = [...selectedSurvivalBlessings];
+  const setJinwooSurvivalSlot = (slot, id) => {
+    const updated = [...jinwooSurvivalBlessings];
     updated[slot] =
       blessings.find(
         (b) => b.firestoreId === id && b?.Runes?.[0]?.type === "Survival",
       ) || null;
-    setSelectedSurvivalBlessings(updated);
+    setJinwooSurvivalBlessings(updated);
   };
-  const setEmpowerment = (slot, id) => {
-    const updated = [...selectedEmpowermentBlessings];
+  const setJinwooEmpowermentSlot = (slot, id) => {
+    const updated = [...jinwooEmpowermentBlessings];
     updated[slot] =
       blessings.find(
         (b) => b.firestoreId === id && b?.Runes?.[0]?.type === "Empowerment",
       ) || null;
-    setSelectedEmpowermentBlessings(updated);
+    setJinwooEmpowermentBlessings(updated);
   };
 
-  const hunterLabels = ["Hunter 1", "Hunter 2", "Hunter 3"];
-  const hunterLabelColors = [
-    "text-purple-400",
-    "text-blue-400",
-    "text-orange-400",
-  ];
-  const hunterBorders = [
-    "border-purple-500",
-    "border-blue-500",
-    "border-orange-500",
-  ];
+  // ─── Inline character card ─────────────────────────────────────────────────
+  const CharCard = ({ name, imgSrc, isEmpty, emptyLabel, borderCls }) => (
+    <div
+      className={`relative rounded-2xl overflow-hidden border ${borderCls} bg-black/40 h-[130px] sm:h-[190px] md:h-[250px] lg:h-[300px]`}
+    >
+      {!isEmpty ? (
+        <>
+          <img
+            src={imgSrc}
+            className="w-full h-full object-cover object-top"
+            alt={name}
+          />
+          <div className="absolute bottom-0 left-0 right-0 p-1.5 bg-gradient-to-t from-black/90 to-transparent">
+            <p className="text-white font-bold text-[10px] sm:text-xs truncate">
+              {name}
+            </p>
+          </div>
+        </>
+      ) : (
+        <div className="h-full flex items-center justify-center text-gray-600 text-[10px] sm:text-xs text-center px-1">
+          {emptyLabel}
+        </div>
+      )}
+    </div>
+  );
 
-  const handleSaveBOT = async () => {
+  const handleSaveGuildBoss = async () => {
     try {
       if (!currentUser) return;
 
@@ -742,46 +771,53 @@ export default function BOT({ fireToast }) {
 
       const payload = {
         updatedBy: currentUser.uid,
+
         updatedAt: new Date(),
 
-        shadows: selectedShadows,
+        shadow: selectedShadow,
 
         jinwoo: {
-          weapon1: selectedWeapon,
-          weapon2: selectedWeapon2,
-          artifact: selectedArtifact,
-          rune1: selectedRune,
-          rune2: selectedRune2,
-          bodyCore: selectedCoreBody,
-          mindCore: selectedCoreMind,
-          spiritCore: selectedCoreSpirit,
-          qteSkills: selectedQteSkills,
-          ultimate: selectedUltimate,
-          survivalBlessings: selectedSurvivalBlessings,
-          empowermentBlessings: selectedEmpowermentBlessings,
+          weapon1: jinwooWeapon,
+          weapon2: jinwooWeapon2,
+          artifact: jinwooArtifact,
+          rune1: jinwooRune,
+          rune2: jinwooRune2,
+          bodyCore: jinwooCoreBody,
+          mindCore: jinwooCoreMind,
+          spiritCore: jinwooCoreSpirit,
+          qteSkills: jinwooQteSkills,
+          ultimate: jinwooUltimate,
+          survivalBlessings: jinwooSurvivalBlessings,
+          empowermentBlessings: jinwooEmpowermentBlessings,
         },
 
         hunters: selectedHunters.map((hunter, index) => ({
           hunter,
+
           artifact: hunterArtifacts[index],
+
           bodyCore: hunterCoreBody[index],
+
           mindCore: hunterCoreMind[index],
+
           spiritCore: hunterCoreSpirit[index],
+
           skin: selectedHunterSkins[index],
         })),
       };
 
-      await setDoc(doc(db, "BOT", "Jinwoo Mode"), payload);
+      await setDoc(doc(db, "GuildBoss", "Main2"), payload);
 
       fireToast({
         type: "success",
-        message: "BOT (Jinwoo Mode) Setup Saved Successfully",
+        message: "Guild Boss Setup Saved Successfully ⚔",
       });
     } catch (error) {
       console.log(error);
+
       fireToast({
         type: "error",
-        message: "Failed To Save BOT (Jinwoo Mode) Setup",
+        message: "Failed To Save Guild Boss Setup",
       });
     } finally {
       setSaving(false);
@@ -792,129 +828,139 @@ export default function BOT({ fireToast }) {
     <Background>
       <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-2 sm:px-4 lg:px-6 py-4 sm:py-6 max-w-screen-2xl mx-auto w-full">
         {/* ── Title ── */}
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-cyan-400 text-center tracking-tight leading-tight">
-          Battlefield Of Time
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-yellow-400 text-center tracking-tight leading-tight">
+          Guild Boss
         </h1>
-        <p className="text-center text-gray-300 text-sm sm:text-lg">
-          Jinwoo Mode
-        </p>
-
+        <p className="text-center text-gray-300 text-sm sm:text-lg">Team 2 </p>
         {/* ── Main Team Preview ── */}
-        <InfoCard label="Main Team" accent="cyan">
-          {/* 2-col on mobile → 4-col on sm+ */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
-            <CharacterCard
+        <InfoCard label="Main Team" accent="yellow">
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+            {/* Row 1 */}
+            <CharCard
               name="Sung Jinwoo"
               imgSrc="https://resources.vortexgaming.io/upload/post/2026/05/10/4a641924d08d47e7b531623c40ff1ad0.webp"
+              isEmpty={false}
+              borderCls="border-cyan-500/40"
             />
-            {selectedHunters.map((hunter, index) => (
-              <CharacterCard
-                key={index}
-                name={hunter?.name}
+            {[0, 1, 2].map((i) => (
+              <CharCard
+                key={i}
+                name={selectedHunters[i]?.name}
                 imgSrc={
-                  selectedHunterSkins[index] || hunter?.img2 || hunter?.img1
+                  selectedHunterSkins[i] ||
+                  selectedHunters[i]?.skin1[0] ||
+                  selectedHunters[i]?.img1
                 }
-                isEmpty={!hunter}
-                emptyLabel={`Empty Hunter ${index + 1}`}
+                isEmpty={!selectedHunters[i]}
+                emptyLabel={`Hunter ${i + 1}`}
+                borderCls={HUNTER_BORDER_CLS[i]}
+              />
+            ))}
+
+            {/* Row 2 */}
+            <div className="invisible" aria-hidden="true" />
+            {[3, 4, 5].map((i) => (
+              <CharCard
+                key={i}
+                name={selectedHunters[i]?.name}
+                imgSrc={
+                  selectedHunterSkins[i] ||
+                  selectedHunters[i]?.skin1[0] ||
+                  selectedHunters[i]?.img1
+                }
+                isEmpty={!selectedHunters[i]}
+                emptyLabel={`Hunter ${i + 1}`}
+                borderCls={HUNTER_BORDER_CLS[i]}
               />
             ))}
           </div>
 
-          {/* Shadows – 3-col always (only 3 slots) */}
-          <div className="pt-3 sm:pt-4 grid grid-cols-3 gap-2 sm:gap-4">
-            {selectedShadows.map((shadow, index) => (
-              <div
-                key={index}
-                className="relative rounded-xl overflow-hidden border border-purple-500/30 bg-black/40 h-[80px] sm:h-[110px] md:h-[132px]"
-              >
-                {shadow ? (
+          {/* Shadow */}
+          <div className="pt-3 sm:pt-4">
+            <p className="text-xs text-yellow-400 font-black uppercase tracking-widest mb-2">
+              Shadow
+            </p>
+            <div className="grid grid-cols-4 gap-2 sm:gap-3">
+              <div className="relative rounded-xl overflow-hidden border border-yellow-500/30 bg-black/40 h-[70px] sm:h-[100px]">
+                {selectedShadow ? (
                   <img
-                    src={shadow.img}
+                    src={selectedShadow.img}
                     className="w-full h-full object-cover"
-                    alt={shadow.name}
+                    alt={selectedShadow.name}
                   />
                 ) : (
-                  <div className="h-full flex items-center justify-center text-gray-600 text-xs sm:text-sm text-center">
+                  <div className="h-full flex items-center justify-center text-gray-600 text-xs text-center px-1">
                     Empty Shadow
                   </div>
                 )}
               </div>
-            ))}
+            </div>
           </div>
         </InfoCard>
-
-        {/* ── Equipment Detail Panels ── */}
-        {/* 1-col mobile → 2-col md+ */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <InfoCard label="Sung Jinwoo" accent="cyan">
-            <JinwooEquipPanel
-              weapon={selectedWeapon}
-              weapon2={selectedWeapon2}
-              artifact={selectedArtifact}
-              rune={selectedRune}
-              rune2={selectedRune2}
-              selectedCoreBody={selectedCoreBody}
-              selectedCoreMind={selectedCoreMind}
-              selectedCoreSpirit={selectedCoreSpirit}
-              qteSkills={selectedQteSkills}
-              ultimate={selectedUltimate}
-              survivalBlessings={selectedSurvivalBlessings}
-              empowermentBlessings={selectedEmpowermentBlessings}
-            />
-          </InfoCard>
-
-          {[0, 1, 2].map((slot) => {
-            const accents = ["purple", "blue", "orange"];
-            return (
-              <InfoCard
-                key={slot}
-                label={`🗡 ${selectedHunters[slot]?.name || hunterLabels[slot]}`}
-                accent={accents[slot]}
-              >
-                {selectedHunters[slot] ? (
-                  <HunterEquipPanel
-                    hunter={selectedHunters[slot]}
-                    artifact={hunterArtifacts[slot]}
-                    coreBody={hunterCoreBody[slot]}
-                    coreMind={hunterCoreMind[slot]}
-                    coreSpirit={hunterCoreSpirit[slot]}
-                  />
-                ) : (
-                  <p className="text-gray-600 text-sm">
-                    Select a hunter to see equipment.
-                  </p>
-                )}
-              </InfoCard>
-            );
-          })}
+        {/* ── Jinwoo Equipment Panel ── */}
+        <InfoCard label="⚔ Sung Jinwoo — Equipment" accent="cyan">
+          <JinwooEquipPanel
+            weapon={jinwooWeapon}
+            weapon2={jinwooWeapon2}
+            artifact={jinwooArtifact}
+            rune={jinwooRune}
+            rune2={jinwooRune2}
+            coreBody={jinwooCoreBody}
+            coreMind={jinwooCoreMind}
+            coreSpirit={jinwooCoreSpirit}
+            qteSkills={jinwooQteSkills}
+            ultimate={jinwooUltimate}
+            survivalBlessings={jinwooSurvivalBlessings}
+            empowermentBlessings={jinwooEmpowermentBlessings}
+          />
+        </InfoCard>
+        {/* ── 6 Hunter Equipment Panels ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+          {Array.from({ length: SLOTS }).map((_, slot) => (
+            <InfoCard
+              key={slot}
+              label={`🗡 ${selectedHunters[slot]?.name || `Hunter ${slot + 1}`}`}
+              accent={HUNTER_ACCENTS[slot]}
+            >
+              {selectedHunters[slot] ? (
+                <HunterEquipPanel
+                  hunter={selectedHunters[slot]}
+                  artifact={hunterArtifacts[slot]}
+                  coreBody={hunterCoreBody[slot]}
+                  coreMind={hunterCoreMind[slot]}
+                  coreSpirit={hunterCoreSpirit[slot]}
+                  accent={HUNTER_ACCENTS[slot]}
+                />
+              ) : (
+                <p className="text-gray-600 text-sm">
+                  Select a hunter to see equipment.
+                </p>
+              )}
+            </InfoCard>
+          ))}
         </div>
-
-        {/* ── Selectors ── */}
+        {/* ── Selectors (Admin Only) ── */}
         {userRole === "admin" && (
-          <InfoCard label="Selectors" accent="cyan">
+          <InfoCard label="Guild Boss Selectors" accent="yellow">
             <div className="space-y-5 sm:space-y-6">
-              {/* ─ Shadows ─ */}
+              {/* ─ Shadow ─ */}
               <div>
-                <SectionLabel color="text-purple-400">Shadows</SectionLabel>
+                <SectionLabel color="text-yellow-400">Shadow</SectionLabel>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                  {[0, 1, 2].map((slot) => (
-                    <ImageSelect
-                      key={slot}
-                      placeholder={`Select Shadow ${slot + 1}`}
-                      border="border-purple-500"
-                      items={shadows}
-                      keyFn={(s) => s.firestoreId}
-                      labelFn={(s) => s.name}
-                      imgFn={(s) => s.img}
-                      value={selectedShadows[slot]?.firestoreId || ""}
-                      onChange={(id) => {
-                        const updated = [...selectedShadows];
-                        updated[slot] =
-                          shadows.find((s) => s.firestoreId === id) || null;
-                        setSelectedShadows(updated);
-                      }}
-                    />
-                  ))}
+                  <ImageSelect
+                    placeholder="Select Shadow"
+                    border="border-yellow-500"
+                    items={shadows}
+                    keyFn={(s) => s.firestoreId}
+                    labelFn={(s) => s.name}
+                    imgFn={(s) => s.img}
+                    value={selectedShadow?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedShadow(
+                        shadows.find((s) => s.firestoreId === id) || null,
+                      )
+                    }
+                  />
                 </div>
               </div>
 
@@ -924,33 +970,33 @@ export default function BOT({ fireToast }) {
                   Jinwoo Equipment
                 </SectionLabel>
 
-                {/* Weapons + Artifact: 1-col → 2-col sm → 3-col lg */}
+                {/* Weapons + Artifact */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   <ImageSelect
                     placeholder="Select Weapon 1"
                     border="border-red-500"
-                    items={weapons}
+                    items={jinwooWeapons}
                     keyFn={(w) => w.firestoreId}
                     labelFn={(w) => w.weaponName}
                     imgFn={(w) => w.weaponImg?.[0] || w.weaponImg2?.[0]}
-                    value={selectedWeapon?.firestoreId || ""}
+                    value={jinwooWeapon?.firestoreId || ""}
                     onChange={(id) =>
-                      setSelectedWeapon(
-                        weapons.find((w) => w.firestoreId === id) || null,
+                      setJinwooWeapon(
+                        jinwooWeapons.find((w) => w.firestoreId === id) || null,
                       )
                     }
                   />
                   <ImageSelect
                     placeholder="Select Weapon 2"
                     border="border-red-500"
-                    items={weapons}
+                    items={jinwooWeapons}
                     keyFn={(w) => w.firestoreId}
                     labelFn={(w) => w.weaponName}
                     imgFn={(w) => w.weaponImg?.[0] || w.weaponImg2?.[0]}
-                    value={selectedWeapon2?.firestoreId || ""}
+                    value={jinwooWeapon2?.firestoreId || ""}
                     onChange={(id) =>
-                      setSelectedWeapon2(
-                        weapons.find((w) => w.firestoreId === id) || null,
+                      setJinwooWeapon2(
+                        jinwooWeapons.find((w) => w.firestoreId === id) || null,
                       )
                     }
                   />
@@ -961,16 +1007,16 @@ export default function BOT({ fireToast }) {
                     keyFn={(a) => a.firestoreId}
                     labelFn={(a) => a.name}
                     imgFn={(a) => a.pieces?.helmet || a.img}
-                    value={selectedArtifact?.firestoreId || ""}
+                    value={jinwooArtifact?.firestoreId || ""}
                     onChange={(id) =>
-                      setSelectedArtifact(
+                      setJinwooArtifact(
                         artifacts.find((a) => a.firestoreId === id) || null,
                       )
                     }
                   />
                 </div>
 
-                {/* Cores: 1-col → 3-col */}
+                {/* Cores */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mt-2 sm:mt-3">
                   <ImageSelect
                     placeholder="Select Body Core"
@@ -979,9 +1025,9 @@ export default function BOT({ fireToast }) {
                     keyFn={(c) => c.name}
                     labelFn={(c) => c.name}
                     imgFn={(c) => c.img}
-                    value={selectedCoreBody?.name || ""}
+                    value={jinwooCoreBody?.name || ""}
                     onChange={(id) =>
-                      setSelectedCoreBody(
+                      setJinwooCoreBody(
                         bodyCores.find((c) => c.name === id) || null,
                       )
                     }
@@ -993,30 +1039,30 @@ export default function BOT({ fireToast }) {
                     keyFn={(c) => c.name}
                     labelFn={(c) => c.name}
                     imgFn={(c) => c.img}
-                    value={selectedCoreMind?.name || ""}
+                    value={jinwooCoreMind?.name || ""}
                     onChange={(id) =>
-                      setSelectedCoreMind(
+                      setJinwooCoreMind(
                         mindCores.find((c) => c.name === id) || null,
                       )
                     }
                   />
                   <ImageSelect
                     placeholder="Select Spirit Core"
-                    border="border-green-500"
+                    border="border-purple-500"
                     items={spiritCores}
                     keyFn={(c) => c.name}
                     labelFn={(c) => c.name}
                     imgFn={(c) => c.img}
-                    value={selectedCoreSpirit?.name || ""}
+                    value={jinwooCoreSpirit?.name || ""}
                     onChange={(id) =>
-                      setSelectedCoreSpirit(
+                      setJinwooCoreSpirit(
                         spiritCores.find((c) => c.name === id) || null,
                       )
                     }
                   />
                 </div>
 
-                {/* Rune Stones: 1-col → 2-col */}
+                {/* Rune Stones */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-2 sm:mt-3">
                   <ImageSelect
                     placeholder="Select Rune Stone 1"
@@ -1029,9 +1075,9 @@ export default function BOT({ fireToast }) {
                     keyFn={(r) => r.firestoreId}
                     labelFn={(r) => r.data?.[0]?.Skills || r.firestoreId}
                     imgFn={(r) => r.data?.[0]?.Runes?.[0]?.skillImg}
-                    value={selectedRune?.firestoreId || ""}
+                    value={jinwooRune?.firestoreId || ""}
                     onChange={(id) =>
-                      setSelectedRune(
+                      setJinwooRune(
                         runes.find((r) => r.firestoreId === id) || null,
                       )
                     }
@@ -1047,9 +1093,9 @@ export default function BOT({ fireToast }) {
                     keyFn={(r) => r.firestoreId}
                     labelFn={(r) => r.data?.[0]?.Skills || r.firestoreId}
                     imgFn={(r) => r.data?.[0]?.Runes?.[0]?.skillImg}
-                    value={selectedRune2?.firestoreId || ""}
+                    value={jinwooRune2?.firestoreId || ""}
                     onChange={(id) =>
-                      setSelectedRune2(
+                      setJinwooRune2(
                         runes.find((r) => r.firestoreId === id) || null,
                       )
                     }
@@ -1057,12 +1103,11 @@ export default function BOT({ fireToast }) {
                 </div>
               </div>
 
-              {/* ─ QTE Skills & Ultimate ─ */}
+              {/* ─ Jinwoo QTE Skills & Ultimate ─ */}
               <div>
                 <SectionLabel color="text-yellow-400">
                   Jinwoo — QTE Skills & Ultimate
                 </SectionLabel>
-                {/* 2-col mobile → 4-col md+ */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
                   {[0, 1, 2].map((slot) => (
                     <ImageSelect
@@ -1075,13 +1120,8 @@ export default function BOT({ fireToast }) {
                       keyFn={(s) => s.firestoreId}
                       labelFn={(s) => s?.data?.[0]?.Skills || "QTE Skill"}
                       imgFn={(s) => s?.data?.[0]?.Runes?.[0]?.skillImg}
-                      value={selectedQteSkills?.[slot]?.firestoreId || ""}
-                      onChange={(id) => {
-                        const updated = [...selectedQteSkills];
-                        updated[slot] =
-                          runes.find((r) => r.firestoreId === id) || null;
-                        setSelectedQteSkills(updated);
-                      }}
+                      value={jinwooQteSkills[slot]?.firestoreId || ""}
+                      onChange={(id) => setJinwooQteSlot(slot, id)}
                     />
                   ))}
                   <ImageSelect
@@ -1093,9 +1133,9 @@ export default function BOT({ fireToast }) {
                     keyFn={(u) => u.firestoreId}
                     labelFn={(u) => u?.data?.[0]?.Skills || "Ultimate"}
                     imgFn={(u) => u?.data?.[0]?.Runes?.[0]?.skillImg}
-                    value={selectedUltimate?.firestoreId || ""}
+                    value={jinwooUltimate?.firestoreId || ""}
                     onChange={(id) =>
-                      setSelectedUltimate(
+                      setJinwooUltimate(
                         runes.find((r) => r.firestoreId === id) || null,
                       )
                     }
@@ -1103,7 +1143,7 @@ export default function BOT({ fireToast }) {
                 </div>
               </div>
 
-              {/* ─ Survival Blessings ─ */}
+              {/* ─ Jinwoo Survival Blessings ─ */}
               <div>
                 <SectionLabel color="text-green-400">
                   Jinwoo — Survival Blessings
@@ -1120,14 +1160,14 @@ export default function BOT({ fireToast }) {
                       keyFn={(b) => b.firestoreId}
                       labelFn={(b) => b.Blessing}
                       imgFn={(b) => b?.Runes?.[0]?.img}
-                      value={selectedSurvivalBlessings[slot]?.firestoreId || ""}
-                      onChange={(id) => setSurvival(slot, id)}
+                      value={jinwooSurvivalBlessings[slot]?.firestoreId || ""}
+                      onChange={(id) => setJinwooSurvivalSlot(slot, id)}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* ─ Empowerment Blessings ─ */}
+              {/* ─ Jinwoo Empowerment Blessings ─ */}
               <div>
                 <SectionLabel color="text-pink-400">
                   Jinwoo — Empowerment Blessings
@@ -1145,26 +1185,25 @@ export default function BOT({ fireToast }) {
                       labelFn={(b) => b.Blessing}
                       imgFn={(b) => b?.Runes?.[0]?.img}
                       value={
-                        selectedEmpowermentBlessings[slot]?.firestoreId || ""
+                        jinwooEmpowermentBlessings[slot]?.firestoreId || ""
                       }
-                      onChange={(id) => setEmpowerment(slot, id)}
+                      onChange={(id) => setJinwooEmpowermentSlot(slot, id)}
                     />
                   ))}
                 </div>
               </div>
 
-              {/* ─ Hunters ─ */}
-              {[0, 1, 2].map((slot) => (
+              {/* ─ 6 Hunters ─ */}
+              {Array.from({ length: SLOTS }).map((_, slot) => (
                 <div key={slot}>
-                  <SectionLabel color={hunterLabelColors[slot]}>
-                    {hunterLabels[slot]} Equipment
+                  <SectionLabel color={HUNTER_LABEL_COLORS[slot]}>
+                    Hunter {slot + 1} Equipment
                   </SectionLabel>
 
-                  {/* Hunter + Artifact: 1-col → 2-col */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                     <ImageSelect
-                      placeholder={`Select ${hunterLabels[slot]}`}
-                      border={hunterBorders[slot]}
+                      placeholder={`Select Hunter ${slot + 1}`}
+                      border={HUNTER_BORDERS[slot]}
                       items={hunters}
                       keyFn={(h) => h.firestoreId}
                       labelFn={(h) => h.name}
@@ -1174,7 +1213,7 @@ export default function BOT({ fireToast }) {
                     />
                     <ImageSelect
                       placeholder="Select Artifact"
-                      border="border-cyan-500"
+                      border={HUNTER_BORDERS[slot]}
                       items={artifacts}
                       keyFn={(a) => a.firestoreId}
                       labelFn={(a) => a.name}
@@ -1202,14 +1241,17 @@ export default function BOT({ fireToast }) {
                       ].map((skinImg, idx) => (
                         <button
                           key={`${slot}-${idx}`}
-                          onClick={() => {
-                            const updated = [...selectedHunterSkins];
-                            updated[slot] = skinImg;
-                            setSelectedHunterSkins(updated);
-                          }}
+                          onClick={() =>
+                            updateSlot(
+                              selectedHunterSkins,
+                              setSelectedHunterSkins,
+                              slot,
+                              skinImg,
+                            )
+                          }
                           className={`flex-shrink-0 rounded-xl overflow-hidden border-4 transition-all ${
                             selectedHunterSkins[slot] === skinImg
-                              ? "border-cyan-400 scale-105"
+                              ? "border-yellow-400 scale-105"
                               : "border-transparent"
                           }`}
                           style={{ width: "60px", height: "60px" }}
@@ -1224,7 +1266,7 @@ export default function BOT({ fireToast }) {
                     </div>
                   )}
 
-                  {/* Hunter Cores: 1-col → 3-col */}
+                  {/* Cores */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mt-2 sm:mt-3">
                     <ImageSelect
                       placeholder="Select Body Core"
@@ -1262,15 +1304,15 @@ export default function BOT({ fireToast }) {
             </div>
             <div className="pt-6 flex justify-center">
               <button
-                onClick={handleSaveBOT}
+                onClick={handleSaveGuildBoss}
                 disabled={saving}
-                className="px-8 py-3 rounded-2xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-black tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                className="px-8 py-3 rounded-2xl bg-yellow-500 hover:bg-yellow-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-black tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(234,179,8,0.45)]"
               >
-                {saving ? "Saving..." : "Save BOT Setup"}
+                {saving ? "Saving..." : "Save Guild Boss Setup"}
               </button>
             </div>
           </InfoCard>
-        )}
+        )}{" "}
       </div>
     </Background>
   );

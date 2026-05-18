@@ -11,7 +11,7 @@ import { auth } from "@/Firebase/FireBaseconfig";
 const ImageSelect = ({
   label,
   placeholder,
-  border = "border-cyan-500",
+  border = "border-red-500",
   items = [],
   keyFn,
   labelFn,
@@ -105,7 +105,7 @@ const ImageSelect = ({
                 </span>
                 {isActive && (
                   <svg
-                    className="w-4 h-4 ml-auto text-cyan-400 flex-shrink-0"
+                    className="w-4 h-4 ml-auto text-red-400 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -128,7 +128,7 @@ const ImageSelect = ({
 };
 
 // ─── InfoCard ─────────────────────────────────────────────────────────────────
-const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
+const InfoCard = ({ label, children, accent = "red", className = "" }) => {
   const borderColor =
     {
       cyan: "border-cyan-500/20",
@@ -139,7 +139,7 @@ const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
       blue: "border-blue-500/20",
       orange: "border-orange-500/20",
       pink: "border-pink-500/20",
-    }[accent] || "border-cyan-500/20";
+    }[accent] || "border-red-500/20";
 
   const labelColor =
     {
@@ -151,7 +151,7 @@ const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
       blue: "text-blue-400",
       orange: "text-orange-400",
       pink: "text-pink-400",
-    }[accent] || "text-cyan-400";
+    }[accent] || "text-red-400";
 
   return (
     <div
@@ -170,13 +170,7 @@ const InfoCard = ({ label, children, accent = "cyan", className = "" }) => {
 };
 
 // ─── ItemSlot ─────────────────────────────────────────────────────────────────
-const ItemSlot = ({
-  src,
-  label,
-  accent = "cyan",
-  size = "md",
-  empty = "?",
-}) => {
+const ItemSlot = ({ src, label, accent = "red", size = "md", empty = "?" }) => {
   const sizeClass = {
     sm: "w-10 h-10 sm:w-12 sm:h-12",
     md: "w-12 h-12 sm:w-16 sm:h-16",
@@ -193,7 +187,7 @@ const ItemSlot = ({
       orange: "border-orange-500/60",
       pink: "border-pink-500/60",
       blue: "border-blue-500/60",
-    }[accent] || "border-cyan-500/60";
+    }[accent] || "border-red-500/60";
 
   const glowColor =
     {
@@ -202,7 +196,7 @@ const ItemSlot = ({
       red: "shadow-red-500/20",
       yellow: "shadow-yellow-500/20",
       green: "shadow-green-500/20",
-    }[accent] || "shadow-cyan-500/20";
+    }[accent] || "shadow-red-500/20";
 
   return (
     <div className="flex flex-col items-center gap-1">
@@ -238,20 +232,20 @@ const ArtifactPiecesGrid = ({ artifact }) => {
     { key: "earrings", label: "Earrings" },
   ];
   return (
-    <InfoCard label="Artifact Set" accent="cyan">
+    <InfoCard label="Artifact Set" accent="red">
       <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
         {slots.map(({ key, label }) => (
           <ItemSlot
             key={key}
             src={pieces[key]}
             label={label}
-            accent="cyan"
+            accent="red"
             size="sm"
           />
         ))}
       </div>
       {artifact?.name && (
-        <p className="text-cyan-300 text-xs font-bold mt-2 text-center">
+        <p className="text-red-300 text-xs font-bold mt-2 text-center">
           {artifact.name}
         </p>
       )}
@@ -460,7 +454,7 @@ const JinwooEquipPanel = ({
 
 // ─── CharacterCard ────────────────────────────────────────────────────────────
 const CharacterCard = ({ name, imgSrc, isEmpty, emptyLabel }) => (
-  <div className="relative rounded-2xl overflow-hidden border border-cyan-500/30 bg-black/40 h-[160px] sm:h-[260px] md:h-[340px] lg:h-[420px]">
+  <div className="relative rounded-2xl overflow-hidden border border-red-500/30 bg-black/40 h-[160px] sm:h-[260px] md:h-[340px] lg:h-[420px]">
     {!isEmpty ? (
       <>
         <img
@@ -483,14 +477,14 @@ const CharacterCard = ({ name, imgSrc, isEmpty, emptyLabel }) => (
 );
 
 // ─── SectionLabel ─────────────────────────────────────────────────────────────
-const SectionLabel = ({ color = "text-cyan-400", children }) => (
+const SectionLabel = ({ color = "text-red-400", children }) => (
   <p className={`text-xs ${color} font-black uppercase tracking-widest mb-2`}>
     {children}
   </p>
 );
 
 // ─── Main BOT Component ───────────────────────────────────────────────────────
-export default function BOT({ fireToast }) {
+export default function POD2({ fireToast }) {
   const [hunters, setHunters] = useState([]);
   const [shadows, setShadows] = useState([]);
   const [weapons, setWeapons] = useState([]);
@@ -613,12 +607,10 @@ export default function BOT({ fireToast }) {
         });
         setCores(coreData);
         // ─── Load Saved BOT Setup ─────────────────────
-        const botRef = doc(db, "BOT", "Jinwoo Mode");
-
-        const botSnap = await getDoc(botRef);
-
-        if (botSnap.exists()) {
-          const data = botSnap.data();
+        const podRef = doc(db, "POD", "Main2");
+        const podSnap = await getDoc(podRef);
+        if (podSnap.exists()) {
+          const data = podSnap.data();
 
           // Shadows
           if (data.shadows) {
@@ -734,7 +726,7 @@ export default function BOT({ fireToast }) {
     "border-orange-500",
   ];
 
-  const handleSaveBOT = async () => {
+  const handleSavePOD = async () => {
     try {
       if (!currentUser) return;
 
@@ -771,17 +763,16 @@ export default function BOT({ fireToast }) {
         })),
       };
 
-      await setDoc(doc(db, "BOT", "Jinwoo Mode"), payload);
-
+      await setDoc(doc(db, "POD", "Main2"), payload);
       fireToast({
         type: "success",
-        message: "BOT (Jinwoo Mode) Setup Saved Successfully",
+        message: "POD Setup Saved Successfully",
       });
     } catch (error) {
       console.log(error);
       fireToast({
         type: "error",
-        message: "Failed To Save BOT (Jinwoo Mode) Setup",
+        message: "Failed To Save POD Setup",
       });
     } finally {
       setSaving(false);
@@ -792,15 +783,13 @@ export default function BOT({ fireToast }) {
     <Background>
       <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-2 sm:px-4 lg:px-6 py-4 sm:py-6 max-w-screen-2xl mx-auto w-full">
         {/* ── Title ── */}
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-cyan-400 text-center tracking-tight leading-tight">
-          Battlefield Of Time
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-red-400 text-center tracking-tight leading-tight">
+          Power Of Destruction{" "}
         </h1>
-        <p className="text-center text-gray-300 text-sm sm:text-lg">
-          Jinwoo Mode
-        </p>
+        <p className="text-center text-gray-300 text-sm sm:text-lg">Team 2 </p>
 
         {/* ── Main Team Preview ── */}
-        <InfoCard label="Main Team" accent="cyan">
+        <InfoCard label="Main Team" accent="red">
           {/* 2-col on mobile → 4-col on sm+ */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
             <CharacterCard
@@ -846,7 +835,8 @@ export default function BOT({ fireToast }) {
         {/* ── Equipment Detail Panels ── */}
         {/* 1-col mobile → 2-col md+ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-          <InfoCard label="Sung Jinwoo" accent="cyan">
+          <InfoCard label="Destruction Commander" accent="orange">
+            {" "}
             <JinwooEquipPanel
               weapon={selectedWeapon}
               weapon2={selectedWeapon2}
@@ -891,7 +881,8 @@ export default function BOT({ fireToast }) {
 
         {/* ── Selectors ── */}
         {userRole === "admin" && (
-          <InfoCard label="Selectors" accent="cyan">
+          <InfoCard label="POD Selectors" accent="red">
+            {" "}
             <div className="space-y-5 sm:space-y-6">
               {/* ─ Shadows ─ */}
               <div>
@@ -920,7 +911,7 @@ export default function BOT({ fireToast }) {
 
               {/* ─ Jinwoo Equipment ─ */}
               <div>
-                <SectionLabel color="text-cyan-400">
+                <SectionLabel color="text-red-400">
                   Jinwoo Equipment
                 </SectionLabel>
 
@@ -956,7 +947,7 @@ export default function BOT({ fireToast }) {
                   />
                   <ImageSelect
                     placeholder="Select Artifact"
-                    border="border-cyan-500"
+                    border="border-red-500"
                     items={artifacts}
                     keyFn={(a) => a.firestoreId}
                     labelFn={(a) => a.name}
@@ -1174,7 +1165,7 @@ export default function BOT({ fireToast }) {
                     />
                     <ImageSelect
                       placeholder="Select Artifact"
-                      border="border-cyan-500"
+                      border="border-red-500"
                       items={artifacts}
                       keyFn={(a) => a.firestoreId}
                       labelFn={(a) => a.name}
@@ -1209,7 +1200,7 @@ export default function BOT({ fireToast }) {
                           }}
                           className={`flex-shrink-0 rounded-xl overflow-hidden border-4 transition-all ${
                             selectedHunterSkins[slot] === skinImg
-                              ? "border-cyan-400 scale-105"
+                              ? "border-red-400 scale-105"
                               : "border-transparent"
                           }`}
                           style={{ width: "60px", height: "60px" }}
@@ -1262,11 +1253,11 @@ export default function BOT({ fireToast }) {
             </div>
             <div className="pt-6 flex justify-center">
               <button
-                onClick={handleSaveBOT}
+                onClick={handleSavePOD}
                 disabled={saving}
-                className="px-8 py-3 rounded-2xl bg-cyan-500 hover:bg-cyan-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-black tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+                className="px-8 py-3 rounded-2xl bg-red-500 hover:bg-red-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-black tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
               >
-                {saving ? "Saving..." : "Save BOT Setup"}
+                {saving ? "Saving..." : "Save POD Setup"}{" "}
               </button>
             </div>
           </InfoCard>

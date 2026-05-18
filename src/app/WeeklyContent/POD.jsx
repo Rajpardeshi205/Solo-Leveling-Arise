@@ -1,10 +1,12 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/Firebase/FireBaseconfig";
 import Background from "@/Components/Background";
+import { onAuthStateChanged } from "firebase/auth";
 
+import { collection, getDocs, setDoc, getDoc, doc } from "firebase/firestore";
+import { auth } from "@/Firebase/FireBaseconfig";
 // ─── ImageSelect ──────────────────────────────────────────────────────────────
 const ImageSelect = ({
   label,
@@ -316,46 +318,163 @@ const HunterEquipPanel = ({
   );
 };
 
-// ─── CharacterCard ────────────────────────────────────────────────────────────
-const CharacterCard = ({
-  name,
-  imgSrc,
-  isEmpty,
-  emptyLabel,
-  accent = "red",
-}) => {
-  const borderColor =
-    {
-      red: "border-red-500/30",
-      orange: "border-orange-500/30",
-      yellow: "border-yellow-500/30",
-    }[accent] || "border-red-500/30";
+// ─── JinwooEquipPanel ─────────────────────────────────────────────────────────
+const JinwooEquipPanel = ({
+  weapon,
+  weapon2,
+  artifact,
+  rune,
+  rune2,
+  selectedCoreBody,
+  selectedCoreMind,
+  selectedCoreSpirit,
+  qteSkills,
+  ultimate,
+  survivalBlessings,
+  empowermentBlessings,
+}) => (
+  <div className="space-y-3">
+    <InfoCard label="Weapons" accent="red">
+      <div className="flex gap-3 sm:gap-4 flex-wrap">
+        <ItemSlot
+          src={weapon?.weaponImg?.[0] || weapon?.weaponImg2?.[0]}
+          label={weapon?.weaponName || "Weapon 1"}
+          accent="red"
+          size="lg"
+        />
+        <ItemSlot
+          src={weapon2?.weaponImg?.[0] || weapon2?.weaponImg2?.[0]}
+          label={weapon2?.weaponName || "Weapon 2"}
+          accent="red"
+          size="lg"
+        />
+      </div>
+    </InfoCard>
 
-  return (
-    <div
-      className={`relative rounded-2xl overflow-hidden border ${borderColor} bg-black/40 h-[160px] sm:h-[260px] md:h-[340px] lg:h-[420px]`}
-    >
-      {!isEmpty ? (
-        <>
-          <img
-            src={imgSrc}
-            className="w-full h-full object-cover object-top"
-            alt={name}
+    <ArtifactPiecesGrid artifact={artifact} />
+
+    <InfoCard label="Rune Stones" accent="purple">
+      <div className="flex gap-3 sm:gap-4 flex-wrap">
+        <ItemSlot
+          src={rune?.data?.[0]?.Runes?.[0]?.skillImg}
+          label={rune?.data?.[0]?.Skills || "Rune 1"}
+          accent="purple"
+          size="md"
+        />
+        <ItemSlot
+          src={rune2?.data?.[0]?.Runes?.[0]?.skillImg}
+          label={rune2?.data?.[0]?.Skills || "Rune 2"}
+          accent="purple"
+          size="md"
+        />
+      </div>
+    </InfoCard>
+
+    <InfoCard label="Cores" accent="red">
+      <div className="flex justify-around gap-2 sm:gap-4">
+        <ItemSlot
+          src={selectedCoreBody?.img}
+          label={selectedCoreBody?.name || "Body"}
+          accent="red"
+          size="md"
+          empty="⬡"
+        />
+        <ItemSlot
+          src={selectedCoreMind?.img}
+          label={selectedCoreMind?.name || "Mind"}
+          accent="blue"
+          size="md"
+          empty="⬡"
+        />
+        <ItemSlot
+          src={selectedCoreSpirit?.img}
+          label={selectedCoreSpirit?.name || "Spirit"}
+          accent="green"
+          size="md"
+          empty="⬡"
+        />
+      </div>
+    </InfoCard>
+
+    <InfoCard label="QTE Skills & Ultimate" accent="yellow">
+      <div className="flex gap-2 sm:gap-3 flex-wrap">
+        {(qteSkills || [null, null, null]).map((skill, i) => (
+          <ItemSlot
+            key={i}
+            src={skill?.data?.[0]?.Runes?.[0]?.skillImg || "/placeholder.png"}
+            label={skill?.data?.[0]?.Skills || `QTE ${i + 1}`}
+            accent="yellow"
+            size="md"
           />
-          <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-black/90 to-transparent">
-            <h2 className="text-white font-bold text-xs sm:text-base truncate">
-              {name}
-            </h2>
-          </div>
-        </>
-      ) : (
-        <div className="h-full flex items-center justify-center text-gray-600 text-xs sm:text-sm text-center px-2">
-          {emptyLabel}
+        ))}
+        <ItemSlot
+          src={ultimate?.data?.[0]?.Runes?.[0]?.skillImg || "/placeholder.png"}
+          label={ultimate?.data?.[0]?.Skills || "Ultimate"}
+          accent="orange"
+          size="md"
+        />
+      </div>
+    </InfoCard>
+
+    <InfoCard label="Survival Blessings" accent="green">
+      <div className="flex gap-2 sm:gap-3 flex-wrap">
+        {survivalBlessings
+          ?.filter((item) => item?.Runes?.[0]?.type === "Survival")
+          .slice(0, 4)
+          .map((item, i) => (
+            <ItemSlot
+              key={i}
+              src={item?.Runes?.[0]?.img || "/placeholder.png"}
+              label={item?.Blessing || `Blessing ${i + 1}`}
+              accent="green"
+              size="md"
+            />
+          ))}
+      </div>
+    </InfoCard>
+
+    <InfoCard label="Empowerment Blessings" accent="pink">
+      <div className="flex gap-2 sm:gap-3 flex-wrap">
+        {empowermentBlessings
+          ?.filter((item) => item?.Runes?.[0]?.type === "Empowerment")
+          .slice(0, 4)
+          .map((item, i) => (
+            <ItemSlot
+              key={i}
+              src={item?.Runes?.[0]?.img || "/placeholder.png"}
+              label={item?.Blessing || `Blessing ${i + 1}`}
+              accent="pink"
+              size="md"
+            />
+          ))}
+      </div>
+    </InfoCard>
+  </div>
+);
+
+// ─── CharacterCard ────────────────────────────────────────────────────────────
+const CharacterCard = ({ name, imgSrc, isEmpty, emptyLabel }) => (
+  <div className="relative rounded-2xl overflow-hidden border border-red-500/30 bg-black/40 h-[160px] sm:h-[260px] md:h-[340px] lg:h-[420px]">
+    {!isEmpty ? (
+      <>
+        <img
+          src={imgSrc}
+          className="w-full h-full object-cover object-top"
+          alt={name}
+        />
+        <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-3 bg-gradient-to-t from-black/90 to-transparent">
+          <h2 className="text-white font-bold text-xs sm:text-base truncate">
+            {name}
+          </h2>
         </div>
-      )}
-    </div>
-  );
-};
+      </>
+    ) : (
+      <div className="h-full flex items-center justify-center text-gray-600 text-xs sm:text-sm text-center px-2">
+        {emptyLabel}
+      </div>
+    )}
+  </div>
+);
 
 // ─── SectionLabel ─────────────────────────────────────────────────────────────
 const SectionLabel = ({ color = "text-red-400", children }) => (
@@ -364,15 +483,45 @@ const SectionLabel = ({ color = "text-red-400", children }) => (
   </p>
 );
 
-// ─── Main POD Component ───────────────────────────────────────────────────────
-export default function POD() {
+// ─── Main BOT Component ───────────────────────────────────────────────────────
+export default function POD({ fireToast }) {
   const [hunters, setHunters] = useState([]);
   const [shadows, setShadows] = useState([]);
+  const [weapons, setWeapons] = useState([]);
   const [artifacts, setArtifacts] = useState([]);
+  const [cores, setCores] = useState([]);
+  const [runes, setRunes] = useState([]);
+  const [blessings, setBlessings] = useState([]);
+  const [qteSkillsList, setQteSkillsList] = useState([]);
+  const [ultimatesList, setUltimatesList] = useState([]);
+
+  const [selectedCoreBody, setSelectedCoreBody] = useState(null);
+  const [selectedCoreMind, setSelectedCoreMind] = useState(null);
+  const [selectedCoreSpirit, setSelectedCoreSpirit] = useState(null);
 
   const [bodyCores, setBodyCores] = useState([]);
   const [mindCores, setMindCores] = useState([]);
   const [spiritCores, setSpiritCores] = useState([]);
+
+  const [selectedQteSkills, setSelectedQteSkills] = useState([
+    null,
+    null,
+    null,
+  ]);
+  const [selectedUltimate, setSelectedUltimate] = useState(null);
+  const [selectedWeapon, setSelectedWeapon] = useState(null);
+  const [selectedWeapon2, setSelectedWeapon2] = useState(null);
+  const [selectedArtifact, setSelectedArtifact] = useState(null);
+  const [selectedRune, setSelectedRune] = useState(null);
+  const [selectedRune2, setSelectedRune2] = useState(null);
+  const [selectedSurvivalBlessings, setSelectedSurvivalBlessings] = useState([
+    null,
+    null,
+    null,
+    null,
+  ]);
+  const [selectedEmpowermentBlessings, setSelectedEmpowermentBlessings] =
+    useState([null, null, null, null]);
 
   const [selectedHunters, setSelectedHunters] = useState([null, null, null]);
   const [hunterArtifacts, setHunterArtifacts] = useState([null, null, null]);
@@ -385,7 +534,9 @@ export default function POD() {
     null,
   ]);
   const [selectedShadows, setSelectedShadows] = useState([null, null, null]);
-
+  const [userRole, setUserRole] = useState(null);
+  const [currentUser, setCurrentUser] = useState(null);
+  const [saving, setSaving] = useState(false);
   // ─── Fetch Cores ─────────────────────────────────────────────────────────
   const fetchCores = async () => {
     try {
@@ -402,6 +553,33 @@ export default function POD() {
   };
 
   useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        setUserRole(null);
+        return;
+      }
+
+      setCurrentUser(user);
+
+      try {
+        const snapshot = await getDocs(collection(db, "users"));
+
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+
+          if (data.uid === user.uid) {
+            setUserRole(data.role || "user");
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const snap = async (col) => {
@@ -410,7 +588,81 @@ export default function POD() {
         };
         setHunters(await snap("hunters"));
         setShadows(await snap("shadows"));
+        setWeapons(await snap("jinwooWeapons"));
         setArtifacts(await snap("artifacts"));
+        setRunes(await snap("runes"));
+        setBlessings(await snap("blessings"));
+        setQteSkillsList(await snap("qteSkills"));
+        setUltimatesList(await snap("ultimates"));
+
+        const coreSnap = await getDocs(collection(db, "cores"));
+        const coreData = [];
+        coreSnap.docs.forEach((doc) => {
+          const data = doc.data();
+          if (Array.isArray(data.items)) {
+            data.items.forEach((item, index) => {
+              coreData.push({ firestoreId: `${doc.id}-${index}`, ...item });
+            });
+          }
+        });
+        setCores(coreData);
+        // ─── Load Saved BOT Setup ─────────────────────
+        const podRef = doc(db, "POD", "Main");
+        const podSnap = await getDoc(podRef);
+        if (podSnap.exists()) {
+          const data = podSnap.data();
+
+          // Shadows
+          if (data.shadows) {
+            setSelectedShadows(data.shadows);
+          }
+
+          // Jinwoo
+          if (data.jinwoo) {
+            setSelectedWeapon(data.jinwoo.weapon1 || null);
+
+            setSelectedWeapon2(data.jinwoo.weapon2 || null);
+
+            setSelectedArtifact(data.jinwoo.artifact || null);
+
+            setSelectedRune(data.jinwoo.rune1 || null);
+
+            setSelectedRune2(data.jinwoo.rune2 || null);
+
+            setSelectedCoreBody(data.jinwoo.bodyCore || null);
+
+            setSelectedCoreMind(data.jinwoo.mindCore || null);
+
+            setSelectedCoreSpirit(data.jinwoo.spiritCore || null);
+
+            setSelectedQteSkills(data.jinwoo.qteSkills || [null, null, null]);
+
+            setSelectedUltimate(data.jinwoo.ultimate || null);
+
+            setSelectedSurvivalBlessings(
+              data.jinwoo.survivalBlessings || [null, null, null, null],
+            );
+
+            setSelectedEmpowermentBlessings(
+              data.jinwoo.empowermentBlessings || [null, null, null, null],
+            );
+          }
+
+          // Hunters
+          if (data.hunters) {
+            setSelectedHunters(data.hunters.map((h) => h.hunter || null));
+
+            setHunterArtifacts(data.hunters.map((h) => h.artifact || null));
+
+            setHunterCoreBody(data.hunters.map((h) => h.bodyCore || null));
+
+            setHunterCoreMind(data.hunters.map((h) => h.mindCore || null));
+
+            setHunterCoreSpirit(data.hunters.map((h) => h.spiritCore || null));
+
+            setSelectedHunterSkins(data.hunters.map((h) => h.skin || null));
+          }
+        }
       } catch (error) {
         console.error(error);
       }
@@ -445,55 +697,124 @@ export default function POD() {
     updated[slot] = spiritCores.find((c) => c.name === name) || null;
     setHunterCoreSpirit(updated);
   };
+  const setSurvival = (slot, id) => {
+    const updated = [...selectedSurvivalBlessings];
+    updated[slot] =
+      blessings.find(
+        (b) => b.firestoreId === id && b?.Runes?.[0]?.type === "Survival",
+      ) || null;
+    setSelectedSurvivalBlessings(updated);
+  };
+  const setEmpowerment = (slot, id) => {
+    const updated = [...selectedEmpowermentBlessings];
+    updated[slot] =
+      blessings.find(
+        (b) => b.firestoreId === id && b?.Runes?.[0]?.type === "Empowerment",
+      ) || null;
+    setSelectedEmpowermentBlessings(updated);
+  };
 
   const hunterLabels = ["Hunter 1", "Hunter 2", "Hunter 3"];
   const hunterLabelColors = [
-    "text-red-400",
+    "text-purple-400",
+    "text-blue-400",
     "text-orange-400",
-    "text-yellow-400",
   ];
   const hunterBorders = [
-    "border-red-500",
+    "border-purple-500",
+    "border-blue-500",
     "border-orange-500",
-    "border-yellow-500",
   ];
-  const hunterAccents = ["red", "orange", "yellow"];
+
+  const handleSavePOD = async () => {
+    try {
+      if (!currentUser) return;
+
+      setSaving(true);
+
+      const payload = {
+        updatedBy: currentUser.uid,
+        updatedAt: new Date(),
+
+        shadows: selectedShadows,
+
+        jinwoo: {
+          weapon1: selectedWeapon,
+          weapon2: selectedWeapon2,
+          artifact: selectedArtifact,
+          rune1: selectedRune,
+          rune2: selectedRune2,
+          bodyCore: selectedCoreBody,
+          mindCore: selectedCoreMind,
+          spiritCore: selectedCoreSpirit,
+          qteSkills: selectedQteSkills,
+          ultimate: selectedUltimate,
+          survivalBlessings: selectedSurvivalBlessings,
+          empowermentBlessings: selectedEmpowermentBlessings,
+        },
+
+        hunters: selectedHunters.map((hunter, index) => ({
+          hunter,
+          artifact: hunterArtifacts[index],
+          bodyCore: hunterCoreBody[index],
+          mindCore: hunterCoreMind[index],
+          spiritCore: hunterCoreSpirit[index],
+          skin: selectedHunterSkins[index],
+        })),
+      };
+
+      await setDoc(doc(db, "POD", "Main"), payload);
+      fireToast({
+        type: "success",
+        message: "POD Setup Saved Successfully",
+      });
+    } catch (error) {
+      console.log(error);
+      fireToast({
+        type: "error",
+        message: "Failed To Save POD Setup",
+      });
+    } finally {
+      setSaving(false);
+    }
+  };
 
   return (
     <Background>
       <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-2 sm:px-4 lg:px-6 py-4 sm:py-6 max-w-screen-2xl mx-auto w-full">
         {/* ── Title ── */}
         <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black text-red-400 text-center tracking-tight leading-tight">
-          Power Of Destruction
+          Power Of Destruction{" "}
         </h1>
-        <p className="text-center text-gray-300 text-sm sm:text-lg">
-          Fight against massive bosses and deal maximum damage for rewards.
-        </p>
+        <p className="text-center text-gray-300 text-sm sm:text-lg">Team 1 </p>
 
         {/* ── Main Team Preview ── */}
         <InfoCard label="Main Team" accent="red">
-          {/* 3-col for 3 hunters */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-4">
+          {/* 2-col on mobile → 4-col on sm+ */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4">
+            <CharacterCard
+              name="Sung Jinwoo"
+              imgSrc="https://resources.vortexgaming.io/upload/post/2026/05/10/4a641924d08d47e7b531623c40ff1ad0.webp"
+            />
             {selectedHunters.map((hunter, index) => (
               <CharacterCard
                 key={index}
                 name={hunter?.name}
                 imgSrc={
-                  selectedHunterSkins[index] || hunter?.skin1[0] || hunter?.img1
+                  selectedHunterSkins[index] || hunter?.img2 || hunter?.img1
                 }
                 isEmpty={!hunter}
                 emptyLabel={`Empty Hunter ${index + 1}`}
-                accent={hunterAccents[index]}
               />
             ))}
           </div>
 
-          {/* Shadows – 3-col */}
+          {/* Shadows – 3-col always (only 3 slots) */}
           <div className="pt-3 sm:pt-4 grid grid-cols-3 gap-2 sm:gap-4">
             {selectedShadows.map((shadow, index) => (
               <div
                 key={index}
-                className="relative rounded-xl overflow-hidden border border-red-500/30 bg-black/40 h-[80px] sm:h-[110px] md:h-[132px]"
+                className="relative rounded-xl overflow-hidden border border-purple-500/30 bg-black/40 h-[80px] sm:h-[110px] md:h-[132px]"
               >
                 {shadow ? (
                   <img
@@ -512,76 +833,117 @@ export default function POD() {
         </InfoCard>
 
         {/* ── Equipment Detail Panels ── */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          {[0, 1, 2].map((slot) => (
-            <InfoCard
-              key={slot}
-              label={`🗡 ${selectedHunters[slot]?.name || hunterLabels[slot]}`}
-              accent={hunterAccents[slot]}
-            >
-              {selectedHunters[slot] ? (
-                <HunterEquipPanel
-                  hunter={selectedHunters[slot]}
-                  artifact={hunterArtifacts[slot]}
-                  coreBody={hunterCoreBody[slot]}
-                  coreMind={hunterCoreMind[slot]}
-                  coreSpirit={hunterCoreSpirit[slot]}
-                />
-              ) : (
-                <p className="text-gray-600 text-sm">
-                  Select a hunter to see equipment.
-                </p>
-              )}
-            </InfoCard>
-          ))}
+        {/* 1-col mobile → 2-col md+ */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+          <InfoCard label="Destruction Commander" accent="orange">
+            {" "}
+            <JinwooEquipPanel
+              weapon={selectedWeapon}
+              weapon2={selectedWeapon2}
+              artifact={selectedArtifact}
+              rune={selectedRune}
+              rune2={selectedRune2}
+              selectedCoreBody={selectedCoreBody}
+              selectedCoreMind={selectedCoreMind}
+              selectedCoreSpirit={selectedCoreSpirit}
+              qteSkills={selectedQteSkills}
+              ultimate={selectedUltimate}
+              survivalBlessings={selectedSurvivalBlessings}
+              empowermentBlessings={selectedEmpowermentBlessings}
+            />
+          </InfoCard>
+
+          {[0, 1, 2].map((slot) => {
+            const accents = ["purple", "blue", "orange"];
+            return (
+              <InfoCard
+                key={slot}
+                label={`🗡 ${selectedHunters[slot]?.name || hunterLabels[slot]}`}
+                accent={accents[slot]}
+              >
+                {selectedHunters[slot] ? (
+                  <HunterEquipPanel
+                    hunter={selectedHunters[slot]}
+                    artifact={hunterArtifacts[slot]}
+                    coreBody={hunterCoreBody[slot]}
+                    coreMind={hunterCoreMind[slot]}
+                    coreSpirit={hunterCoreSpirit[slot]}
+                  />
+                ) : (
+                  <p className="text-gray-600 text-sm">
+                    Select a hunter to see equipment.
+                  </p>
+                )}
+              </InfoCard>
+            );
+          })}
         </div>
 
         {/* ── Selectors ── */}
-        <InfoCard label="Selectors" accent="red">
-          <div className="space-y-5 sm:space-y-6">
-            {/* ─ Shadows ─ */}
-            <div>
-              <SectionLabel color="text-red-400">Shadows</SectionLabel>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                {[0, 1, 2].map((slot) => (
-                  <ImageSelect
-                    key={slot}
-                    placeholder={`Select Shadow ${slot + 1}`}
-                    border="border-red-500"
-                    items={shadows}
-                    keyFn={(s) => s.firestoreId}
-                    labelFn={(s) => s.name}
-                    imgFn={(s) => s.img}
-                    value={selectedShadows[slot]?.firestoreId || ""}
-                    onChange={(id) => {
-                      const updated = [...selectedShadows];
-                      updated[slot] =
-                        shadows.find((s) => s.firestoreId === id) || null;
-                      setSelectedShadows(updated);
-                    }}
-                  />
-                ))}
+        {userRole === "admin" && (
+          <InfoCard label="POD Selectors" accent="red">
+            {" "}
+            <div className="space-y-5 sm:space-y-6">
+              {/* ─ Shadows ─ */}
+              <div>
+                <SectionLabel color="text-purple-400">Shadows</SectionLabel>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
+                  {[0, 1, 2].map((slot) => (
+                    <ImageSelect
+                      key={slot}
+                      placeholder={`Select Shadow ${slot + 1}`}
+                      border="border-purple-500"
+                      items={shadows}
+                      keyFn={(s) => s.firestoreId}
+                      labelFn={(s) => s.name}
+                      imgFn={(s) => s.img}
+                      value={selectedShadows[slot]?.firestoreId || ""}
+                      onChange={(id) => {
+                        const updated = [...selectedShadows];
+                        updated[slot] =
+                          shadows.find((s) => s.firestoreId === id) || null;
+                        setSelectedShadows(updated);
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
 
-            {/* ─ Hunters ─ */}
-            {[0, 1, 2].map((slot) => (
-              <div key={slot}>
-                <SectionLabel color={hunterLabelColors[slot]}>
-                  {hunterLabels[slot]} Equipment
+              {/* ─ Jinwoo Equipment ─ */}
+              <div>
+                <SectionLabel color="text-red-400">
+                  Jinwoo Equipment
                 </SectionLabel>
 
-                {/* Hunter + Artifact */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                {/* Weapons + Artifact: 1-col → 2-col sm → 3-col lg */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                   <ImageSelect
-                    placeholder={`Select ${hunterLabels[slot]}`}
-                    border={hunterBorders[slot]}
-                    items={hunters}
-                    keyFn={(h) => h.firestoreId}
-                    labelFn={(h) => h.name}
-                    imgFn={(h) => h.img2 || h.img1}
-                    value={selectedHunters[slot]?.firestoreId || ""}
-                    onChange={(id) => setHunterSlot(slot, id)}
+                    placeholder="Select Weapon 1"
+                    border="border-red-500"
+                    items={weapons}
+                    keyFn={(w) => w.firestoreId}
+                    labelFn={(w) => w.weaponName}
+                    imgFn={(w) => w.weaponImg?.[0] || w.weaponImg2?.[0]}
+                    value={selectedWeapon?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedWeapon(
+                        weapons.find((w) => w.firestoreId === id) || null,
+                      )
+                    }
+                  />
+                  <ImageSelect
+                    placeholder="Select Weapon 2"
+                    border="border-red-500"
+                    items={weapons}
+                    keyFn={(w) => w.firestoreId}
+                    labelFn={(w) => w.weaponName}
+                    imgFn={(w) => w.weaponImg?.[0] || w.weaponImg2?.[0]}
+                    value={selectedWeapon2?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedWeapon2(
+                        weapons.find((w) => w.firestoreId === id) || null,
+                      )
+                    }
                   />
                   <ImageSelect
                     placeholder="Select Artifact"
@@ -590,52 +952,16 @@ export default function POD() {
                     keyFn={(a) => a.firestoreId}
                     labelFn={(a) => a.name}
                     imgFn={(a) => a.pieces?.helmet || a.img}
-                    value={hunterArtifacts[slot]?.firestoreId || ""}
-                    onChange={(id) => setHunterArtifactSlot(slot, id)}
+                    value={selectedArtifact?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedArtifact(
+                        artifacts.find((a) => a.firestoreId === id) || null,
+                      )
+                    }
                   />
                 </div>
 
-                {/* Skin picker */}
-                {[
-                  ...(selectedHunters[slot]?.skin1 || []),
-                  ...(selectedHunters[slot]?.skin2 || []),
-                  ...(selectedHunters[slot]?.skin3 || []),
-                  ...(selectedHunters[slot]?.skin4 || []),
-                  ...(selectedHunters[slot]?.skin5 || []),
-                ].length > 0 && (
-                  <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 mt-2">
-                    {[
-                      ...(selectedHunters[slot]?.skin1 || []),
-                      ...(selectedHunters[slot]?.skin2 || []),
-                      ...(selectedHunters[slot]?.skin3 || []),
-                      ...(selectedHunters[slot]?.skin4 || []),
-                      ...(selectedHunters[slot]?.skin5 || []),
-                    ].map((skinImg, idx) => (
-                      <button
-                        key={`${slot}-${idx}`}
-                        onClick={() => {
-                          const updated = [...selectedHunterSkins];
-                          updated[slot] = skinImg;
-                          setSelectedHunterSkins(updated);
-                        }}
-                        className={`flex-shrink-0 rounded-xl overflow-hidden border-4 transition-all ${
-                          selectedHunterSkins[slot] === skinImg
-                            ? "border-red-400 scale-105"
-                            : "border-transparent"
-                        }`}
-                        style={{ width: "60px", height: "60px" }}
-                      >
-                        <img
-                          src={skinImg}
-                          alt={`skin-${idx}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
-                  </div>
-                )}
-
-                {/* Hunter Cores */}
+                {/* Cores: 1-col → 3-col */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mt-2 sm:mt-3">
                   <ImageSelect
                     placeholder="Select Body Core"
@@ -644,8 +970,12 @@ export default function POD() {
                     keyFn={(c) => c.name}
                     labelFn={(c) => c.name}
                     imgFn={(c) => c.img}
-                    value={hunterCoreBody[slot]?.name || ""}
-                    onChange={(id) => setHunterCoreBodySlot(slot, id)}
+                    value={selectedCoreBody?.name || ""}
+                    onChange={(id) =>
+                      setSelectedCoreBody(
+                        bodyCores.find((c) => c.name === id) || null,
+                      )
+                    }
                   />
                   <ImageSelect
                     placeholder="Select Mind Core"
@@ -654,24 +984,284 @@ export default function POD() {
                     keyFn={(c) => c.name}
                     labelFn={(c) => c.name}
                     imgFn={(c) => c.img}
-                    value={hunterCoreMind[slot]?.name || ""}
-                    onChange={(id) => setHunterCoreMindSlot(slot, id)}
+                    value={selectedCoreMind?.name || ""}
+                    onChange={(id) =>
+                      setSelectedCoreMind(
+                        mindCores.find((c) => c.name === id) || null,
+                      )
+                    }
                   />
                   <ImageSelect
                     placeholder="Select Spirit Core"
-                    border="border-purple-500"
+                    border="border-green-500"
                     items={spiritCores}
                     keyFn={(c) => c.name}
                     labelFn={(c) => c.name}
                     imgFn={(c) => c.img}
-                    value={hunterCoreSpirit[slot]?.name || ""}
-                    onChange={(id) => setHunterCoreSpiritSlot(slot, id)}
+                    value={selectedCoreSpirit?.name || ""}
+                    onChange={(id) =>
+                      setSelectedCoreSpirit(
+                        spiritCores.find((c) => c.name === id) || null,
+                      )
+                    }
+                  />
+                </div>
+
+                {/* Rune Stones: 1-col → 2-col */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-2 sm:mt-3">
+                  <ImageSelect
+                    placeholder="Select Rune Stone 1"
+                    border="border-purple-500"
+                    items={runes.filter(
+                      (r) =>
+                        !r?.data?.[0]?.Skills?.includes("(QTE)") &&
+                        !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
+                    )}
+                    keyFn={(r) => r.firestoreId}
+                    labelFn={(r) => r.data?.[0]?.Skills || r.firestoreId}
+                    imgFn={(r) => r.data?.[0]?.Runes?.[0]?.skillImg}
+                    value={selectedRune?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedRune(
+                        runes.find((r) => r.firestoreId === id) || null,
+                      )
+                    }
+                  />
+                  <ImageSelect
+                    placeholder="Select Rune Stone 2"
+                    border="border-purple-500"
+                    items={runes.filter(
+                      (r) =>
+                        !r?.data?.[0]?.Skills?.includes("(QTE)") &&
+                        !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
+                    )}
+                    keyFn={(r) => r.firestoreId}
+                    labelFn={(r) => r.data?.[0]?.Skills || r.firestoreId}
+                    imgFn={(r) => r.data?.[0]?.Runes?.[0]?.skillImg}
+                    value={selectedRune2?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedRune2(
+                        runes.find((r) => r.firestoreId === id) || null,
+                      )
+                    }
                   />
                 </div>
               </div>
-            ))}
-          </div>
-        </InfoCard>
+
+              {/* ─ QTE Skills & Ultimate ─ */}
+              <div>
+                <SectionLabel color="text-yellow-400">
+                  Jinwoo — QTE Skills & Ultimate
+                </SectionLabel>
+                {/* 2-col mobile → 4-col md+ */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+                  {[0, 1, 2].map((slot) => (
+                    <ImageSelect
+                      key={slot}
+                      placeholder={`QTE Skill ${slot + 1}`}
+                      border="border-yellow-500"
+                      items={runes.filter((r) =>
+                        r?.data?.[0]?.Skills?.includes("(QTE)"),
+                      )}
+                      keyFn={(s) => s.firestoreId}
+                      labelFn={(s) => s?.data?.[0]?.Skills || "QTE Skill"}
+                      imgFn={(s) => s?.data?.[0]?.Runes?.[0]?.skillImg}
+                      value={selectedQteSkills?.[slot]?.firestoreId || ""}
+                      onChange={(id) => {
+                        const updated = [...selectedQteSkills];
+                        updated[slot] =
+                          runes.find((r) => r.firestoreId === id) || null;
+                        setSelectedQteSkills(updated);
+                      }}
+                    />
+                  ))}
+                  <ImageSelect
+                    placeholder="Select Ultimate"
+                    border="border-orange-500"
+                    items={runes.filter((r) =>
+                      r?.data?.[0]?.Skills?.includes("(Ultimate)"),
+                    )}
+                    keyFn={(u) => u.firestoreId}
+                    labelFn={(u) => u?.data?.[0]?.Skills || "Ultimate"}
+                    imgFn={(u) => u?.data?.[0]?.Runes?.[0]?.skillImg}
+                    value={selectedUltimate?.firestoreId || ""}
+                    onChange={(id) =>
+                      setSelectedUltimate(
+                        runes.find((r) => r.firestoreId === id) || null,
+                      )
+                    }
+                  />
+                </div>
+              </div>
+
+              {/* ─ Survival Blessings ─ */}
+              <div>
+                <SectionLabel color="text-green-400">
+                  Jinwoo — Survival Blessings
+                </SectionLabel>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+                  {[0, 1, 2, 3].map((slot) => (
+                    <ImageSelect
+                      key={slot}
+                      placeholder={`Survival ${slot + 1}`}
+                      border="border-green-500"
+                      items={blessings.filter(
+                        (b) => b?.Runes?.[0]?.type === "Survival",
+                      )}
+                      keyFn={(b) => b.firestoreId}
+                      labelFn={(b) => b.Blessing}
+                      imgFn={(b) => b?.Runes?.[0]?.img}
+                      value={selectedSurvivalBlessings[slot]?.firestoreId || ""}
+                      onChange={(id) => setSurvival(slot, id)}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* ─ Empowerment Blessings ─ */}
+              <div>
+                <SectionLabel color="text-pink-400">
+                  Jinwoo — Empowerment Blessings
+                </SectionLabel>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+                  {[0, 1, 2, 3].map((slot) => (
+                    <ImageSelect
+                      key={slot}
+                      placeholder={`Empower ${slot + 1}`}
+                      border="border-pink-500"
+                      items={blessings.filter(
+                        (b) => b?.Runes?.[0]?.type === "Empowerment",
+                      )}
+                      keyFn={(b) => b.firestoreId}
+                      labelFn={(b) => b.Blessing}
+                      imgFn={(b) => b?.Runes?.[0]?.img}
+                      value={
+                        selectedEmpowermentBlessings[slot]?.firestoreId || ""
+                      }
+                      onChange={(id) => setEmpowerment(slot, id)}
+                    />
+                  ))}
+                </div>
+              </div>
+
+              {/* ─ Hunters ─ */}
+              {[0, 1, 2].map((slot) => (
+                <div key={slot}>
+                  <SectionLabel color={hunterLabelColors[slot]}>
+                    {hunterLabels[slot]} Equipment
+                  </SectionLabel>
+
+                  {/* Hunter + Artifact: 1-col → 2-col */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                    <ImageSelect
+                      placeholder={`Select ${hunterLabels[slot]}`}
+                      border={hunterBorders[slot]}
+                      items={hunters}
+                      keyFn={(h) => h.firestoreId}
+                      labelFn={(h) => h.name}
+                      imgFn={(h) => h.img2 || h.img1}
+                      value={selectedHunters[slot]?.firestoreId || ""}
+                      onChange={(id) => setHunterSlot(slot, id)}
+                    />
+                    <ImageSelect
+                      placeholder="Select Artifact"
+                      border="border-red-500"
+                      items={artifacts}
+                      keyFn={(a) => a.firestoreId}
+                      labelFn={(a) => a.name}
+                      imgFn={(a) => a.pieces?.helmet || a.img}
+                      value={hunterArtifacts[slot]?.firestoreId || ""}
+                      onChange={(id) => setHunterArtifactSlot(slot, id)}
+                    />
+                  </div>
+
+                  {/* Skin picker */}
+                  {[
+                    ...(selectedHunters[slot]?.skin1 || []),
+                    ...(selectedHunters[slot]?.skin2 || []),
+                    ...(selectedHunters[slot]?.skin3 || []),
+                    ...(selectedHunters[slot]?.skin4 || []),
+                    ...(selectedHunters[slot]?.skin5 || []),
+                  ].length > 0 && (
+                    <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 mt-2">
+                      {[
+                        ...(selectedHunters[slot]?.skin1 || []),
+                        ...(selectedHunters[slot]?.skin2 || []),
+                        ...(selectedHunters[slot]?.skin3 || []),
+                        ...(selectedHunters[slot]?.skin4 || []),
+                        ...(selectedHunters[slot]?.skin5 || []),
+                      ].map((skinImg, idx) => (
+                        <button
+                          key={`${slot}-${idx}`}
+                          onClick={() => {
+                            const updated = [...selectedHunterSkins];
+                            updated[slot] = skinImg;
+                            setSelectedHunterSkins(updated);
+                          }}
+                          className={`flex-shrink-0 rounded-xl overflow-hidden border-4 transition-all ${
+                            selectedHunterSkins[slot] === skinImg
+                              ? "border-red-400 scale-105"
+                              : "border-transparent"
+                          }`}
+                          style={{ width: "60px", height: "60px" }}
+                        >
+                          <img
+                            src={skinImg}
+                            alt={`skin-${idx}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Hunter Cores: 1-col → 3-col */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mt-2 sm:mt-3">
+                    <ImageSelect
+                      placeholder="Select Body Core"
+                      border="border-red-500"
+                      items={bodyCores}
+                      keyFn={(c) => c.name}
+                      labelFn={(c) => c.name}
+                      imgFn={(c) => c.img}
+                      value={hunterCoreBody[slot]?.name || ""}
+                      onChange={(id) => setHunterCoreBodySlot(slot, id)}
+                    />
+                    <ImageSelect
+                      placeholder="Select Mind Core"
+                      border="border-blue-500"
+                      items={mindCores}
+                      keyFn={(c) => c.name}
+                      labelFn={(c) => c.name}
+                      imgFn={(c) => c.img}
+                      value={hunterCoreMind[slot]?.name || ""}
+                      onChange={(id) => setHunterCoreMindSlot(slot, id)}
+                    />
+                    <ImageSelect
+                      placeholder="Select Spirit Core"
+                      border="border-purple-500"
+                      items={spiritCores}
+                      keyFn={(c) => c.name}
+                      labelFn={(c) => c.name}
+                      imgFn={(c) => c.img}
+                      value={hunterCoreSpirit[slot]?.name || ""}
+                      onChange={(id) => setHunterCoreSpiritSlot(slot, id)}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="pt-6 flex justify-center">
+              <button
+                onClick={handleSavePOD}
+                disabled={saving}
+                className="px-8 py-3 rounded-2xl bg-red-500 hover:bg-red-400 disabled:opacity-50 disabled:cursor-not-allowed text-black font-black tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.4)]"
+              >
+                {saving ? "Saving..." : "Save POD Setup"}{" "}
+              </button>
+            </div>
+          </InfoCard>
+        )}
       </div>
     </Background>
   );

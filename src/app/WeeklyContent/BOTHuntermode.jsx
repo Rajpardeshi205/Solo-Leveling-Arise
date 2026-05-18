@@ -1,10 +1,13 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/Firebase/FireBaseconfig";
 import Background from "@/Components/Background";
+import { auth } from "@/Firebase/FireBaseconfig";
 
+import { onAuthStateChanged } from "firebase/auth";
+
+import { collection, getDocs, setDoc, getDoc, doc } from "firebase/firestore";
 // ─── ImageSelect ──────────────────────────────────────────────────────────────
 const ImageSelect = ({
   label,
@@ -371,7 +374,7 @@ const SectionLabel = ({ color = "text-purple-400", children }) => (
 );
 
 // ─── Main BOTHunterMode Component ─────────────────────────────────────────────
-export default function BOTHunterMode() {
+export default function BOTHunterMode({ fireToast }) {
   const [hunters, setHunters] = useState([]);
   const [shadows, setShadows] = useState([]);
   const [artifacts, setArtifacts] = useState([]);
@@ -391,6 +394,11 @@ export default function BOTHunterMode() {
     null,
   ]);
   const [selectedShadows, setSelectedShadows] = useState([null, null, null]);
+  const [userRole, setUserRole] = useState(null);
+
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const [saving, setSaving] = useState(false);
 
   // ─── Fetch Cores ─────────────────────────────────────────────────────────
   const fetchCores = async () => {
@@ -408,6 +416,33 @@ export default function BOTHunterMode() {
   };
 
   useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        setUserRole(null);
+        return;
+      }
+
+      setCurrentUser(user);
+
+      try {
+        const snapshot = await getDocs(collection(db, "users"));
+
+        snapshot.forEach((docSnap) => {
+          const data = docSnap.data();
+
+          if (data.uid === user.uid) {
+            setUserRole(data.role || "user");
+          }
+        });
+      } catch (err) {
+        console.log(err);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  useEffect(() => {
     const fetchData = async () => {
       try {
         const snap = async (col) => {
@@ -417,6 +452,32 @@ export default function BOTHunterMode() {
         setHunters(await snap("hunters"));
         setShadows(await snap("shadows"));
         setArtifacts(await snap("artifacts"));
+        // ─── Load Saved Hunter BOT ─────────────────────
+        const botRef = doc(db, "BOT", "Hunter Mode");
+
+        const botSnap = await getDoc(botRef);
+
+        if (botSnap.exists()) {
+          const data = botSnap.data();
+
+          if (data.shadows) {
+            setSelectedShadows(data.shadows);
+          }
+
+          if (data.hunters) {
+            setSelectedHunters(data.hunters.map((h) => h.hunter || null));
+
+            setHunterArtifacts(data.hunters.map((h) => h.artifact || null));
+
+            setHunterCoreBody(data.hunters.map((h) => h.bodyCore || null));
+
+            setHunterCoreMind(data.hunters.map((h) => h.mindCore || null));
+
+            setHunterCoreSpirit(data.hunters.map((h) => h.spiritCore || null));
+
+            setSelectedHunterSkins(data.hunters.map((h) => h.skin || null));
+          }
+        }
       } catch (error) {
         console.error(error);
       }
@@ -465,6 +526,51 @@ export default function BOTHunterMode() {
   ];
   const hunterAccents = ["purple", "blue", "orange"];
 
+  const handleSaveBOT = async () => {
+    try {
+      if (!currentUser) return;
+
+      setSaving(true);
+
+      const payload = {
+        updatedBy: currentUser.uid,
+
+        updatedAt: new Date(),
+
+        shadows: selectedShadows,
+
+        hunters: selectedHunters.map((hunter, index) => ({
+          hunter,
+
+          artifact: hunterArtifacts[index],
+
+          bodyCore: hunterCoreBody[index],
+
+          mindCore: hunterCoreMind[index],
+
+          spiritCore: hunterCoreSpirit[index],
+
+          skin: selectedHunterSkins[index],
+        })),
+      };
+
+      await setDoc(doc(db, "BOT", "Hunter Mode"), payload);
+
+      fireToast({
+        type: "success",
+        message: "BOT (Hunter Mode) Saved Successfully",
+      });
+    } catch (error) {
+      console.log(error);
+
+      fireToast({
+        type: "error",
+        message: "Failed To Save BOT (Hunter Mode)",
+      });
+    } finally {
+      setSaving(false);
+    }
+  };
   return (
     <Background>
       <div className="space-y-4 sm:space-y-6 lg:space-y-8 px-2 sm:px-4 lg:px-6 py-4 sm:py-6 max-w-screen-2xl mx-auto w-full">
@@ -545,142 +651,153 @@ export default function BOTHunterMode() {
           })}
         </div>
 
-        {/* ── Selectors ── */}
-        <InfoCard label="Selectors" accent="purple">
-          <div className="space-y-5 sm:space-y-6">
-            {/* ─ Shadows ─ */}
-            <div>
-              <SectionLabel color="text-purple-400">Shadows</SectionLabel>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
-                {[0, 1, 2].map((slot) => (
-                  <ImageSelect
-                    key={slot}
-                    placeholder={`Select Shadow ${slot + 1}`}
-                    border="border-purple-500"
-                    items={shadows}
-                    keyFn={(s) => s.firestoreId}
-                    labelFn={(s) => s.name}
-                    imgFn={(s) => s.img}
-                    value={selectedShadows[slot]?.firestoreId || ""}
-                    onChange={(id) => {
-                      const updated = [...selectedShadows];
-                      updated[slot] =
-                        shadows.find((s) => s.firestoreId === id) || null;
-                      setSelectedShadows(updated);
-                    }}
-                  />
-                ))}
-              </div>
-            </div>
-
-            {/* ─ Hunters ─ */}
-            {[0, 1, 2].map((slot) => (
-              <div key={slot}>
-                <SectionLabel color={hunterLabelColors[slot]}>
-                  {hunterLabels[slot]} Equipment
-                </SectionLabel>
-
-                {/* Hunter + Artifact */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                  <ImageSelect
-                    placeholder={`Select ${hunterLabels[slot]}`}
-                    border={hunterBorders[slot]}
-                    items={hunters}
-                    keyFn={(h) => h.firestoreId}
-                    labelFn={(h) => h.name}
-                    imgFn={(h) => h.img2 || h.img1}
-                    value={selectedHunters[slot]?.firestoreId || ""}
-                    onChange={(id) => setHunterSlot(slot, id)}
-                  />
-                  <ImageSelect
-                    placeholder="Select Artifact"
-                    border="border-purple-500"
-                    items={artifacts}
-                    keyFn={(a) => a.firestoreId}
-                    labelFn={(a) => a.name}
-                    imgFn={(a) => a.pieces?.helmet || a.img}
-                    value={hunterArtifacts[slot]?.firestoreId || ""}
-                    onChange={(id) => setHunterArtifactSlot(slot, id)}
-                  />
+        {/* ── Selectors (Admin Only) ── */}
+        {userRole === "admin" && (
+          <InfoCard label="Selectors" accent="purple">
+            <div className="space-y-5 sm:space-y-6">
+              {/* ─ Shadows ─ */}
+              <div>
+                <SectionLabel color="text-purple-400">Shadows</SectionLabel>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3">
+                  {[0, 1, 2].map((slot) => (
+                    <ImageSelect
+                      key={slot}
+                      placeholder={`Select Shadow ${slot + 1}`}
+                      border="border-purple-500"
+                      items={shadows}
+                      keyFn={(s) => s.firestoreId}
+                      labelFn={(s) => s.name}
+                      imgFn={(s) => s.img}
+                      value={selectedShadows[slot]?.firestoreId || ""}
+                      onChange={(id) => {
+                        const updated = [...selectedShadows];
+                        updated[slot] =
+                          shadows.find((s) => s.firestoreId === id) || null;
+                        setSelectedShadows(updated);
+                      }}
+                    />
+                  ))}
                 </div>
+              </div>
 
-                {/* Skin picker */}
-                {[
-                  ...(selectedHunters[slot]?.skin1 || []),
-                  ...(selectedHunters[slot]?.skin2 || []),
-                  ...(selectedHunters[slot]?.skin3 || []),
-                  ...(selectedHunters[slot]?.skin4 || []),
-                  ...(selectedHunters[slot]?.skin5 || []),
-                ].length > 0 && (
-                  <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 mt-2">
-                    {[
-                      ...(selectedHunters[slot]?.skin1 || []),
-                      ...(selectedHunters[slot]?.skin2 || []),
-                      ...(selectedHunters[slot]?.skin3 || []),
-                      ...(selectedHunters[slot]?.skin4 || []),
-                      ...(selectedHunters[slot]?.skin5 || []),
-                    ].map((skinImg, idx) => (
-                      <button
-                        key={`${slot}-${idx}`}
-                        onClick={() => {
-                          const updated = [...selectedHunterSkins];
-                          updated[slot] = skinImg;
-                          setSelectedHunterSkins(updated);
-                        }}
-                        className={`flex-shrink-0 rounded-xl overflow-hidden border-4 transition-all ${
-                          selectedHunterSkins[slot] === skinImg
-                            ? "border-purple-400 scale-105"
-                            : "border-transparent"
-                        }`}
-                        style={{ width: "60px", height: "60px" }}
-                      >
-                        <img
-                          src={skinImg}
-                          alt={`skin-${idx}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </button>
-                    ))}
+              {/* ─ Hunters ─ */}
+              {[0, 1, 2].map((slot) => (
+                <div key={slot}>
+                  <SectionLabel color={hunterLabelColors[slot]}>
+                    {hunterLabels[slot]} Equipment
+                  </SectionLabel>
+
+                  {/* Hunter + Artifact */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                    <ImageSelect
+                      placeholder={`Select ${hunterLabels[slot]}`}
+                      border={hunterBorders[slot]}
+                      items={hunters}
+                      keyFn={(h) => h.firestoreId}
+                      labelFn={(h) => h.name}
+                      imgFn={(h) => h.img2 || h.img1}
+                      value={selectedHunters[slot]?.firestoreId || ""}
+                      onChange={(id) => setHunterSlot(slot, id)}
+                    />
+                    <ImageSelect
+                      placeholder="Select Artifact"
+                      border="border-purple-500"
+                      items={artifacts}
+                      keyFn={(a) => a.firestoreId}
+                      labelFn={(a) => a.name}
+                      imgFn={(a) => a.pieces?.helmet || a.img}
+                      value={hunterArtifacts[slot]?.firestoreId || ""}
+                      onChange={(id) => setHunterArtifactSlot(slot, id)}
+                    />
                   </div>
-                )}
 
-                {/* Hunter Cores */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mt-2 sm:mt-3">
-                  <ImageSelect
-                    placeholder="Select Body Core"
-                    border="border-red-500"
-                    items={bodyCores}
-                    keyFn={(c) => c.name}
-                    labelFn={(c) => c.name}
-                    imgFn={(c) => c.img}
-                    value={hunterCoreBody[slot]?.name || ""}
-                    onChange={(id) => setHunterCoreBodySlot(slot, id)}
-                  />
-                  <ImageSelect
-                    placeholder="Select Mind Core"
-                    border="border-blue-500"
-                    items={mindCores}
-                    keyFn={(c) => c.name}
-                    labelFn={(c) => c.name}
-                    imgFn={(c) => c.img}
-                    value={hunterCoreMind[slot]?.name || ""}
-                    onChange={(id) => setHunterCoreMindSlot(slot, id)}
-                  />
-                  <ImageSelect
-                    placeholder="Select Spirit Core"
-                    border="border-purple-500"
-                    items={spiritCores}
-                    keyFn={(c) => c.name}
-                    labelFn={(c) => c.name}
-                    imgFn={(c) => c.img}
-                    value={hunterCoreSpirit[slot]?.name || ""}
-                    onChange={(id) => setHunterCoreSpiritSlot(slot, id)}
-                  />
+                  {/* Skin picker */}
+                  {[
+                    ...(selectedHunters[slot]?.skin1 || []),
+                    ...(selectedHunters[slot]?.skin2 || []),
+                    ...(selectedHunters[slot]?.skin3 || []),
+                    ...(selectedHunters[slot]?.skin4 || []),
+                    ...(selectedHunters[slot]?.skin5 || []),
+                  ].length > 0 && (
+                    <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 mt-2">
+                      {[
+                        ...(selectedHunters[slot]?.skin1 || []),
+                        ...(selectedHunters[slot]?.skin2 || []),
+                        ...(selectedHunters[slot]?.skin3 || []),
+                        ...(selectedHunters[slot]?.skin4 || []),
+                        ...(selectedHunters[slot]?.skin5 || []),
+                      ].map((skinImg, idx) => (
+                        <button
+                          key={`${slot}-${idx}`}
+                          onClick={() => {
+                            const updated = [...selectedHunterSkins];
+                            updated[slot] = skinImg;
+                            setSelectedHunterSkins(updated);
+                          }}
+                          className={`flex-shrink-0 rounded-xl overflow-hidden border-4 transition-all ${
+                            selectedHunterSkins[slot] === skinImg
+                              ? "border-purple-400 scale-105"
+                              : "border-transparent"
+                          }`}
+                          style={{ width: "60px", height: "60px" }}
+                        >
+                          <img
+                            src={skinImg}
+                            alt={`skin-${idx}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Hunter Cores */}
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 mt-2 sm:mt-3">
+                    <ImageSelect
+                      placeholder="Select Body Core"
+                      border="border-red-500"
+                      items={bodyCores}
+                      keyFn={(c) => c.name}
+                      labelFn={(c) => c.name}
+                      imgFn={(c) => c.img}
+                      value={hunterCoreBody[slot]?.name || ""}
+                      onChange={(id) => setHunterCoreBodySlot(slot, id)}
+                    />
+                    <ImageSelect
+                      placeholder="Select Mind Core"
+                      border="border-blue-500"
+                      items={mindCores}
+                      keyFn={(c) => c.name}
+                      labelFn={(c) => c.name}
+                      imgFn={(c) => c.img}
+                      value={hunterCoreMind[slot]?.name || ""}
+                      onChange={(id) => setHunterCoreMindSlot(slot, id)}
+                    />
+                    <ImageSelect
+                      placeholder="Select Spirit Core"
+                      border="border-purple-500"
+                      items={spiritCores}
+                      keyFn={(c) => c.name}
+                      labelFn={(c) => c.name}
+                      imgFn={(c) => c.img}
+                      value={hunterCoreSpirit[slot]?.name || ""}
+                      onChange={(id) => setHunterCoreSpiritSlot(slot, id)}
+                    />
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </InfoCard>
+              ))}
+            </div>
+            <div className="pt-6 flex justify-center">
+              <button
+                onClick={handleSaveBOT}
+                disabled={saving}
+                className="px-8 py-3 rounded-2xl bg-purple-500 hover:bg-purple-400 disabled:opacity-50 disabled:cursor-not-allowed text-white font-black tracking-wider uppercase transition-all duration-300 shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+              >
+                {saving ? "Saving..." : "Save Hunter Mode"}
+              </button>
+            </div>
+          </InfoCard>
+        )}
       </div>
     </Background>
   );
