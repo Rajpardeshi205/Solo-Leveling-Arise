@@ -285,7 +285,11 @@ export default function Page({ params }) {
 
             {/* Comments */}
             <InfoCard>
-              <CommentsPage />
+              <CommentsPage
+                type="weapon"
+                itemId={WeaponId}
+                itemName={weapon.weaponName}
+              />
             </InfoCard>
           </div>
         </div>

@@ -98,18 +98,33 @@ export default function Blessings() {
     (b) => b?.Runes?.[0]?.type === "Empowerment",
   );
 
+  const InfoCard = ({ label, children }) => (
+    <div className="bg-gray-900/50 border border-purple-500/20 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl">
+      {label && (
+        <div className="text-purple-400 text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-5 font-semibold">
+          {label}
+        </div>
+      )}
+      {children}
+    </div>
+  );
+
   return (
     <Background>
       <div className="w-full max-w-7xl mx-auto px-4 py-8 sm:py-10 space-y-10 sm:space-y-12">
         {/* Hero title */}
-        <div className="h-screen flex items-center justify-center">
+        <div className="py-24 sm:py-32 md:py-40 flex items-center justify-center h-screen">
           <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-center text-purple-400">
             Blessings
           </h1>
         </div>
+        <InfoCard>
+          <BlessingSection title="Survival" data={survivalBlessings} />
+        </InfoCard>
 
-        <BlessingSection title="Survival" data={survivalBlessings} />
-        <BlessingSection title="Empowerment" data={empowermentBlessings} />
+        <InfoCard>
+          <BlessingSection title="Empowerment" data={empowermentBlessings} />
+        </InfoCard>
       </div>
     </Background>
   );

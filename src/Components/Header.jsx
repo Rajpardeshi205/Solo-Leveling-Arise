@@ -145,15 +145,25 @@ export default function Header() {
                 onClick={() => setProfileOpen((prev) => !prev)}
                 className="flex items-center gap-2 px-4 py-2 rounded-xl border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 transition-all duration-300"
               >
-                {/* Avatar */}
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#7c3aed] to-[#4f46e5] flex items-center justify-center text-white font-bold text-sm uppercase">
-                  {(userData?.username || userData?.fullName || "H")[0]}
-                </div>
+                <div className="flex items-center gap-2">
+                  {/* Avatar */}
+                  <div className="w-8 h-8 rounded-full overflow-hidden bg-gradient-to-br from-[#7c3aed] to-[#4f46e5] flex items-center justify-center text-white font-bold text-sm uppercase border border-purple-400/30 shrink-0">
+                    {userData?.photoURL ? (
+                      <img
+                        src={userData.photoURL}
+                        alt="profile"
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span>{(userData?.fullName || "H")[0]}</span>
+                    )}
+                  </div>
 
-                {/* Username */}
-                <span className="text-sm text-white font-medium max-w-[140px] truncate">
-                  {userData?.username || userData?.fullName || "Hunter"}
-                </span>
+                  {/* Name */}
+                  <span className="text-sm text-purple-400 font-medium max-w-[140px] truncate">
+                    @{userData?.username || userData?.fullName || "Hunter"}
+                  </span>
+                </div>
               </button>
 
               {/* Dropdown */}
@@ -183,13 +193,15 @@ export default function Header() {
 
                 {/* Menu */}
                 <div className="p-2">
-                  <Link
-                    href="/UserDashboard"
-                    onClick={() => setProfileOpen(false)}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-all duration-200"
-                  >
-                    ⚔ User Dashboard
-                  </Link>
+                  <div className="p-2">
+                    <Link
+                      href="/UserDashboard"
+                      onClick={() => setProfileOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-all duration-200"
+                    >
+                      User Dashboard
+                    </Link>
+                  </div>
 
                   <button
                     onClick={handleLogout}

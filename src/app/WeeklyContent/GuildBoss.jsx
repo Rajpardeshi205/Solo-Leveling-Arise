@@ -5,6 +5,8 @@ import Background from "@/Components/Background";
 import { db, auth } from "@/Firebase/FireBaseconfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDocs, setDoc, getDoc, doc } from "firebase/firestore";
+import CommentsPage from "@/Components/CommentsPage ";
+import GameTooltip from "@/Components/GameTooltip";
 // ─── ImageSelect ──────────────────────────────────────────────────────────────
 const ImageSelect = ({
   label,
@@ -177,15 +179,18 @@ const InfoCard = ({ label, children, accent = "yellow", className = "" }) => {
 const ItemSlot = ({
   src,
   label,
-  accent = "yellow",
+  accent = "purple",
   size = "md",
   empty = "?",
+  tooltipTitle,
+  tooltipDescription,
 }) => {
   const sizeClass = {
     sm: "w-10 h-10 sm:w-12 sm:h-12",
     md: "w-12 h-12 sm:w-16 sm:h-16",
     lg: "w-14 h-14 sm:w-20 sm:h-20",
   }[size];
+
   const borderColor =
     {
       cyan: "border-cyan-500/60",
@@ -196,38 +201,32 @@ const ItemSlot = ({
       orange: "border-orange-500/60",
       pink: "border-pink-500/60",
       blue: "border-blue-500/60",
-      amber: "border-amber-500/60",
-      lime: "border-lime-500/60",
-      teal: "border-teal-500/60",
-      sky: "border-sky-500/60",
-    }[accent] || "border-yellow-500/60";
-  const glowColor =
-    {
-      cyan: "shadow-cyan-500/20",
-      purple: "shadow-purple-500/20",
-      red: "shadow-red-500/20",
-      yellow: "shadow-yellow-500/20",
-      green: "shadow-green-500/20",
-      orange: "shadow-orange-500/20",
-    }[accent] || "shadow-yellow-500/20";
+    }[accent] || "border-purple-500/60";
 
   return (
-    <div className="flex flex-col items-center gap-1">
-      <div
-        className={`${sizeClass} rounded-xl border ${borderColor} bg-black/50 overflow-hidden flex items-center justify-center shadow-md ${glowColor}`}
-      >
-        {src ? (
-          <img src={src} alt={label} className="w-full h-full object-cover" />
-        ) : (
-          <span className="text-gray-600 text-base sm:text-xl">{empty}</span>
+    <GameTooltip
+      title={tooltipTitle || label}
+      description={tooltipDescription}
+      image={src}
+    >
+      <div className="flex flex-col items-center gap-1 cursor-pointer">
+        <div
+          className={`${sizeClass} rounded-xl border ${borderColor} bg-black/50 overflow-hidden flex items-center justify-center hover:scale-105 transition-all duration-300`}
+        >
+          {src ? (
+            <img src={src} alt={label} className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-gray-600 text-base sm:text-xl">{empty}</span>
+          )}
+        </div>
+
+        {label && (
+          <span className="text-[9px] sm:text-[10px] text-gray-400 text-center leading-tight max-w-[56px] sm:max-w-[72px] truncate">
+            {label}
+          </span>
         )}
       </div>
-      {label && (
-        <span className="text-[9px] sm:text-[10px] text-gray-400 text-center leading-tight max-w-[56px] sm:max-w-[72px] truncate">
-          {label}
-        </span>
-      )}
-    </div>
+    </GameTooltip>
   );
 };
 
@@ -257,20 +256,26 @@ const ArtifactPiecesGrid = ({ artifact, accent = "yellow" }) => {
       blue: "text-blue-300",
     }[accent] || "text-yellow-300";
   return (
-    <InfoCard label="Artifact Set" accent={accent}>
+    <InfoCard label="Artifact Set" accent="cyan">
       <div className="grid grid-cols-4 gap-1.5 sm:gap-2">
         {slots.map(({ key, label }) => (
           <ItemSlot
             key={key}
             src={pieces[key]}
             label={label}
-            accent={accent}
+            accent="cyan"
             size="sm"
+            tooltipTitle={artifact?.name}
+            tooltipDescription={
+              artifact?.setEffects?.[4]?.[0] ||
+              artifact?.setEffects?.[8]?.[0] ||
+              "Artifact Set"
+            }
           />
         ))}
       </div>
       {artifact?.name && (
-        <p className={`${nameColor} text-xs font-bold mt-2 text-center`}>
+        <p className="text-cyan-300 text-xs font-bold mt-2 text-center">
           {artifact.name}
         </p>
       )}
@@ -286,22 +291,30 @@ const CorePanel = ({ coreBody, coreMind, coreSpirit, size = "sm" }) => (
         src={coreBody?.img}
         label={coreBody?.name || "Body"}
         accent="red"
-        size={size}
+        size="md"
         empty="⬡"
+        tooltipTitle={coreBody?.name}
+        tooltipDescription={coreBody?.passive?.[0]}
       />
+
       <ItemSlot
         src={coreMind?.img}
         label={coreMind?.name || "Mind"}
         accent="blue"
-        size={size}
+        size="md"
         empty="⬡"
+        tooltipTitle={coreMind?.name}
+        tooltipDescription={coreMind?.passive?.[0]}
       />
+
       <ItemSlot
         src={coreSpirit?.img}
         label={coreSpirit?.name || "Spirit"}
         accent="purple"
-        size={size}
+        size="md"
         empty="⬡"
+        tooltipTitle={coreSpirit?.name}
+        tooltipDescription={coreSpirit?.passive?.[0]}
       />
     </div>
   </InfoCard>
@@ -331,12 +344,16 @@ const JinwooEquipPanel = ({
           label={weapon?.weaponName || "Weapon 1"}
           accent="red"
           size="lg"
+          tooltipTitle={weapon?.weaponName}
+          tooltipDescription={weapon?.skills?.[2]?.description}
         />
         <ItemSlot
           src={weapon2?.weaponImg?.[0] || weapon2?.weaponImg2?.[0]}
           label={weapon2?.weaponName || "Weapon 2"}
           accent="red"
           size="lg"
+          tooltipTitle={weapon2?.weaponName}
+          tooltipDescription={weapon2?.skills?.[2]?.description}
         />
       </div>
     </InfoCard>
@@ -348,16 +365,46 @@ const JinwooEquipPanel = ({
     <InfoCard label="Rune Stones" accent="purple">
       <div className="flex gap-3 sm:gap-4 flex-wrap">
         <ItemSlot
-          src={rune?.data?.[0]?.Runes?.[0]?.skillImg}
-          label={rune?.data?.[0]?.Skills || "Rune 1"}
+          src={rune?.skillImg}
+          label={
+            rune?.skill1 ||
+            rune?.skill2 ||
+            rune?.skill3 ||
+            rune?.skill4 ||
+            rune?.skill5 ||
+            "Rune 1"
+          }
           accent="purple"
           size="md"
+          tooltipTitle={
+            rune?.skill1 ||
+            rune?.skill2 ||
+            rune?.skill3 ||
+            rune?.skill4 ||
+            rune?.skill5
+          }
+          tooltipDescription={rune?.description}
         />
+
         <ItemSlot
-          src={rune2?.data?.[0]?.Runes?.[0]?.skillImg}
-          label={rune2?.data?.[0]?.Skills || "Rune 2"}
+          src={rune2?.skillImg}
+          label={
+            rune2?.skill1 ||
+            rune2?.skill2 ||
+            rune2?.skill4 ||
+            rune2?.skill5 ||
+            "Rune 2"
+          }
           accent="purple"
           size="md"
+          tooltipTitle={
+            rune2?.skill1 ||
+            rune2?.skill2 ||
+            rune2?.skill3 ||
+            rune2?.skill4 ||
+            rune2?.skill5
+          }
+          tooltipDescription={rune2?.description}
         />
       </div>
     </InfoCard>
@@ -376,17 +423,47 @@ const JinwooEquipPanel = ({
         {(qteSkills || [null, null, null]).map((skill, i) => (
           <ItemSlot
             key={i}
-            src={skill?.data?.[0]?.Runes?.[0]?.skillImg}
-            label={skill?.data?.[0]?.Skills || `QTE ${i + 1}`}
+            src={skill?.skillImg || "/placeholder.png"}
+            label={
+              skill?.skill1 ||
+              skill?.skill2 ||
+              skill?.skill3 ||
+              skill?.skill4 ||
+              skill?.skill5 ||
+              `QTE ${i + 1}`
+            }
             accent="yellow"
             size="md"
+            tooltipTitle={
+              skill?.skill1 ||
+              skill?.skill2 ||
+              skill?.skill3 ||
+              skill?.skill4 ||
+              skill?.skill5
+            }
+            tooltipDescription={skill?.description}
           />
         ))}
         <ItemSlot
-          src={ultimate?.data?.[0]?.Runes?.[0]?.skillImg}
-          label={ultimate?.data?.[0]?.Skills || "Ultimate"}
+          src={ultimate?.skillImg || "/placeholder.png"}
+          label={
+            ultimate?.skill1 ||
+            ultimate?.skill2 ||
+            ultimate?.skill3 ||
+            ultimate?.skill4 ||
+            ultimate?.skill5 ||
+            "Ultimate"
+          }
           accent="orange"
           size="md"
+          tooltipTitle={
+            ultimate?.skill1 ||
+            ultimate?.skill2 ||
+            ultimate?.skill3 ||
+            ultimate?.skill4 ||
+            ultimate
+          }
+          tooltipDescription={ultimate?.description}
         />
       </div>
     </InfoCard>
@@ -403,6 +480,8 @@ const JinwooEquipPanel = ({
               label={item?.Blessing || `Blessing ${i + 1}`}
               accent="green"
               size="md"
+              tooltipTitle={item?.Blessing}
+              tooltipDescription={item?.Runes?.[0]?.description}
             />
           ))}
       </div>
@@ -420,6 +499,8 @@ const JinwooEquipPanel = ({
               label={item?.Blessing || `Blessing ${i + 1}`}
               accent="pink"
               size="md"
+              tooltipTitle={item?.Blessing}
+              tooltipDescription={item?.Runes?.[0]?.description}
             />
           ))}
       </div>
@@ -440,18 +521,35 @@ const HunterEquipPanel = ({
   return (
     <div className="space-y-3">
       <InfoCard label="Weapon" accent="orange">
-        <div className="flex items-center gap-3">
-          <ItemSlot
-            src={hunter.weaponImg?.[0] || hunter.weapon?.img}
-            label={hunter.weaponName || hunter.weapon?.name || "Weapon"}
-            accent="orange"
-            size="md"
-          />
-          {(hunter.weaponName || hunter.weapon?.name) && (
-            <span className="text-orange-300 text-xs font-semibold truncate">
-              {hunter.weaponName || hunter.weapon?.name}
-            </span>
-          )}
+        <div className="flex items-start gap-4">
+          {/* LEFT SIDE - NAME + IMAGE */}
+          <div className="flex flex-col items-center min-w-[90px]">
+            <ItemSlot
+              src={hunter.weaponImg?.[0] || hunter.weapon?.img}
+              label={hunter.weaponName || hunter.weapon?.name || "Weapon"}
+              accent="orange"
+              size="md"
+              tooltipTitle={
+                hunter.weaponName || hunter.weapon?.name || "Weapon"
+              }
+              tooltipDescription={
+                hunter.weapon?.skills?.[0]?.description ||
+                hunter.weaponDescription ||
+                "No Description"
+              }
+            />
+          </div>
+
+          {/* RIGHT SIDE -  */}
+          <div className="flex-1">
+            <p className=" leading-relaxed">
+              {(hunter.weaponName || hunter.weapon?.name) && (
+                <span className="text-orange-300 text-2xl font-semibold">
+                  {hunter.weaponName || hunter.weapon?.name}
+                </span>
+              )}{" "}
+            </p>
+          </div>
         </div>
       </InfoCard>
       <ArtifactPiecesGrid artifact={artifact} accent={accent} />
@@ -1064,41 +1162,100 @@ export default function GuildBoss({ fireToast }) {
 
                 {/* Rune Stones */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 mt-2 sm:mt-3">
+                  {/* Rune 1 */}
                   <ImageSelect
                     placeholder="Select Rune Stone 1"
                     border="border-purple-500"
-                    items={runes.filter(
-                      (r) =>
-                        !r?.data?.[0]?.Skills?.includes("(QTE)") &&
-                        !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
-                    )}
-                    keyFn={(r) => r.firestoreId}
-                    labelFn={(r) => r.data?.[0]?.Skills || r.firestoreId}
-                    imgFn={(r) => r.data?.[0]?.Runes?.[0]?.skillImg}
-                    value={jinwooRune?.firestoreId || ""}
-                    onChange={(id) =>
-                      setJinwooRune(
-                        runes.find((r) => r.firestoreId === id) || null,
+                    items={runes
+                      .filter(
+                        (r) =>
+                          !r?.data?.[0]?.Skills?.includes("(QTE)") &&
+                          !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
                       )
+                      .flatMap((r) =>
+                        (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                          ...skill,
+                          firestoreId: `${r.firestoreId}-${index}`,
+                          parentRune: r,
+                        })),
+                      )}
+                    keyFn={(r) => r.firestoreId}
+                    labelFn={(r) =>
+                      r.skill1 ||
+                      r.skill2 ||
+                      r.skill3 ||
+                      r.skill4 ||
+                      r.skill5 ||
+                      "Rune Skill"
                     }
+                    imgFn={(r) => r.skillImg}
+                    value={jinwooRune?.firestoreId || ""}
+                    onChange={(id) => {
+                      const selected = runes
+                        .filter(
+                          (r) =>
+                            !r?.data?.[0]?.Skills?.includes("(QTE)") &&
+                            !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
+                        )
+                        .flatMap((r) =>
+                          (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                            ...skill,
+                            firestoreId: `${r.firestoreId}-${index}`,
+                            parentRune: r,
+                          })),
+                        )
+                        .find((r) => r.firestoreId === id);
+
+                      setJinwooRune(selected || null);
+                    }}
                   />
+
+                  {/* Rune 2 */}
                   <ImageSelect
                     placeholder="Select Rune Stone 2"
                     border="border-purple-500"
-                    items={runes.filter(
-                      (r) =>
-                        !r?.data?.[0]?.Skills?.includes("(QTE)") &&
-                        !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
-                    )}
-                    keyFn={(r) => r.firestoreId}
-                    labelFn={(r) => r.data?.[0]?.Skills || r.firestoreId}
-                    imgFn={(r) => r.data?.[0]?.Runes?.[0]?.skillImg}
-                    value={jinwooRune2?.firestoreId || ""}
-                    onChange={(id) =>
-                      setJinwooRune2(
-                        runes.find((r) => r.firestoreId === id) || null,
+                    items={runes
+                      .filter(
+                        (r) =>
+                          !r?.data?.[0]?.Skills?.includes("(QTE)") &&
+                          !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
                       )
+                      .flatMap((r) =>
+                        (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                          ...skill,
+                          firestoreId: `${r.firestoreId}-${index}`,
+                          parentRune: r,
+                        })),
+                      )}
+                    keyFn={(r) => r.firestoreId}
+                    labelFn={(r) =>
+                      r.skill1 ||
+                      r.skill2 ||
+                      r.skill3 ||
+                      r.skill4 ||
+                      r.skill5 ||
+                      "Rune Skill"
                     }
+                    imgFn={(r) => r.skillImg}
+                    value={jinwooRune2?.firestoreId || ""}
+                    onChange={(id) => {
+                      const selected = runes
+                        .filter(
+                          (r) =>
+                            !r?.data?.[0]?.Skills?.includes("(QTE)") &&
+                            !r?.data?.[0]?.Skills?.includes("(Ultimate)"),
+                        )
+                        .flatMap((r) =>
+                          (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                            ...skill,
+                            firestoreId: `${r.firestoreId}-${index}`,
+                            parentRune: r,
+                          })),
+                        )
+                        .find((r) => r.firestoreId === id);
+
+                      setJinwooRune2(selected || null);
+                    }}
                   />
                 </div>
               </div>
@@ -1108,37 +1265,99 @@ export default function GuildBoss({ fireToast }) {
                 <SectionLabel color="text-yellow-400">
                   Jinwoo — QTE Skills & Ultimate
                 </SectionLabel>
+
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3">
+                  {/* QTE */}
                   {[0, 1, 2].map((slot) => (
                     <ImageSelect
                       key={slot}
                       placeholder={`QTE Skill ${slot + 1}`}
                       border="border-yellow-500"
-                      items={runes.filter((r) =>
-                        r?.data?.[0]?.Skills?.includes("(QTE)"),
-                      )}
+                      items={runes
+                        .filter((r) => r?.data?.[0]?.Skills?.includes("(QTE)"))
+                        .flatMap((r) =>
+                          (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                            ...skill,
+                            firestoreId: `${r.firestoreId}-${index}`,
+                            parentRune: r,
+                          })),
+                        )}
                       keyFn={(s) => s.firestoreId}
-                      labelFn={(s) => s?.data?.[0]?.Skills || "QTE Skill"}
-                      imgFn={(s) => s?.data?.[0]?.Runes?.[0]?.skillImg}
-                      value={jinwooQteSkills[slot]?.firestoreId || ""}
-                      onChange={(id) => setJinwooQteSlot(slot, id)}
+                      labelFn={(s) =>
+                        s.skill1 ||
+                        s.skill2 ||
+                        s.skill3 ||
+                        s.skill4 ||
+                        s.skill5 ||
+                        "QTE Skill"
+                      }
+                      imgFn={(s) => s.skillImg}
+                      value={jinwooQteSkills?.[slot]?.firestoreId || ""}
+                      onChange={(id) => {
+                        const updated = [...jinwooQteSkills];
+
+                        const selected = runes
+                          .filter((r) =>
+                            r?.data?.[0]?.Skills?.includes("(QTE)"),
+                          )
+                          .flatMap((r) =>
+                            (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                              ...skill,
+                              firestoreId: `${r.firestoreId}-${index}`,
+                              parentRune: r,
+                            })),
+                          )
+                          .find((r) => r.firestoreId === id);
+
+                        updated[slot] = selected || null;
+
+                        setJinwooQteSkills(updated);
+                      }}
                     />
                   ))}
+
+                  {/* Ultimate */}
                   <ImageSelect
                     placeholder="Select Ultimate"
                     border="border-orange-500"
-                    items={runes.filter((r) =>
-                      r?.data?.[0]?.Skills?.includes("(Ultimate)"),
-                    )}
-                    keyFn={(u) => u.firestoreId}
-                    labelFn={(u) => u?.data?.[0]?.Skills || "Ultimate"}
-                    imgFn={(u) => u?.data?.[0]?.Runes?.[0]?.skillImg}
-                    value={jinwooUltimate?.firestoreId || ""}
-                    onChange={(id) =>
-                      setJinwooUltimate(
-                        runes.find((r) => r.firestoreId === id) || null,
+                    items={runes
+                      .filter((r) =>
+                        r?.data?.[0]?.Skills?.includes("(Ultimate)"),
                       )
+                      .flatMap((r) =>
+                        (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                          ...skill,
+                          firestoreId: `${r.firestoreId}-${index}`,
+                          parentRune: r,
+                        })),
+                      )}
+                    keyFn={(u) => u.firestoreId}
+                    labelFn={(u) =>
+                      u.skill1 ||
+                      u.skill2 ||
+                      u.skill3 ||
+                      u.skill4 ||
+                      u.skill5 ||
+                      "Ultimate"
                     }
+                    imgFn={(u) => u.skillImg}
+                    value={jinwooUltimate?.firestoreId || ""}
+                    onChange={(id) => {
+                      const selected = runes
+                        .filter((r) =>
+                          r?.data?.[0]?.Skills?.includes("(Ultimate)"),
+                        )
+                        .flatMap((r) =>
+                          (r?.data?.[0]?.Runes || []).map((skill, index) => ({
+                            ...skill,
+                            firestoreId: `${r.firestoreId}-${index}`,
+                            parentRune: r,
+                          })),
+                        )
+                        .find((r) => r.firestoreId === id);
+
+                      setJinwooUltimate(selected || null);
+                    }}
                   />
                 </div>
               </div>
@@ -1314,6 +1533,13 @@ export default function GuildBoss({ fireToast }) {
           </InfoCard>
         )}{" "}
       </div>
+      <InfoCard label="Community Reviews" accent="cyan" className="pt-10 mt-8">
+        <CommentsPage
+          type="guildboss"
+          itemId="guild-boss-main"
+          itemName="Guild Boss Team 1"
+        />
+      </InfoCard>
     </Background>
   );
 }

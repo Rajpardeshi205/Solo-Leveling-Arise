@@ -9,6 +9,8 @@ export const hunters = [
         "Kuroha's Sword Technique Lethal Move: Moonless Night Overture",
       weapon: "Katana",
       weaponName: "Bunny Bunbun",
+      weaponDescription:`Charges the user's Power Gauge by 60% when the user enters the stage.
+Increases the Critical Hit Rate and Critical Hit damage of Kuroha's Sword Technique Type 3: Wings of Night and Kuroha's Sword Technique Type 4: Raven's Cry by 30%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/b09b1d6de08b496788a543f6c2bcc06d.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/13147739bd754149abc3f7b70a9db9dd.webp"],
       color: "#32CD32",
       description:
@@ -42,6 +44,8 @@ export const hunters = [
       ultimateSkill: "Tsuchigumo",
       weapon: "Double Katana",
       weaponName: "The Path a Hero Must Take",
+       weaponDescription:`Increases the user's Attack by 12%
+The user's Critical Hit Rate by 20%`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/026725629b8747af8c18b094c80e255a.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/e05a3fc1e5064493b7947862646cbf50.webp"],
       color: "#FF4500",
       description:
@@ -75,6 +79,9 @@ export const hunters = [
       ultimateSkill: " Arcana: The World, Arcana: Death",
       weapon: "Cards",
       weaponName: "Unexpected Luck",
+      weaponDescription:`The user's Defense increases by 4%.
+The entire team's Defense increases by 4% for every Dark element hunter on the team.
+Decreases Isla Wright's Ultimate Skill cooldown by 20 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/58a0037d2c2a45639f897c1a5efb6d12.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/58a0037d2c2a45639f897c1a5efb6d12.webp"],
       color: "#9b5de5",
       description:
@@ -108,6 +115,8 @@ export const hunters = [
       ultimateSkill: "Sword of Destiny",
       weapon: "Sword",
       weaponName: "Valkyrie Guild's Oath",
+      weaponDescription:`Increases the user's Defense by 12%
+When the [Will of the Sword] gauge recharge effect activates, it triggers an effect that increases the user's Defense by 6% (stacking up to 60 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/2d20dd9f8066469e874c2539662dafe9.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/73628c03ff9b469db2d28f8127911e8f.webp"],
       color: "#00BFFF",
       description:
@@ -172,6 +181,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Ruler's Judgement",
       weapon: "Sunglasses",
       weaponName: "The True King",
+      weaponDescription:`Increases Defense by 16%.
+Increases Shield Acquisition Chance by 24%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/ee0a88ef603c4a17b20cfddf49d4c04e.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/71d79f5d560e4c11ae1e18d3005196d6.webp"],
       color: "#FFFF00",
       description:
@@ -204,6 +215,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Devastate Prey",
       weapon: "Katana",
       weaponName: "Distorted Dreams",
+      weaponDescription:`Increases the user's HP by 12%
+Using Reverse Tempest or Storm Blade increases the user's Critical Hit damage by 30% for 15 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/f1e67d2c16e84232b941cd2ecd17004a.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/80322d079cdc41fc94536cf784cdf40c.webp"],
       color: "#90EE90",
       description:
@@ -236,6 +249,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Frost Chaser",
       weapon: "Gun",
       weaponName: "Melody of Iron and Blood",
+      weaponDescription:`Increases the user's HP by 12%
+Increases missile damage by 100%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/34b1f3ff6d294ecb80ba29c3e64a08ca.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/5ff75673a9cc45c7bac14f531e268320.webp"],
       color: "#0080FF",
       description:
@@ -268,6 +283,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Foretold Victory",
       weapon: "Spear",
       weaponName: "Glorious Demise",
+       weaponDescription:`The user's Attack increases by 12%.
+The Additional Attack of the team member with the highest Critical Hit Rate increases by 300 per 1000 of Esil Radiru's Additional Attack (The Max Additional Attack cap increases to 2400.)`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/6d37b4c7890d41afb37ef4bd2b02462e.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/01ef38044c284dc1a580c0f7e3168e6d.webp"],
       color: "#DC143C",
       description:
@@ -299,6 +316,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Supernova",
       weapon: "jacket locket",
       weaponName: "A Conviction and a Calling",
+       weaponDescription:`Increases the user's Defense by 20%
+When Fighting Spirit or Heavy Attack: Fighting Spirit hits, increases the target's Light damage taken by 15% and their chance of receiving Critical Hit damage by 15% for 15 second(s)`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/b397f5997e204f5d8b3fc36589725e53.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/c7d575ce2c6a491a85b49726725ef3f3.webp"],
       color: "#FFD700",
       description:
@@ -329,6 +348,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Harper's Mjölnr",
       weapon: "Bag",
       weaponName: "Mischievous",
+       weaponDescription:`The user's HP increases by 12%.
+When the user uses their Ultimate Skill it increases their team members' Dark damage by 12% for 30 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/55fd799474a04b34b156689af5d73d33.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/e12807e55c4a4d5f93c215dbacd4077c.webp"],
       color: "#9b5de5",
       description:
@@ -360,6 +381,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: " Ring of Fire",
       weapon: "Axe",
       weaponName: "The Price of a Promise",
+      weaponDescription:`Increases HP by 12%.
+When the [Echo of Light] effect is activated on Light team members, increases Light damage of all team members by 12% for 8 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/bb28cfd699154fdf9f08c5556e877520.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/07e1a01a68044b2ab383c6a947d23d8e.webp"],
       color: "#FFD700",
       description:
@@ -392,6 +415,10 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Liberation",
       weapon: "Orb",
       weaponName: "The Glamour of Self-worth",
+      weaponDescription:`The user's Attack increases by 12%.
+When [Mana Circulation] activates, all team members recover 250 mana.
+When [Mana Circulation] activates, it increases all attack and Fire damage by 1% (stacking up to 10 times).
+Duration: Infinite`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/31c3900794fc43219a0073827f32bc4e.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/31c3900794fc43219a0073827f32bc4e.webp"],
       color: "#FF4500",
       description:
@@ -424,6 +451,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Vines of Vitality",
       weapon: "Magic Bag",
       weaponName: "Coming of Age",
+      weaponDescription:`Increases the user's HP by 10%.
+Increases damage taken by 5% for 10 second(s) to targets hit by Han Se-Mi's skill.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/b119eef9615247a1b9b7cbb4f0e55ef1.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/c226523c2bac4e10b0e41e7eb3d0f983.webp"],
       color: "#32CD32",
       description:
@@ -456,6 +485,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Zeroed-in Blast",
       weapon: "Gun",
       weaponName: "Overdrive",
+      weaponDescription:`Increases the user's Defense Penetration by 12%.
+Increases the damage of Core Attack, Kill Shot, and Hell Fire by 24%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/5275ca3287794a4c854e6e7bf0159572.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/fbc62bf12eee4bdb8614c633499765c5.webp"],
       color: "#FF4500",
       description:
@@ -488,6 +519,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Big Meow!",
       weapon: "Fishing Stick",
       weaponName: "Hook, Line, and Sinker",
+      weaponDescription:`When the user uses Side Whip, it increases the damage of the team member with the highest Attack by 1% per 2000 of Meilin Fisher's Max HP for 12 second(s). (Max Damage increase Rate: 16%)
+Decreases Ultimate Skill cooldown by 20%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/2eab6885a5a14278a2d3c3cfca865c3a.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/9199050500ee4da7840fd85673a01b4d.webp"],
       color: "#00BFFF",
       description: "Meilin's beloved cat returned to her as a guardian spirit.",
@@ -519,6 +552,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Absolute Zero",
       weapon: "Ice Stick",
       weaponName: "Ice Witch",
+       weaponDescription:`Increases the user's Core Attack damage by 40%.
+When the [Ice Body Armor] effect activates, it increases Water damage dealt by 20% for 20 second(s). (Cooldown: 30 second(s))`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/6cfb581337be4c5f9bd2fbc2dec8cb03.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/7dbb4ec91f374f40946b86029921167b.webp"],
       color: "#00BFFF",
       description:
@@ -552,6 +587,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Light of the End",
       weapon: "Sword",
       weaponName: "Sword of Light",
+      weaponDescription:`Increases the user's Basic Skill damage by 20%.
+When the user's uses a Basic Skill, increases Critical Hit damage by 8% for 12 second(s) (stacking up to 6 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/779757513b994d5f89d896741f072185.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/9ba0f72377e2442e854807183fdf7f21.webp"],
       color: "#FFD700",
       description:
@@ -585,6 +622,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: " End of Days",
       weapon: "Ring",
       weaponName: "Equivalent Exchange",
+         weaponDescription:`Increases the user's Attack by 20%.
+When attacking targets [Burned] by Choi Jong-In, the target's Defense decreases 20% for 5 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/17db6534171e47d5bbc942c887e35067.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/b16523dfb17642aab0bc952c28254a2a.webp"],
       color: "#FF4500",
       description:
@@ -615,6 +654,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Divinity",
       weapon: "Claw Gauntlet",
       weaponName: "Howling White Tiger's Soul",
+      weaponDescription:`Increases the user's Basic Attack damage by 80%.
+When the user's Basic Attack hits, they take damage equal to 0.1% of their current HP, but deals damage equal to 0.5% of their current HP to targets. (Cooldown: 0.5 second(s))
+If the target is immune to [Bleed] it deals damage equal to 300% of Silver Mane Baek Yoonho's Max HP. (Cooldown: 0.5 second(s))`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/89ddb909e58843098d83518c533e4ccc.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/e144f48dea92437881be495dd18f3e2e.webp"],
       color: "#9b5de5",
       description:
@@ -646,6 +688,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: " Truth: White Flame Strike",
       weapon: "Gauntlet",
       weaponName: "Suppressed White Tiger's Soul",
+      weaponDescription:`Increases the user's Light damage by 12%.
+When attacking targets with the [White Flames] effect, increases the user's Defense by 20% for 20 second(s). (Cooldown: 30 second(s))`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/d8a7adb4d8f1439aa6215e846befd64a.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/e17f154533274b7fb7a7f4054caa9066.webp"],
       color: "#FFD700",
       description:
@@ -676,6 +720,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Burning Pride",
       weapon: "Sword",
       weaponName: "Night-Thoughts",
+      weaponDescription:`Increases the damage dealt to targets affected by the [Break] effect by 12%.
+When [Heat Absorption] activates, the user's damage dealt increases by 1.5% (stacking up to 15 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/ced9344847234ef5a1306fee1d3a7106.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/483520ad8fc34914a6478a9d695a1e7d.webp"],
       color: "#FF4500",
       description:
@@ -707,6 +753,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Merciless",
       weapon: "Knuckledusters",
       weaponName: "A Gentle Touch",
+      weaponDescription:`The user's Wind damage increases by 12%.
+Increases the user's Basic Skill damage by 3% when the [Impulsive Revenge or Madness] effects activate (stacking up to 15 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/3a5cc34da02f4e8a940a5e40556c8116.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/f8139df61eb04d019ba811318e6d8017.webp"],
       color: "#32CD32",
       description:
@@ -737,6 +785,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Dark Charm: Meg",
       weapon: "Staff",
       weaponName: "Solid Logic",
+      weaponDescription:`Increases the user's Attack by 10%.
+Targets hit by the user's Strengthening Charm have both the damage they take from Critical Hits and their chance of receiving Critical Hit damage increases by 10% for 10 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/4bf19048bbd743f48212a34c0fede92b.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/87737abc565c4833b0d10814653b8948.webp"],
       color: "#9b5de5",
       description:
@@ -769,6 +819,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Quick Attack: Typhoon Fire",
       weapon: "Bow",
       weaponName: "Intercept",
+      weaponDescription:`Increases the user's Dark damage by 12%.
+When they use a Basic Attack within 10 second(s) after using Quick Attack: Typhoon Fire, it increases their attack by 8% for 30 second(s) (stacking up to 8 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/8f9df1b2434b4b87b5941fcbd962168f.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/8f9df1b2434b4b87b5941fcbd962168f.webp"],
       color: "#9b5de5",
       description:
@@ -799,6 +851,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Heavenly Blessing",
       weapon: "Mace",
       weaponName: "Eternal Slumber",
+      weaponDescription:`Increases the user's HP by 10%.
+When the user uses Heavenly Blessing, the user and team members' damage dealt increases by 16% for 16 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/84d695229e3949569910a2f47ea45575.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/0b42920a78b24fc29d0308462e9573c0.webp"],
       color: "#FFD700",
       description:
@@ -829,6 +883,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Lethal Move: Water Dragon Transformation Strike",
       weapon: "Gauntlet",
       weaponName: "Unparalleled Bravery",
+      weaponDescription:`Increases the user's Critical Hit damage by 20%.
+When the user uses Water Dragon Rush, Lightning Kick, Heavy Attack: Water Dragon Rush, or Heavy Attack: Lightning Kick, increases Critical Hit damage by 6% (stacking up to 20 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/fabe112144ca4936aad6fdeb9a674710.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/d39cae82980d41b1a72791eeb253dd36.webp"],
       color: "#00BFFF",
       description:
@@ -860,6 +916,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Energy Field",
       weapon: "The leather gloves",
       weaponName: "Another Level",
+      weaponDescription:`The user's attacks ignore 6% of the target's Defense.
+When Meditation of Power is used, increases damage dealt to the target by 20% or 5 second(s) (stacking up to 3 times).
+When the enemy enters the [Break] state, all team members’ Wind damage increases by 12%, excluding the user of this skill (Duration: Infinite).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/9a88e90b0f81411eaa792264e6cd48a8.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/0cadbdbde8a14c74910e910d41f09156.webp"],
       color: "#32CD32",
       description:
@@ -890,6 +949,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Poison Wave",
       weapon: "Pendant",
       weaponName: "Lonely Wanderer",
+      weaponDescription:`Increases the user's Attack by 10%.
+Decreases the target's Defense by 10% for 5 second(s) when Poison Shower hits.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/a4662ccaa9ca4dce9ab7672b092e5482.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/67065d9367644b20acb20e94f613cdef.webp"],
       color: "#00BFFF",
       description:
@@ -920,6 +981,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Rakshasa",
       weapon: "Daggers",
       weaponName: "First Bloom",
+      weaponDescription:`Increases the user's Water damage by 10%.
+When the user places an Umbral Weapon, excluding those placed by using Retrieve, it activates the [Assassination Ready] effect.
+When [Assassination Ready] effect activates, it increases the damage of Retrieve equal to 20% per instance for 15 second(s) (stacking up to 3 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/a18b8e5364f849b2b4fab257fc52dde0.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/49860a358dc74d58a7e26c210fcce2ab.webp"],
       color: "#00BFFF",
       description:
@@ -950,6 +1014,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Mighty Attack",
       weapon: "A Sword And Shield",
       weaponName: "Soul Plunderer",
+      weaponDescription:`Increases the user's HP by 8%.
+When they are hit, their damage increases by 2% (stacking up to 10 times) and they recover 2% of their HP. (Cooldown: 3 second(s))`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/ced1c924b18b411783f55301f9ec404a.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/a6c689089f994cbe8d42489d75e83b17.webp"],
       color: "#9b5de5",
       description:
@@ -980,6 +1046,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Laser Guidance",
       weapon: "Cloak",
       weaponName: "Sweet Life",
+      weaponDescription:`Increases the user's Attack by 8%.
+If the user's MP is 50% or above, increases Core Attack, Basic Skill, QTE Skill damage by 40%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/2977c69d21874a6e91767c1b45a4a3e5.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/92bbdda359e14898aaebc5cf9bcdcbaa.webp"],
       color: "#FFD700",
       description:
@@ -1010,6 +1078,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Camouflage",
       weapon: "Dual Daggers",
       weaponName: "Unstoppable Frenzy",
+      weaponDescription:`Increases the user's Basic Attack damage by 10%.
+Kang Taeshik's damage to targets inflicted with [Bleed] increases by 10%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/4dd6f65984114f90a054167c21ffd9c3.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/859aa8952ad34fb998d276716a24d17c.webp"],
       color: "#9b5de5",
       description:
@@ -1040,6 +1110,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Faction of the Shield",
       weapon: "A Special Shield",
       weaponName: "A Guardian's Will",
+      weaponDescription:`Increases the user's Defense by 10%.
+When Kim Chul attacks a target inflicted with the [Stun] effect, his attacks ignore 30% of the target's Defense for 5 second(s). (Cooldown: 5 second(s))`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/c8906ecd2e6b48d7939cee6668ac6f9b.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/e1963c1f9d2a48b6a94f35866d1b1bbd.webp"],
       color: "#FFD700",
       description:
@@ -1071,6 +1143,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Sword of Wind",
       weapon: "Sword",
       weaponName: "Someone's Downfall",
+      weaponDescription:`Increases the user's Core Attack damage by 24%.
+When the user uses a Core Attack, increases the next Basic Skill damage by 24%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/1f6efc8379184dfbb9f1ee25a33c5284.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/1e5fe613e1714b0191917999068f1079.webp"],
       color: "#32CD32",
       description:
@@ -1101,6 +1175,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Energy Field",
       weapon: "Gloves",
       weaponName: "What Never Was",
+      weaponDescription:`Increases the user's HP by 5%.
+When tagging out, the user and the team members gain a [Shield] equal to 5% of Lee Joohee's HP for 10 second(s). (Cooldown: 30 second(s)).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/173ce01791c648cd9e759afe1b42caea.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/93bf8ca167344967993daf3bd3373e85.webp"],
       color: "#00BFFF",
       description:
@@ -1132,6 +1208,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Light-Freezing Arrow",
       weapon: "An Ice Arrow ",
       weaponName: "Slayer's Mercy",
+      weaponDescription:`If there are no enemies within a 5m range, increases the user's damage by 10%.
+When Nam Chae-Young attacks a [Frozen] target, the target's Defense decreases by 20% for 5 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/88d5c706233a4f0595de4560d68ae16f.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/3b77699915644c21bd1c789d45e7fc7a.webp"],
       color: "#00BFFF",
       description:
@@ -1162,6 +1240,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Another Worldline",
       weapon: "A Blunt",
       weaponName: "Decisions",
+      weaponDescription:`The user's Defense increases by 8%.
+When [Father's Determination] activates it grants an additional [Shield] equal to 8% of the user's Defense and increases the damage of their Basic Skills by 35%.`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/27fb4ce17a284a308139627917e1991c.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/ba79f654a9ff4ed588fe5daba6fefc23.webp"],
       color: "#32CD32",
       description:
@@ -1193,6 +1273,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Wind Storm",
       weapon: "A Staff",
       weaponName: "Intuition",
+      weaponDescription:`Increases the user's Ultimate Skill damage by 20%.
+When the user's Ultimate Skill is used, the Ultimate Skill damage of the user and their team members additionally increases by 20% for 20 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/597d0bea23994546ab1f627a370b0767.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/8270ea9a62854d27ab1eef07d5379dde.webp"],
       color: "#32CD32",
       description: "A Mage-type hunter in the White_Tiger_Guild.",
@@ -1222,6 +1304,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Special Iaido: Fire Demon",
       weapon: "Sword",
       weaponName: "Still Got It",
+      weaponDescription:`Increases the user's Fire damage by 8%.
+When using Basic Skill or Core Attack, increases the damage dealt to Normal Monster by 8% for 10 second(s) (stacking up to 5 times).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/78d78e069bf746f180a3ee538b8b850e.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/52029be2b1bd4617bc8c03b037cf28e6.webp"],
       color: "#FF4500",
       description:
@@ -1252,6 +1336,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "I'll Protect You!",
       weapon: "Sword",
       weaponName: "Nice to Meet You",
+      weaponDescription:`Increases the user's Attack, Defense, and HP by 5%.
+When the user obtains Yoo Jinho's [Potion], team member's Attack, Defense, and HP increase by an additional 3% for 10 second(s).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/c08a8b419a7f4a449981c57a9f032321.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/610fd2eaf196432996d499619de2b0f6.webp"],
       color: "#FFD700",
       description:
@@ -1283,6 +1369,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Todes-Symphonie",
       weapon: "Pocket Watch",
       weaponName: "The Weight of Responsibility",
+      weaponDescription:`Increases the user's Defense by 50%
+When Fenriszahn, Kaisers Rache, Todes-Symphonie, or Wolfspranke are used, it inflicts the [Paralyze] effect for 5 seconds to enemies within 10m area (Cooldown: 20 second(s)).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/11/d60a4d30eb1942f287bf13e0033472a8.webp","https://resources.vortexgaming.io/upload/post/2025/07/11/f557420bbd924a1b8e493ea222b545f3.webp"],
       color: "#32CD32",
       description:
@@ -1316,6 +1404,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Star Recital",
       weapon: "One-Handed Sword",
       weaponName: "The Battlefield’s Guiding Star",
+      weaponDescription:`The user's Defense increases by 12%
+The user's Core Attack inflicts an effect on enemies within a 20m range that increases the enemy's damage taken from MIYEON by 30% for 30 second(s) (Cooldown: 20 second(s)).`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/12/fb31f6c28bdd43198e9a7d9d6b18ce63.png","https://resources.vortexgaming.io/upload/post/2025/07/12/c6963e88805a4155888384f5c802eafe.png"],
       color: "#FFD700",
       description:
@@ -1348,6 +1438,10 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
       ultimateSkill: "Harmony Catharsis",
       weapon: "Energy Orbs",
       weaponName: "The Place Bathed in Moonlight",
+      weaponDescription:`The user's Attack increases by 12%.
+When Rhythmic Beatdown or High-energy Beat hits, it increases the damage of Catharsis in Harmony by 5% stacks up to 10 times.
+When Catharsis in Harmony ends, it removes all instances of the effect.
+Duration: 30 second(s)`,
       weaponImg:["https://resources.vortexgaming.io/upload/post/2025/07/12/6645e437c4604bd79690adc50c7850f3.png","https://resources.vortexgaming.io/upload/post/2025/07/12/6645e437c4604bd79690adc50c7850f3.png"],
       color: "#00BFFF",
       description:
@@ -1381,6 +1475,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
         ultimateSkill: "Stromwind Serenade",
         weapon: "Umbrella",
         weaponName: "Blue Monsoon",
+        weaponDescription:`Increases Defense by 12%
+When the user uses Reverse Tempest Cleave or Umbrella: Reverse Tempest Cleave, team members' Basic Skill damage increases by 2%
+Duration: Infinite (stacking up to 5 times)`,
         weaponImg:["https://resources.vortexgaming.io/upload/post/2025/09/29/328370beca59436e9c16393a6550192f.png","https://resources.vortexgaming.io/upload/post/2025/09/29/328370beca59436e9c16393a6550192f.png"],
         color: "#32CD32",
         description:
@@ -1414,6 +1511,7 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
           ultimateSkill: "Stromwind Serenade",
           weapon: "Axe",
           weaponName: "Purple Butterfly's Dream",
+          weaponDescription:`The user's Defense increases by 12% and their Critical Hit Rate and Critical Hit damage increase by 15%`,
           weaponImg:["https://resources.vortexgaming.io/upload/post/2025/09/29/921f0003251a433985a9a31f1b025232.png","https://resources.vortexgaming.io/upload/post/2025/09/29/921f0003251a433985a9a31f1b025232.png"],
           color: "#9b5de5",
           description:
@@ -1447,6 +1545,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
             ultimateSkill: "Killing Verse",
             weapon: "Gun",
             weaponName: "Blazing Flash",
+            weaponDescription:`The user's Attack increases by 12%.
+Using Kill the Mic, Hook and Chain, Kill the Mic Ver. 2, or Hook and Chain Ver. 2 increases the Basic Skill damage of team members by 30% for 30 second(s).`,
             weaponImg:["https://resources.vortexgaming.io/upload/post/2025/09/29/4ac6ded82ad54bdb9a5ff17a8f4231b3.png","https://resources.vortexgaming.io/upload/post/2025/09/29/4ac6ded82ad54bdb9a5ff17a8f4231b3.png"],
             color: "#32CD32",
             description:
@@ -1480,6 +1580,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Kill The Stage",
               weapon: "Gauntlet",
               weaponName: "Righteous Sun",
+              weaponDescription:`The user's HP increases by 12%.
+The user's Fire damage increases by 30% for 15 second(s) when the [Full Burst] effect is activated.`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2025/09/29/f41ed7117b094885adc0104b1238dc63.png","https://resources.vortexgaming.io/upload/post/2025/09/29/f41ed7117b094885adc0104b1238dc63.png"],
               color: "#FF4500",
               description:
@@ -1512,6 +1614,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Apocalyptic Might",
               weapon: "Dagger",
               weaponName: "Unbreakable Will",
+              weaponDescription:`Increases the user's Attack by 30%
+Increases the user's Critical Hit damage by 30%`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2025/09/29/5930b84b50a546bfa7135eceb2fd4ba1.png","https://resources.vortexgaming.io/upload/post/2025/09/29/5930b84b50a546bfa7135eceb2fd4ba1.png"],
               color: "#9b5de5",
               description:
@@ -1543,6 +1647,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: " Lightning Strike - Annihilation",
               weapon: "Axe",
               weaponName: "Stark's Axe",
+              weaponDescription:`Increases the user's HP by 12%
+When Lightning Strike, Lightning Strike: Heavy Attack, or Lightning Strike: Extreme Attack hit, they increase Fire damage and Defense Penetration by 5% (stacks up to 3 times)
+Duration: 20 second(s)`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/08/dc2445829abe46f49586497148f8bd9e.webp","https://resources.vortexgaming.io/upload/post/2026/05/08/dc2445829abe46f49586497148f8bd9e.webp"],
               color: "#FF4500",
               description:
@@ -1575,6 +1682,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Ordinary Offensive Magic (Zoltraak) - Ultimate",
               weapon: "Staff",
               weaponName: "Frieren's Staff",
+              weaponDescription:`The user's Defense increases by 50%
+Team members' Basic Skill and Ultimate Skill damage increases by 30%`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/9f9a571012294bf1b282de4280bccb48.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/9f9a571012294bf1b282de4280bccb48.webp"],
               color: "#00BFFF",
               description:
@@ -1607,6 +1716,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Demon-killing Magic (Zoltraak) - Mighty",
               weapon: "Staff",
               weaponName: "Fern's Staff",
+              weaponDescription:`Increases the user's HP by 12%
+Demon-killing Magic (Zoltraak) - Barrage and Demon-killing Magic (Zoltraak) - Rapid Fire Critical Hit Rate increases by 10% and Criitcal Hit damage increases by 20%
+Using Demon-killing Magic (Zoltraak) - Balanced restores 100% of the user's MP (Cooldown: 30 second(s))`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/941c0ec748ff47bdb5ce274ac3ee12e4.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/941c0ec748ff47bdb5ce274ac3ee12e4.webp"],
               color: "#FF4500",
               description:
@@ -1639,6 +1751,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Apex Administrato",
               weapon: "Whip",
               weaponName: "Night-cleaving Flash",
+              weaponDescription:`The user's Attack increases by 12%
+Using Corporate Escort or Apex Administrator increases the entire team's Light damage by 30% for 30 second(s)
+When a team member uses a skill with [Break], increases the entire team's Defense by 2% (stacks up to 5 times)`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/d48fad4d71544657b83b4d89142b455e.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/d48fad4d71544657b83b4d89142b455e.webp"],
               color: "#FFD700",
               description:
@@ -1671,6 +1786,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Zero to a Hundred",
               weapon: "Gauntlet",
               weaponName: "Strategy for Victory",
+              weaponDescription:`The user's Defense increases by 50%
+The user's Dash cooldown decreases by 20%
+Using Zero to a Hundred increases the user's Defense Penetration by 15% for 20 second(s)`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/52fca2717fd44e3f9ca6891f4f58991d.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/52fca2717fd44e3f9ca6891f4f58991d.webp"],
               color: "#FF4500",
               description:
@@ -1703,6 +1821,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Knight's Pride",
               weapon: "Sword",
               weaponName: "Crimson Shadow",
+              weaponDescription:`Defense Penetration increases by 15%
+When an enemy if inflicted with Dark [Overload], it activates an effect that increases the entire team's Dark damage by 12% (stacks up to 4 times)
+Duration: Infinite`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/0f38e8fca3fa4df2948ddc7c79298751.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0f38e8fca3fa4df2948ddc7c79298751.webp"],
               color: "#9b5de5",
               description:
@@ -1736,6 +1857,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: " Thrilling Fighting Spirit",
               weapon: "Sword & Shield",
               weaponName: "Iron Resolve",
+              weaponDescription:`Kihoon's HP increases by 12%
+When Kihoon or an ally successfully puts the target in the [Break] state it increases his entire team's Dark damage by 15%`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/aeeea251ec404555befe499bfc1f2c82.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/aeeea251ec404555befe499bfc1f2c82.webp"],
               color: "#9b5de5",
               description:
@@ -1768,6 +1891,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: " Frozen Drive",
               weapon: "Blade",
               weaponName: "Winterbreaker",
+              weaponDescription:`Increases the user's HP by 12%
+Each time Blade Sweep or Raging Sweep hits, the entire team's Water damage increases by 0.6%
+Duration: 45 second(s) (stacks up to 50 times)`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/11004415fda04e2b91be6bff10f2220a.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/11004415fda04e2b91be6bff10f2220a.webp"],
               color: "#00BFFF",
               description:
@@ -1800,6 +1926,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: " Quickblade - Oblivion",
               weapon: "Katana",
               weaponName: "Etched to the Bone",
+              weaponDescription:`Increases the user's HP by 12%
+Using Punisher, Eclipse Slash, or Extinction Blade increases the entire team's Wind Overload damage by 10%
+Duration: 30 second(s) (stacks up to 3 times)`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/0d3a79f0f8af4a25a2d40670ee3be53f.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/0d3a79f0f8af4a25a2d40670ee3be53f.webp"],
               color: "#32CD32",
               description:
@@ -1832,6 +1961,9 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "Prison d'Argent",
               weapon: "Sword",
               weaponName: "The Embodiment of Obsession",
+              weaponDescription:`The user's Defense increases by 50%
+Using Piège d'Argent increases team members' Overload damage by 30% for 60 second(s)
+Using Furie d'Argent increases team members' damage by 30% for 60 second(s)`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/41e423e352ec49a690745160753a5444.webp","https://resources.vortexgaming.io/upload/post/2026/05/09/41e423e352ec49a690745160753a5444.webp"],
               color: "#00BFFF",
               description:
@@ -1864,6 +1996,8 @@ Cores:["Ferocious Protector's Desire","Arrogant Ruler's Will","Teeth of the Watc
               ultimateSkill: "The Angel's Stay",
               weapon: "Double Axe",
               weaponName: "Saint's Benediction",
+              weaponDescription:`12% increase in HP.
+Increases Light damage by 15%.`,
               weaponImg:["https://resources.vortexgaming.io/upload/post/2026/05/09/0f2ab6254d2a45acb0a987d61d60e58c.png","https://resources.vortexgaming.io/upload/post/2026/05/09/0f2ab6254d2a45acb0a987d61d60e58c.png"],
               color: "#FFD700",
               description:

@@ -10,6 +10,7 @@ import GuildBoss from "./GuildBoss";
 import SimulationGate from "./SimulationGate";
 import POD2 from "./POD2";
 import GuildBoss2 from "./GuildBoss2";
+import GlobalTooltip from "@/Components/GlobalTooltip";
 
 const PAGES = [
   { key: "BOT (Jinwoo Mode)", label: "BOT (Jinwoo Mode)" },
@@ -212,11 +213,12 @@ export default function WeeklyContent() {
 
           {/* ── RIGHT CONTENT ── */}
           <div className="flex-1 min-w-0 p-3 sm:p-4 md:p-6 lg:p-8">
-            <div className="w-full bg-gray-900/50 border border-gray-700 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 backdrop-blur-md shadow-2xl">
+            <div className="w-full bg-gray-900/50 border border-gray-700 rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 backdrop-blur-md shadow-2xl overflow-visible relative">
               {renderPage()}
             </div>
           </div>
         </div>
+        <GlobalTooltip />
       </Background>
     </>
   );

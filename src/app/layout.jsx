@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import PageTransitionWrapper from "@/Components/PageTransitionWrapper";
+import { TooltipProvider } from "@/context/TooltipContext";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,7 +20,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${inter.variable} antialiased `}>
         <Header />
-        <PageTransitionWrapper>{children}</PageTransitionWrapper>
+        <PageTransitionWrapper>
+          <TooltipProvider>{children} </TooltipProvider>
+        </PageTransitionWrapper>
         <Footer />
       </body>
     </html>

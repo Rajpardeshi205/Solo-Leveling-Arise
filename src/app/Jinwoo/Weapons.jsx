@@ -5,6 +5,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/Firebase/FireBaseconfig";
 import Background from "@/Components/Background";
 import { useRouter } from "next/navigation";
+import CommentsPage from "@/Components/CommentsPage ";
 
 const rarityGradient = {
   SSR: "from-red-900 via-red-700 to-rose-600 border-red-400/50",
@@ -110,7 +111,7 @@ export default function Weapons() {
   return (
     <Background className="pb-20">
       {/* Hero title */}
-      <div className="h-screen flex items-center justify-center px-4">
+      <div className="py-24 sm:py-32 md:py-40 h-screen flex items-center justify-center">
         <h1 className="text-5xl sm:text-6xl md:text-8xl font-black text-center text-purple-400">
           Weapons
         </h1>
@@ -125,13 +126,15 @@ export default function Weapons() {
                 key={weapon.firestoreId || index}
                 className="w-full max-w-[450px]"
               >
-                <JinwooWeaponCard
-                  weapon={weapon}
-                  elementImg={elements[weapon.element]}
-                  onClick={() =>
-                    router.push(`/Jinwoo/WeaponDetails/${weapon.firestoreId}`)
-                  }
-                />
+                <InfoCard>
+                  <JinwooWeaponCard
+                    weapon={weapon}
+                    elementImg={elements[weapon.element]}
+                    onClick={() =>
+                      router.push(`/Jinwoo/WeaponDetails/${weapon.firestoreId}`)
+                    }
+                  />
+                </InfoCard>
               </div>
             ))}
           </div>

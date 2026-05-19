@@ -5,6 +5,9 @@ import Background from "@/Components/Background";
 import { db, auth } from "@/Firebase/FireBaseconfig";
 import { onAuthStateChanged } from "firebase/auth";
 import { collection, getDocs, setDoc, getDoc, doc } from "firebase/firestore";
+import CommentsPage from "@/Components/CommentsPage ";
+import GameTooltip from "@/Components/GameTooltip";
+
 // ─── ImageSelect ──────────────────────────────────────────────────────────────
 const ImageSelect = ({
   label,
@@ -159,7 +162,7 @@ const InfoCard = ({ label, children, accent = "purple", className = "" }) => {
 
   return (
     <div
-      className={`bg-gray-900/60 border ${borderColor} rounded-2xl p-3 sm:p-4 backdrop-blur-md ${className}`}
+      className={`bg-gray-900/60 border ${borderColor} rounded-2xl p-3 sm:p-4 backdrop-blur-md overflow-visible ${className}`}
     >
       {label && (
         <h3
@@ -180,6 +183,8 @@ const ItemSlot = ({
   accent = "purple",
   size = "md",
   empty = "?",
+  tooltipTitle,
+  tooltipDescription,
 }) => {
   const sizeClass = {
     sm: "w-10 h-10 sm:w-12 sm:h-12",
@@ -214,22 +219,29 @@ const ItemSlot = ({
     }[accent] || "shadow-purple-500/20";
 
   return (
-    <div className="flex flex-col items-center gap-1">
-      <div
-        className={`${sizeClass} rounded-xl border ${borderColor} bg-black/50 overflow-hidden flex items-center justify-center shadow-md ${glowColor}`}
-      >
-        {src ? (
-          <img src={src} alt={label} className="w-full h-full object-cover" />
-        ) : (
-          <span className="text-gray-600 text-base sm:text-xl">{empty}</span>
+    <GameTooltip
+      title={tooltipTitle || label}
+      description={tooltipDescription}
+      image={src}
+    >
+      <div className="flex flex-col items-center gap-1 cursor-pointer">
+        <div
+          className={`${sizeClass} rounded-xl border ${borderColor} bg-black/50 overflow-hidden flex items-center justify-center shadow-md ${glowColor} hover:scale-105 transition-all duration-300`}
+        >
+          {src ? (
+            <img src={src} alt={label} className="w-full h-full object-cover" />
+          ) : (
+            <span className="text-gray-600 text-base sm:text-xl">{empty}</span>
+          )}
+        </div>
+
+        {label && (
+          <span className="text-[9px] sm:text-[10px] text-gray-400 text-center leading-tight max-w-[56px] sm:max-w-[72px] truncate">
+            {label}
+          </span>
         )}
       </div>
-      {label && (
-        <span className="text-[9px] sm:text-[10px] text-gray-400 text-center leading-tight max-w-[56px] sm:max-w-[72px] truncate">
-          {label}
-        </span>
-      )}
-    </div>
+    </GameTooltip>
   );
 };
 
@@ -264,6 +276,12 @@ const ArtifactPiecesGrid = ({ artifact, accent = "purple" }) => {
             label={label}
             accent={accent}
             size="sm"
+            tooltipTitle={artifact?.name}
+            tooltipDescription={
+              artifact?.setEffects?.[4]?.[0] ||
+              artifact?.setEffects?.[8]?.[0] ||
+              "Artifact Set"
+            }
           />
         ))}
       </div>
@@ -286,20 +304,28 @@ const CorePanel = ({ coreBody, coreMind, coreSpirit }) => (
         accent="red"
         size="sm"
         empty="⬡"
+        tooltipTitle={coreBody?.name}
+        tooltipDescription={coreBody?.passive?.[0]}
       />
+
       <ItemSlot
         src={coreMind?.img}
         label={coreMind?.name || "Mind"}
         accent="blue"
         size="sm"
         empty="⬡"
+        tooltipTitle={coreMind?.name}
+        tooltipDescription={coreMind?.passive?.[0]}
       />
+
       <ItemSlot
         src={coreSpirit?.img}
         label={coreSpirit?.name || "Spirit"}
         accent="purple"
         size="sm"
         empty="⬡"
+        tooltipTitle={coreSpirit?.name}
+        tooltipDescription={coreSpirit?.passive?.[0]}
       />
     </div>
   </InfoCard>
@@ -318,18 +344,35 @@ const HunterEquipPanel = ({
   return (
     <div className="space-y-3">
       <InfoCard label="Weapon" accent="orange">
-        <div className="flex items-center gap-3">
-          <ItemSlot
-            src={hunter.weaponImg?.[0] || hunter.weapon?.img}
-            label={hunter.weaponName || hunter.weapon?.name || "Weapon"}
-            accent="orange"
-            size="md"
-          />
-          {(hunter.weaponName || hunter.weapon?.name) && (
-            <span className="text-orange-300 text-xs font-semibold truncate">
-              {hunter.weaponName || hunter.weapon?.name}
-            </span>
-          )}
+        <div className="flex items-start gap-4">
+          {/* LEFT SIDE - NAME + IMAGE */}
+          <div className="flex flex-col items-center min-w-[90px]">
+            <ItemSlot
+              src={hunter.weaponImg?.[0] || hunter.weapon?.img}
+              label={hunter.weaponName || hunter.weapon?.name || "Weapon"}
+              accent="orange"
+              size="md"
+              tooltipTitle={
+                hunter.weaponName || hunter.weapon?.name || "Weapon"
+              }
+              tooltipDescription={
+                hunter.weapon?.skills?.[0]?.description ||
+                hunter.weaponDescription ||
+                "No Description"
+              }
+            />
+          </div>
+
+          {/* RIGHT SIDE -  */}
+          <div className="flex-1">
+            <p className=" leading-relaxed">
+              {(hunter.weaponName || hunter.weapon?.name) && (
+                <span className="text-orange-300 text-2xl font-semibold">
+                  {hunter.weaponName || hunter.weapon?.name}
+                </span>
+              )}{" "}
+            </p>
+          </div>
         </div>
       </InfoCard>
       <ArtifactPiecesGrid artifact={artifact} accent={accent} />
@@ -596,7 +639,7 @@ export default function SimulationGate({ fireToast }) {
           Simulation Gate
         </h1>
         <p className="text-center text-gray-300 text-sm sm:text-lg">
-          Enter simulation battles with increasing difficulty and rewards.
+          Hunter Mode{" "}
         </p>
         {/* ── Main Team Preview ── */}
         <InfoCard label="Main Team" accent="purple">
@@ -807,6 +850,13 @@ export default function SimulationGate({ fireToast }) {
           </InfoCard>
         )}{" "}
       </div>
+      <InfoCard label="Community Reviews" accent="cyan" className="pt-10 mt-8">
+        <CommentsPage
+          type="simulationgate"
+          itemId="simulation-gate-main"
+          itemName="Simulation Gate"
+        />
+      </InfoCard>
     </Background>
   );
 }

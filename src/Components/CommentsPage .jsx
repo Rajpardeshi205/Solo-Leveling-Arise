@@ -1,151 +1,534 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
   ChevronDown,
   ThumbsUp,
   ThumbsDown,
-  MessageCircle,
-  Share2,
+  Pencil,
+  Trash2,
 } from "lucide-react";
 
-const CommentsPage = () => {
-  const [selectedVote, setSelectedVote] = useState("Go for it");
+import {
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  onSnapshot,
+  orderBy,
+  query,
+  serverTimestamp,
+  updateDoc,
+  where,
+} from "firebase/firestore";
+
+import { auth, db } from "@/Firebase/FireBaseconfig";
+
+const voteCategories = ["Skip it", "Average", "Go for it", "Must Have"];
+
+const voteColors = {
+  "Skip it": "#ef4444",
+  Average: "#eab308",
+  "Go for it": "#10b981",
+  "Must Have": "#8b5cf6",
+};
+
+const voteBgClasses = {
+  "Skip it": "bg-red-500/15 text-red-400 ring-1 ring-red-500/30",
+  Average: "bg-yellow-500/15 text-yellow-400 ring-1 ring-yellow-500/30",
+  "Go for it": "bg-emerald-500/15 text-emerald-400 ring-1 ring-emerald-500/30",
+  "Must Have": "bg-purple-500/15 text-purple-400 ring-1 ring-purple-500/30",
+};
+
+const voteActiveClasses = {
+  "Skip it": "bg-red-600 text-white",
+  Average: "bg-yellow-500 text-white",
+  "Go for it": "bg-emerald-600 text-white",
+  "Must Have": "bg-purple-600 text-white",
+};
+
+const slugify = (text) => {
+  if (text === undefined || text === null) return "";
+
+  return String(text).toLowerCase().replace(/\s+/g, "-");
+};
+const CommentsPage = ({ type, itemId, itemName }) => {
+  const [reviews, setReviews] = useState([]);
   const [reviewText, setReviewText] = useState("");
-  const [sortBy, setSortBy] = useState("Most Liked");
+  const [selectedVote, setSelectedVote] = useState("Go for it");
+  const [editingId, setEditingId] = useState(null);
+  const [hoveredArc, setHoveredArc] = useState(null);
+  const [currentUserData, setCurrentUserData] = useState(null);
 
-  // Vote data derived from actual reviews counts
-  // Only these categories present in reviews: Average, Go for it, Must Have, Skip it = 0
-  const voteData = {
-    "Skip it": { count: 0, color: "bg-red-500", hex: "#ef4444" },
-    Average: { count: 1, color: "bg-yellow-500", hex: "#eab308" },
-    "Go for it": { count: 1, color: "bg-green-500", hex: "#10b981" },
-    "Must Have": { count: 1, color: "bg-purple-500", hex: "#8b5cf6" },
-  };
+  const [sortType, setSortType] = useState("recent");
 
-  // Calculate total votes from voteData counts
-  const totalVotes = Object.values(voteData).reduce(
-    (acc, curr) => acc + curr.count,
-    0
+  const [replyInputs, setReplyInputs] = useState({});
+  const [editingReplyId, setEditingReplyId] = useState(null);
+
+  const [editingReplyText, setEditingReplyText] = useState("");
+
+  const arcPathRefs = useRef({});
+
+  const currentUser = auth.currentUser;
+
+  const userReview = reviews.find(
+    (review) => review.userId === currentUser?.uid,
   );
 
-  // Calculate percentage for each category dynamically
-  Object.entries(voteData).forEach(([key, value]) => {
-    voteData[key].percentage =
-      totalVotes === 0 ? 0 : Math.round((value.count / totalVotes) * 100);
-  });
+  const slug = useMemo(() => slugify(itemId || itemName), [itemId, itemName]);
 
-  const reviews = [
-    {
-      id: 1,
-      user: "Raj Pardeshi",
-      username: "@Rajpardeshi",
-      avatar: "https://i.pravatar.cc/40?img=1",
-      review:
-        "Amazing storyline and great character development. The pacing was perfect and kept me engaged throughout.",
-      likes: 45,
-      dislikes: 2,
-      replies: 12,
-      timeAgo: "2 hours ago",
-      vote: "Go for it",
-    },
-    {
-      id: 2,
-      user: "Sarah Johnson",
-      username: "@sarahj",
-      avatar: "	https://i.pravatar.cc/40?img=27",
-      review:
-        "Decent watch but felt like it could have been shorter. Some parts dragged on unnecessarily.",
-      likes: 23,
-      dislikes: 5,
-      replies: 8,
-      timeAgo: "5 hours ago",
-      vote: "Average",
-    },
-    {
-      id: 3,
-      user: "Mike Chen",
-      username: "@mikechen",
-      avatar: "	https://i.pravatar.cc/40?img=43",
-      review:
-        "Absolutely blown away! This is cinema at its finest. Every frame is a masterpiece.",
-      likes: 78,
-      dislikes: 1,
-      replies: 24,
-      timeAgo: "1 day ago",
-      vote: "Must Have",
-    },
-  ];
+  const reviewsRef = collection(db, `${type}Reviews`, slug, "reviews");
 
-  // Colors map for meter arcs and dots
-  const voteColors = {
-    "Skip it": "#ef4444",
-    Average: "#eab308",
-    "Go for it": "#10b981",
-    "Must Have": "#8b5cf6",
+  // ─── FETCH USER ───────────────────────────────────────────────────────
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (!currentUser) return;
+
+      const q = query(
+        collection(db, "users"),
+        where("uid", "==", currentUser.uid),
+      );
+
+      const snap = await getDocs(q);
+
+      if (!snap.empty) {
+        setCurrentUserData(snap.docs[0].data());
+      }
+    };
+
+    fetchUser();
+  }, [currentUser]);
+
+  // ─── FETCH REVIEWS ────────────────────────────────────────────────────
+  useEffect(() => {
+    const q = query(reviewsRef, orderBy("createdAt", "desc"));
+
+    const unsubscribe = onSnapshot(q, (snapshot) => {
+      const data = snapshot.docs.map((d) => {
+        const review = d.data();
+
+        return {
+          id: d.id,
+          ...review,
+
+          likes: Array.isArray(review.likes) ? review.likes : [],
+
+          dislikes: Array.isArray(review.dislikes) ? review.dislikes : [],
+
+          replies: Array.isArray(review.replies)
+            ? review.replies.map((reply) => ({
+                ...reply,
+
+                likes: Array.isArray(reply.likes) ? reply.likes : [],
+
+                dislikes: Array.isArray(reply.dislikes) ? reply.dislikes : [],
+              }))
+            : [],
+        };
+      });
+
+      setReviews(data);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  // ─── POST REVIEW ──────────────────────────────────────────────────────
+  const handlePostReview = async () => {
+    if (!currentUser || !currentUserData || !reviewText.trim()) return;
+
+    try {
+      const existingQuery = query(
+        reviewsRef,
+        where("userId", "==", currentUser.uid),
+      );
+
+      const existingSnap = await getDocs(existingQuery);
+
+      if (!existingSnap.empty) {
+        await updateDoc(doc(reviewsRef, existingSnap.docs[0].id), {
+          vote: selectedVote,
+          review: reviewText,
+          updatedAt: serverTimestamp(),
+          edited: true,
+        });
+
+        setEditingId(null);
+      } else {
+        await addDoc(reviewsRef, {
+          userId: currentUser.uid,
+          username: currentUserData.username,
+          fullName: currentUserData.fullName,
+          role: currentUserData.role,
+          photoURL: currentUserData.photoURL || "",
+          vote: selectedVote,
+          review: reviewText,
+          likes: [],
+          dislikes: [],
+          replies: [],
+          pinned: false,
+          createdAt: serverTimestamp(),
+          updatedAt: serverTimestamp(),
+          edited: false,
+        });
+      }
+
+      setReviewText("");
+      setSelectedVote("Go for it");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  // Semicircle circumference (approx)
+  // ─── DELETE ───────────────────────────────────────────────────────────
+  const handleDelete = async (reviewId) => {
+    try {
+      await deleteDoc(doc(reviewsRef, reviewId));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ─── EDIT ─────────────────────────────────────────────────────────────
+  const handleEdit = (review) => {
+    setEditingId(review.id);
+    setReviewText(review.review);
+    setSelectedVote(review.vote);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // ─── LIKE / DISLIKE ───────────────────────────────────────────────────
+  const handleReaction = async (reviewId, type) => {
+    if (!currentUser) return;
+
+    try {
+      const reviewRef = doc(reviewsRef, reviewId);
+
+      const reviewData = reviews.find((r) => r.id === reviewId);
+
+      if (!reviewData) return;
+
+      let likes = reviewData.likes || [];
+
+      let dislikes = reviewData.dislikes || [];
+
+      const uid = currentUser.uid;
+
+      if (type === "like") {
+        dislikes = dislikes.filter((id) => id !== uid);
+
+        if (likes.includes(uid)) {
+          likes = likes.filter((id) => id !== uid);
+        } else {
+          likes.push(uid);
+        }
+      }
+
+      if (type === "dislike") {
+        likes = likes.filter((id) => id !== uid);
+
+        if (dislikes.includes(uid)) {
+          dislikes = dislikes.filter((id) => id !== uid);
+        } else {
+          dislikes.push(uid);
+        }
+      }
+
+      await updateDoc(reviewRef, {
+        likes,
+        dislikes,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ─── PIN REVIEW ───────────────────────────────────────────────────────
+  const handlePinReview = async (reviewId) => {
+    if (!currentUserData?.role?.includes("admin")) return;
+    try {
+      const reviewData = reviews.find((r) => r.id === reviewId);
+
+      if (!reviewData) return;
+
+      const pinnedReviews = reviews.filter((r) => r.pinned);
+
+      if (!reviewData.pinned && pinnedReviews.length >= 3) {
+        alert("Maximum 3 pinned reviews allowed.");
+        return;
+      }
+
+      await updateDoc(doc(reviewsRef, reviewId), {
+        pinned: !reviewData.pinned,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ─── REPLY ────────────────────────────────────────────────────────────
+  const handleReply = async (reviewId) => {
+    if (!currentUser || !currentUserData) return;
+
+    const text = replyInputs[reviewId];
+
+    if (!text?.trim()) return;
+
+    try {
+      const reviewData = reviews.find((r) => r.id === reviewId);
+
+      if (!reviewData) return;
+
+      const newReply = {
+        id: Date.now(),
+        userId: currentUser.uid,
+        username: currentUserData.username,
+        fullName: currentUserData.fullName,
+        text,
+        createdAt: new Date(),
+      };
+
+      await updateDoc(doc(reviewsRef, reviewId), {
+        replies: [...(reviewData.replies || []), newReply],
+      });
+
+      setReplyInputs((prev) => ({
+        ...prev,
+        [reviewId]: "",
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ─── VOTE DATA ────────────────────────────────────────────────────────
+  const voteData = {
+    "Skip it": 0,
+    Average: 0,
+    "Go for it": 0,
+    "Must Have": 0,
+  };
+
+  reviews.forEach((r) => {
+    voteData[r.vote]++;
+  });
+
+  const totalVotes = reviews.length;
+
   const circumference = 377;
 
-  // Calculate arcs for each vote category for SVG strokeDasharray and strokeDashoffset
   let cumulativePercentage = 0;
-  const voteCategories = ["Skip it", "Average", "Go for it", "Must Have"];
+
   const arcs = voteCategories.map((key) => {
-    const pct = voteData[key]?.percentage || 0;
+    const pct =
+      totalVotes === 0 ? 0 : Math.round((voteData[key] / totalVotes) * 100);
+
     const strokeLength = (pct / 100) * circumference;
+
     const dashArray = `${strokeLength} ${circumference - strokeLength}`;
-    // The offset starts from total circumference and subtracts cumulative length
+
     const dashOffset =
       circumference - cumulativePercentage * (circumference / 100);
+
     cumulativePercentage += pct;
+
     return {
       key,
+      pct,
       dashArray,
       dashOffset,
       color: voteColors[key],
     };
   });
 
-  const getVoteColor = (vote) => {
-    const colors = {
-      "Skip it": "bg-red-500",
-      Average: "bg-yellow-500",
-      "Go for it": "bg-green-500",
-      "Must Have": "bg-purple-500",
-    };
-    return colors[vote] || "bg-gray-500";
+  const highestVote = voteCategories.reduce((prev, cur) =>
+    voteData[cur] > voteData[prev] ? cur : prev,
+  );
+
+  const activeVote = hoveredArc || highestVote;
+
+  const activePercentage =
+    totalVotes === 0
+      ? 0
+      : Math.round((voteData[activeVote] / totalVotes) * 100);
+
+  const activeColor = voteColors[activeVote];
+
+  // ─── ARC HOVER ────────────────────────────────────────────────────────
+  const handleArcEnter = (key) => {
+    setHoveredArc(key);
+
+    const el = arcPathRefs.current[key];
+
+    if (el) {
+      el.style.transform = "scale(1.08)";
+
+      el.style.filter = `drop-shadow(0 0 8px ${voteColors[key]})`;
+    }
+  };
+
+  const handleArcLeave = (key) => {
+    setHoveredArc(null);
+
+    const el = arcPathRefs.current[key];
+
+    if (el) {
+      el.style.transform = "";
+      el.style.filter = "";
+    }
+  };
+
+  // ─── LIKE / DISLIKE REPLY ───────────────────────────────────────────────
+  const handleReplyReaction = async (reviewId, replyId, type) => {
+    if (!currentUser || !currentUserData) return;
+
+    try {
+      const reviewData = reviews.find((r) => r.id === reviewId);
+
+      if (!reviewData) return;
+
+      const updatedReplies = (reviewData.replies || []).map((reply) => {
+        if (reply.id !== replyId) return reply;
+
+        let likes = reply.likes || [];
+
+        let dislikes = reply.dislikes || [];
+
+        const uid = currentUser.uid;
+
+        if (type === "like") {
+          dislikes = dislikes.filter((id) => id !== uid);
+
+          if (likes.includes(uid)) {
+            likes = likes.filter((id) => id !== uid);
+          } else {
+            likes.push(uid);
+          }
+        }
+
+        if (type === "dislike") {
+          likes = likes.filter((id) => id !== uid);
+
+          if (dislikes.includes(uid)) {
+            dislikes = dislikes.filter((id) => id !== uid);
+          } else {
+            dislikes.push(uid);
+          }
+        }
+
+        return {
+          ...reply,
+          likes,
+          dislikes,
+        };
+      });
+
+      await updateDoc(doc(reviewsRef, reviewId), {
+        replies: updatedReplies,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ─── DELETE REPLY ───────────────────────────────────────────────────────
+  const handleDeleteReply = async (reviewId, replyId) => {
+    try {
+      const reviewData = reviews.find((r) => r.id === reviewId);
+
+      if (!reviewData) return;
+
+      const replyData = reviewData.replies?.find((r) => r.id === replyId);
+
+      if (!replyData) return;
+
+      // only owner or admin
+      const canDelete =
+        currentUser?.uid === replyData.userId ||
+        currentUserData?.role?.includes("admin");
+      if (!canDelete) return;
+
+      const updatedReplies = (reviewData.replies || []).filter(
+        (reply) => reply.id !== replyId,
+      );
+
+      await updateDoc(doc(reviewsRef, reviewId), {
+        replies: updatedReplies,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // ─── EDIT REPLY ─────────────────────────────────────────────────────────
+  const handleEditReply = (replyId, text) => {
+    setEditingReplyId(replyId);
+    setEditingReplyText(text);
+  };
+
+  // ─── UPDATE REPLY ───────────────────────────────────────────────────────
+  const handleUpdateReply = async (reviewId, replyId) => {
+    if (!editingReplyText.trim()) return;
+
+    try {
+      const reviewData = reviews.find((r) => r.id === reviewId);
+
+      if (!reviewData) return;
+
+      const updatedReplies = (reviewData.replies || []).map((reply) => {
+        if (reply.id !== replyId) return reply;
+
+        return {
+          ...reply,
+          text: editingReplyText,
+          edited: true,
+        };
+      });
+
+      await updateDoc(doc(reviewsRef, reviewId), {
+        replies: updatedReplies,
+      });
+
+      setEditingReplyId(null);
+      setEditingReplyText("");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
-    <div className="min-h-screen text-white p-4 sm:p-6 bg-gray-900">
-      <div className="max-w-4xl mx-auto">
-        {/* Meter Section */}
-        <div className="mb-8">
-          <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-center sm:text-left">
-            Meter
-          </h1>
+    <div className="text-white">
+      {/* METER */}
+      <div className="mb-10">
+        <h1 className="text-3xl font-bold mb-8">Meter</h1>
 
-          {/* Circular Progress */}
-          <div className="flex flex-col items-center mb-8">
-            <div className="relative w-full max-w-[320px] h-[160px] mb-6">
-              <svg
-                className="w-full h-full"
-                viewBox="0 0 320 160"
-                role="img"
-                aria-label="Vote meter"
-              >
-                {/* Background arc */}
-                <path
-                  d="M 40 120 A 120 120 0 0 1 280 120"
-                  fill="none"
-                  stroke="#1f2937"
-                  strokeWidth="20"
-                  strokeLinecap="round"
-                />
+        <div className="flex flex-col items-center">
+          <div className="relative w-full max-w-[320px] h-[160px] mb-6">
+            <svg
+              className="w-full h-full overflow-visible"
+              viewBox="0 0 320 160"
+            >
+              <path
+                d="M 40 120 A 120 120 0 0 1 280 120"
+                fill="none"
+                stroke="#1f2937"
+                strokeWidth="20"
+                strokeLinecap="round"
+              />
 
-                {/* Colored arcs */}
-                {arcs.map(({ key, dashArray, dashOffset, color }) => (
+              {arcs
+                .filter((a) => a.pct > 0)
+                .map(({ key, dashArray, dashOffset, color }) => (
                   <path
                     key={key}
+                    ref={(el) => {
+                      arcPathRefs.current[key] = el;
+                    }}
                     d="M 40 120 A 120 120 0 0 1 280 120"
                     fill="none"
                     stroke={color}
@@ -153,174 +536,419 @@ const CommentsPage = () => {
                     strokeLinecap="round"
                     strokeDasharray={dashArray}
                     strokeDashoffset={dashOffset}
+                    className="cursor-pointer"
                     style={{
+                      transformOrigin: "160px 120px",
                       transition:
-                        "stroke-dashoffset 1s ease, stroke-dasharray 1s ease",
+                        "transform 0.22s cubic-bezier(.34,1.56,.64,1), filter 0.18s ease",
                     }}
+                    onMouseEnter={() => handleArcEnter(key)}
+                    onMouseLeave={() => handleArcLeave(key)}
                   />
                 ))}
-              </svg>
+            </svg>
 
-              {/* Percentage Text */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center mt-8 pointer-events-none">
-                <div className="text-4xl sm:text-5xl font-bold text-green-400 mb-1 sm:mb-2 select-none">
-                  {voteData["Go for it"].percentage}%
+            <div className="absolute inset-0 flex flex-col items-center justify-center mt-8 pointer-events-none">
+              <div
+                className="text-5xl font-bold"
+                style={{
+                  color: activeColor,
+                }}
+              >
+                {activePercentage}%
+              </div>
+
+              <div className="text-gray-400 text-center mt-1">
+                <div className="text-sm">
+                  {voteData[activeVote]} Vote
+                  {voteData[activeVote] !== 1 ? "s" : ""}
                 </div>
-                <div className="text-gray-400 text-sm sm:text-lg select-none">
-                  {totalVotes} Vote{totalVotes !== 1 ? "s" : ""}
+
+                <div
+                  className="text-sm font-medium"
+                  style={{
+                    color: activeColor,
+                  }}
+                >
+                  {activeVote}
                 </div>
               </div>
             </div>
+          </div>
 
-            {/* Vote Categories Legend */}
-            <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-xs sm:text-sm select-none">
-              {voteCategories.map((key) => (
+          {/* LEGEND */}
+          <div className="flex flex-wrap justify-center gap-4 mt-2">
+            {arcs
+              .filter((item) => item.pct > 0)
+              .map((item) => (
                 <div
-                  key={key}
-                  className="flex items-center gap-2 whitespace-nowrap"
+                  key={item.key}
+                  className="flex items-center gap-2 cursor-pointer"
+                  onMouseEnter={() => handleArcEnter(item.key)}
+                  onMouseLeave={() => handleArcLeave(item.key)}
                 >
                   <div
-                    className="w-3 h-3 rounded-full shrink-0"
-                    style={{ backgroundColor: voteColors[key] }}
-                  ></div>
-                  <span>
-                    {key} {voteData[key].percentage}%
+                    className="w-3 h-3 rounded-full"
+                    style={{
+                      backgroundColor: item.color,
+                    }}
+                  />
+
+                  <span className="text-sm text-gray-300">
+                    {item.key}{" "}
+                    <span className="text-gray-500">{item.pct}%</span>
                   </span>
                 </div>
               ))}
-            </div>
           </div>
         </div>
+      </div>
 
-        {/* Reviews Section */}
-        <div className="mb-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4 sm:gap-0">
-            <h2 className="text-xl sm:text-2xl font-bold">
-              Reviews ({reviews.length})
-            </h2>
-            <div className="relative w-full sm:w-auto">
-              <button className="flex items-center justify-between gap-2 bg-gray-800 px-4 py-2 rounded-lg w-full sm:w-auto hover:bg-gray-700 transition-colors">
-                <span>↕</span>
-                <span>{sortBy}</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
+      {/* REVIEWS */}
+      <div>
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="text-2xl font-bold">Reviews ({reviews.length})</h2>
 
-          {/* Write Review Section */}
-          <div className="bg-gray-800 rounded-lg p-4 sm:p-6 mb-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
-              <img
-                src="https://i.pravatar.cc/40?img=1"
-                alt="User avatar"
-                className="w-10 h-10 rounded-full flex-shrink-0"
-              />
-              <div>
-                <div className="font-semibold text-sm sm:text-base">
-                  Raj Pardeshi
-                </div>
-                <div className="text-gray-400 text-xs sm:text-sm">
-                  @Rajpardeshi
-                </div>
-              </div>
-              <div className="flex-1"></div>
-              <div className="flex flex-wrap gap-2 sm:gap-0 sm:flex-nowrap bg-gray-700 rounded-lg p-1 justify-center sm:justify-start w-full sm:w-auto">
-                {voteCategories.map((vote) => (
-                  <button
-                    key={vote}
-                    onClick={() => setSelectedVote(vote)}
-                    className={`px-3 sm:px-4 py-2 rounded-md text-xs sm:text-sm transition-colors whitespace-nowrap flex-1 sm:flex-none text-center ${
-                      selectedVote === vote
-                        ? vote === "Skip it"
-                          ? "bg-red-600"
-                          : vote === "Average"
-                          ? "bg-yellow-600"
-                          : vote === "Go for it"
-                          ? "bg-green-600"
-                          : "bg-purple-600"
-                        : "hover:bg-gray-600"
-                    }`}
-                  >
-                    {vote}
-                  </button>
-                ))}
-              </div>
+          <select
+            value={sortType}
+            onChange={(e) => setSortType(e.target.value)}
+            className="bg-gray-800 border border-gray-700 text-sm text-gray-300 rounded-lg px-4 py-2 outline-none"
+          >
+            <option value="recent">Most Recent</option>
+
+            <option value="oldest">Oldest</option>
+
+            <option value="likes">Most Liked</option>
+
+            <option value="comments">Most Commented</option>
+          </select>
+        </div>
+
+        {/* WRITE REVIEW */}
+        {currentUserData && (!userReview || editingId) && (
+          <div className="bg-gray-800 rounded-2xl p-6 mb-6">
+            <div className="flex flex-wrap gap-2 mb-4">
+              {voteCategories.map((vote) => (
+                <button
+                  key={vote}
+                  onClick={() => setSelectedVote(vote)}
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                    selectedVote === vote
+                      ? voteActiveClasses[vote]
+                      : "bg-gray-700 text-gray-300 hover:bg-gray-600"
+                  }`}
+                >
+                  {vote}
+                </button>
+              ))}
             </div>
 
             <textarea
               value={reviewText}
               onChange={(e) => setReviewText(e.target.value)}
-              placeholder="Write your review here..."
-              className="w-full bg-gray-700 rounded-lg p-3 mb-4 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base"
-              rows={4}
+              placeholder={`Review ${itemName}...`}
+              rows={5}
               maxLength={1000}
+              className="w-full bg-gray-700 rounded-xl p-4 resize-none outline-none text-sm"
             />
 
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-              <div className="text-gray-400 text-xs sm:text-sm select-none">
-                {reviewText.length}/1000
-              </div>
-              <button className="bg-white text-black px-6 py-2 rounded-lg font-semibold hover:bg-gray-200 transition-colors whitespace-nowrap w-full sm:w-auto">
-                Post
+            <div className="flex justify-between items-center mt-4">
+              <span className="text-gray-500 text-xs">
+                {reviewText.length} / 1000
+              </span>
+
+              <button
+                onClick={handlePostReview}
+                className="bg-white text-black px-6 py-2 rounded-xl text-sm font-bold"
+              >
+                {editingId ? "Update Review" : "Post Review"}
               </button>
             </div>
           </div>
+        )}
 
-          {/* Review List */}
-          <div className="space-y-4">
-            {reviews.map((review) => (
-              <div
-                key={review.id}
-                className="bg-gray-800 rounded-lg p-4 sm:p-6 flex flex-col sm:flex-row gap-4"
-              >
-                <img
-                  src={review.avatar}
-                  alt={review.user}
-                  className="w-10 h-10 rounded-full flex-shrink-0"
-                />
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className="font-semibold">{review.user}</span>
-                    <span className="text-gray-400 text-xs">
-                      {review.username}
-                    </span>
-                    <span className="text-gray-500">•</span>
-                    <span className="text-gray-400 text-xs">
-                      {review.timeAgo}
-                    </span>
-                    <div
-                      className={`ml-2 px-2 py-1 rounded text-xs ${getVoteColor(
-                        review.vote
-                      )} text-white whitespace-nowrap`}
-                    >
-                      {review.vote}
+        {/* REVIEW CARDS */}
+        <div className="space-y-4">
+          {[...reviews]
+            .sort((a, b) => {
+              if (a.pinned !== b.pinned) {
+                return a.pinned ? -1 : 1;
+              }
+
+              if (sortType === "recent") {
+                return (
+                  (b.createdAt?.seconds || 0) - (a.createdAt?.seconds || 0)
+                );
+              }
+
+              if (sortType === "oldest") {
+                return (
+                  (a.createdAt?.seconds || 0) - (b.createdAt?.seconds || 0)
+                );
+              }
+
+              if (sortType === "likes") {
+                return (b.likes?.length || 0) - (a.likes?.length || 0);
+              }
+
+              if (sortType === "comments") {
+                return (b.replies?.length || 0) - (a.replies?.length || 0);
+              }
+
+              return 0;
+            })
+            .map((review) => {
+              const canDelete =
+                currentUser?.uid === review.userId ||
+                currentUserData?.role?.includes("admin");
+              const canEdit = currentUser?.uid === review.userId;
+
+              return (
+                <div
+                  key={review.id}
+                  className={`rounded-2xl p-6 ${
+                    review.pinned
+                      ? "bg-yellow-500/10 border border-yellow-500/30"
+                      : "bg-gray-800"
+                  }`}
+                >
+                  <div className="flex justify-between">
+                    <div className="flex gap-4">
+                      <div className="w-11 h-11 rounded-full overflow-hidden bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center font-bold uppercase shrink-0 border border-violet-400/30">
+                        {review.photoURL ? (
+                          <img
+                            src={review.photoURL}
+                            alt="profile"
+                            className="w-full h-full object-cover"
+                          />
+                        ) : (
+                          <span>{(review.username || "H")[0]}</span>
+                        )}
+                      </div>
+
+                      <div>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <h3 className="font-semibold">{review.fullName}</h3>
+
+                          <span
+                            className={`text-xs px-2 py-0.5 rounded-md font-medium ${
+                              voteBgClasses[review.vote]
+                            }`}
+                          >
+                            {review.vote}
+                          </span>
+
+                          {review.pinned && (
+                            <span className="bg-yellow-500/20 text-yellow-300 text-xs px-2 py-0.5 rounded-full">
+                              📌 Pinned
+                            </span>
+                          )}
+                        </div>
+
+                        <p className="text-xs text-gray-500">
+                          @{review.username}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-2">
+                      {currentUserData?.role?.includes("admin") && (
+                        <button onClick={() => handlePinReview(review.id)}>
+                          📌
+                        </button>
+                      )}
+
+                      {canEdit && (
+                        <button
+                          onClick={() => handleEdit(review)}
+                          className="text-blue-400"
+                        >
+                          <Pencil className="w-4 h-4" />
+                        </button>
+                      )}
+
+                      {canDelete && (
+                        <button
+                          onClick={() => handleDelete(review.id)}
+                          className="text-red-400"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      )}
                     </div>
                   </div>
-                  <p className="text-gray-300 mb-4 text-sm sm:text-base">
-                    {review.review}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm">
-                    <button className="flex items-center gap-1 text-gray-400 hover:text-green-400 transition-colors">
+                  <p className="text-gray-300 text-sm mt-4">{review.review}</p>
+                  {/* LIKE / DISLIKE */}
+                  <div className="flex gap-4 mt-4">
+                    <button
+                      onClick={() => handleReaction(review.id, "like")}
+                      className={`flex items-center gap-1.5 text-sm ${
+                        review.likes?.includes(currentUser?.uid)
+                          ? "text-blue-400"
+                          : "text-gray-500"
+                      }`}
+                    >
                       <ThumbsUp className="w-4 h-4" />
-                      <span>{review.likes}</span>
+                      {review.likes?.length || 0}
                     </button>
-                    <button className="flex items-center gap-1 text-gray-400 hover:text-red-400 transition-colors">
+
+                    <button
+                      onClick={() => handleReaction(review.id, "dislike")}
+                      className={`flex items-center gap-1.5 text-sm ${
+                        review.dislikes?.includes(currentUser?.uid)
+                          ? "text-red-400"
+                          : "text-gray-500"
+                      }`}
+                    >
                       <ThumbsDown className="w-4 h-4" />
-                      <span>{review.dislikes}</span>
-                    </button>
-                    <button className="flex items-center gap-1 text-gray-400 hover:text-blue-400 transition-colors">
-                      <MessageCircle className="w-4 h-4" />
-                      <span>{review.replies}</span>
-                    </button>
-                    <button className="flex items-center gap-1 text-gray-400 hover:text-purple-400 transition-colors whitespace-nowrap">
-                      <Share2 className="w-4 h-4" />
-                      <span>Share</span>
+                      {review.dislikes?.length || 0}
                     </button>
                   </div>
+                  <div className="mt-5 border-t border-gray-700 pt-4">
+                    <div className="space-y-3 mb-4">
+                      {(review.replies || []).map((reply) => (
+                        <div
+                          key={reply.id}
+                          className="bg-gray-900 rounded-xl p-3"
+                        >
+                          {/* HEADER */}
+                          <div className="flex items-start justify-between mb-2">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="text-sm font-semibold">
+                                {reply.fullName}
+                              </span>
+
+                              <span className="text-xs text-gray-500">
+                                @{reply.username}
+                              </span>
+
+                              {reply.edited && (
+                                <span className="text-[10px] text-cyan-400">
+                                  Edited
+                                </span>
+                              )}
+                            </div>
+
+                            {/* ACTIONS */}
+                            <div className="flex items-center gap-2">
+                              {currentUser?.uid === reply.userId && (
+                                <button
+                                  onClick={() =>
+                                    handleEditReply(reply.id, reply.text)
+                                  }
+                                  className="text-blue-400 hover:text-blue-300 transition-colors"
+                                >
+                                  <Pencil className="w-3.5 h-3.5" />
+                                </button>
+                              )}
+
+                              {(currentUser?.uid === reply.userId ||
+                                currentUserData?.role?.includes("admin")) && (
+                                <button
+                                  onClick={() =>
+                                    handleDeleteReply(review.id, reply.id)
+                                  }
+                                  className="text-red-400 hover:text-red-300 transition-colors"
+                                >
+                                  <Trash2 className="w-3.5 h-3.5" />
+                                </button>
+                              )}
+                            </div>
+                          </div>
+
+                          {/* EDIT MODE */}
+                          {editingReplyId === reply.id ? (
+                            <div className="mb-3 flex gap-2">
+                              <input
+                                type="text"
+                                value={editingReplyText}
+                                onChange={(e) =>
+                                  setEditingReplyText(e.target.value)
+                                }
+                                className="flex-1 bg-gray-800 rounded-lg px-3 py-2 text-sm outline-none"
+                              />
+
+                              <button
+                                onClick={() =>
+                                  handleUpdateReply(review.id, reply.id)
+                                }
+                                className="bg-white text-black px-3 rounded-lg text-xs font-medium"
+                              >
+                                Save
+                              </button>
+                            </div>
+                          ) : (
+                            <p className="text-sm text-gray-300 mb-3">
+                              {reply.text}
+                            </p>
+                          )}
+
+                          {/* REPLY LIKE / DISLIKE */}
+                          <div className="flex gap-4">
+                            <button
+                              onClick={() =>
+                                handleReplyReaction(review.id, reply.id, "like")
+                              }
+                              className={`flex items-center gap-1 text-xs ${
+                                reply.likes?.includes(currentUser?.uid)
+                                  ? "text-blue-400"
+                                  : "text-gray-500 hover:text-gray-300"
+                              }`}
+                            >
+                              <ThumbsUp className="w-3.5 h-3.5" />
+                              {reply.likes?.length || 0}
+                            </button>
+
+                            <button
+                              onClick={() =>
+                                handleReplyReaction(
+                                  review.id,
+                                  reply.id,
+                                  "dislike",
+                                )
+                              }
+                              className={`flex items-center gap-1 text-xs ${
+                                reply.dislikes?.includes(currentUser?.uid)
+                                  ? "text-red-400"
+                                  : "text-gray-500 hover:text-gray-300"
+                              }`}
+                            >
+                              <ThumbsDown className="w-3.5 h-3.5" />
+                              {reply.dislikes?.length || 0}
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* REPLY INPUT */}
+                    {currentUser && (
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={replyInputs[review.id] || ""}
+                          onChange={(e) =>
+                            setReplyInputs((prev) => ({
+                              ...prev,
+                              [review.id]: e.target.value,
+                            }))
+                          }
+                          placeholder="Write a comment..."
+                          className="flex-1 bg-gray-700 rounded-xl px-4 py-2 text-sm outline-none"
+                        />
+
+                        <button
+                          onClick={() => handleReply(review.id)}
+                          className="bg-white text-black px-4 rounded-xl text-sm font-medium"
+                        >
+                          Reply
+                        </button>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              );
+            })}
         </div>
       </div>
     </div>

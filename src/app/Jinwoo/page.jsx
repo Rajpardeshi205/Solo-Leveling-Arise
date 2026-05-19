@@ -7,26 +7,11 @@ import Weapons from "./Weapons";
 
 export default function Page() {
   return (
-    <div className="w-full min-h-screen bg-black">
-      {/* SKINS */}
-      <section className="min-h-screen">
-        <JinwooSkins />
-      </section>
-
-      {/* RUNES */}
-      <section className="relative z-20">
-        <Runes />
-      </section>
-
-      {/* BLESSINGS */}
-      <section className="relative z-20">
-        <Blessings />
-      </section>
-
-      {/* WEAPONS */}
-      <section className="relative z-20">
-        <Weapons />
-      </section>
+    <div className="w-full max-w-full overflow-x-hidden">
+      <JinwooSkins />
+      <Runes />
+      <Blessings />
+      <Weapons />
     </div>
   );
 }

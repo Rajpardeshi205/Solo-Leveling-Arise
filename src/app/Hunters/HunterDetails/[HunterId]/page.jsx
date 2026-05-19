@@ -12,6 +12,7 @@ import Cores from "../../Cores";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "@/Firebase/FireBaseconfig";
 import Artifacts from "../../Artifacts";
+import HunterWeaponCard from "../../HunterWeaponCard";
 
 const cinzel = Cinzel_Decorative({
   subsets: ["latin"],
@@ -387,6 +388,21 @@ export default function HunterDetailsPage() {
             </InfoCard>
           </div>
 
+          <InfoCard label="Hunter Weapon">
+            <div className="flex flex-col justify-center items-center w-full gap-3">
+              <HunterWeaponCard
+                weaponImg={selectedHunter.weaponImg}
+                rarity={selectedHunter.Rarity}
+                element={selectedHunter.element}
+                selectedHunter={selectedHunter}
+              />
+
+              <p className="text-center text-lg sm:text-xl font-semibold text-white">
+                {selectedHunter.weaponName}
+              </p>
+            </div>
+          </InfoCard>
+
           {/* Advancement Section */}
           <InfoCard label="Advancement">
             <div className="flex flex-col gap-2">
@@ -554,9 +570,12 @@ export default function HunterDetailsPage() {
             <Cores selectedHunter={selectedHunter} coresData={coresData} />{" "}
           </InfoCard>
 
-          <InfoCard>
-            {" "}
-            <CommentsPage />
+          <InfoCard label="Community Reviews">
+            <CommentsPage
+              type="hunter"
+              itemId={selectedHunter.id}
+              itemName={selectedHunter.name}
+            />
           </InfoCard>
         </div>
       </div>

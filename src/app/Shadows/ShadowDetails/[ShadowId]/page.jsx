@@ -7,6 +7,7 @@ import ShadowWeaponCard from "../../ShadowWeaponCard";
 import { doc, getDoc } from "firebase/firestore";
 
 import { db } from "@/Firebase/FireBaseconfig";
+import CommentsPage from "@/Components/CommentsPage ";
 
 const cinzel = Cinzel_Decorative({
   subsets: ["latin"],
@@ -194,6 +195,14 @@ export default function Page({ params }) {
                 </div>
               </div>
             </div>
+          </InfoCard>
+
+          <InfoCard label="Community Reviews">
+            <CommentsPage
+              type="shadow"
+              itemId={ShadowId}
+              itemName={shadow.name}
+            />
           </InfoCard>
         </div>
       </div>

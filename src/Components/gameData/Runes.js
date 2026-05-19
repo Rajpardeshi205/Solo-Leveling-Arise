@@ -942,7 +942,7 @@ MP Consumption: 150
       Skills: "Collapse (QTE)",
       Runes: [
         {
-          skill1: "Compress",
+          skill1: "Compress (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/d459f5cd3456458f8a60e91c99dd792e.png",
           description: `Damage: 916% of Jinwoo's Attack.
 Cooldown: 25 sec
@@ -954,7 +954,7 @@ target.
 Gauge instantly decreases by 7%.`
         },
         {
-          skill2: "Surprise Attack",
+          skill2: "Surprise Attack (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/d6bb86fc067b431788daf79de19ffecf.png",
           description: `Damage: 1569% of Jinwoo's Attack.
 Cooldown: 25 sec
@@ -978,7 +978,7 @@ Increases damage by 22%.
 Duration: 30 second(s)`
         },
         {
-          skill3: "Surge",
+          skill3: "Surge (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/ba1644b4325547b6be212233985956ba.png",
           description: `Damage: 972% of Jinwoo's Attack.
 Cooldown: 25 sec
@@ -998,7 +998,7 @@ of Surge's 17.5% damage increase effect is
 applied.`
         },
         {
-          skill4: "Thunderstorm",
+          skill4: "Thunderstorm (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/2e0e793366d84b718cf4f21332739693.png",
           description: `Damage: 1514% of Jinwoo's Attack.
 Cooldown: 25 sec
@@ -1023,7 +1023,7 @@ Thunderstorm by 180%.`
       Skills: "Death (QTE)",
       Runes: [
         {
-          skill1: "Overshadow",
+          skill1: "Overshadow (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/56c6299560ff4176bf61bc19360b2351.png",
           description: `Damage: 1045% of Jinwoo's Attack
 Cooldown: 25 sec
@@ -1036,7 +1036,7 @@ HP equal to 15% of their current HP and
 increases their skill damage by 230%.`
         },
         {
-          skill2: "Extinction",
+          skill2: "Extinction (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/22010cdd00df46d588bae28aa3381e4b.png",
           description: `Damage: 1153% of Jinwoo's Attack
 Cooldown: 25 sec
@@ -1053,7 +1053,7 @@ Decreases the target's Attack by
 Duration: 15 second(s)`
         },
         {
-          skill3: "Squall",
+          skill3: "Squall (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/e7be72d0af7f4d3db23990c1d71c2499.png",
           description: `Damage: 1064% of Jinwoo's Attack
 Cooldown: 25 sec
@@ -1073,7 +1073,7 @@ Increases [Break] effectiveness by
 Duration: 8 second(s)`
         },
         {
-          skill4: "Ice Strike",
+          skill4: "Ice Strike (QTE)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/6fda480f5ce841e8aa96301ba5a55729.png",
           description: `Damage: 1324% of the Jinwoo's Attack
 Cooldown: 25 sec
@@ -1134,7 +1134,7 @@ Power Gauge Consumption: 100%`
       Skills: "King's Domain (Ultimate)",
       Runes: [
         {
-          skill1: "Blazing Annihilation",
+          skill1: "Blazing Annihilation (Ultimate)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/e197181e7537411087d17a6e8278ef78.png",
           description: `Damage: 3567% of Jinwoo's Attack
 Cooldown: 60 sec
@@ -1142,7 +1142,7 @@ Power Gauge Consumption: 100%
 . Deals Fire elemental damage`
         },
         {
-          skill2: "Tidal Surge",
+          skill2: "Tidal Surge (Ultimate)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/9ee07a7d314a4dc099144c68ea9f4003.png",
           description: `Damage: 3567% of Jinwoo's Attack
 Cooldown: 60 sec
@@ -1150,7 +1150,7 @@ Power Gauge Consumption: 100%
 . Deals Water elemental damage`
         },
         {
-          skill3: "Storm",
+          skill3: "Storm (Ultimate)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/b997b1b1718d4f56bed7db9a73f58a70.png",
           description: `Damage: 3567% of Jinwoo's Attack
 Cooldown: 60 sec
@@ -1158,7 +1158,7 @@ Power Gauge Consumption: 100%
 . Deals Wind elemental damage`
         },
         {
-          skill4: "Daybreak",
+          skill4: "Daybreak (Ultimate)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/ca3047bc6d5e4fd2816e9fc0648a066e.png",
           description: `Damage: 3567% of Jinwoo's Attack
 Cooldown: 60 sec
@@ -1166,7 +1166,7 @@ Power Gauge Consumption: 100%
 . Deals Light elemental damage`
         },
         {
-          skill5: "Darkfall",
+          skill5: "Darkfall (Ultimate)",
           skillImg: "https://resources.vortexgaming.io/upload/post/2026/05/12/06624b056c7645ee9dd49869b3ddf015.png",
           description: `Damage: 3567% of Jinwoo's Attack
 Cooldown: 60 sec

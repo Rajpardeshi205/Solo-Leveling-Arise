@@ -132,37 +132,55 @@ export default function Runes() {
     r?.data?.[0]?.Skills?.toLowerCase().includes("ultimate"),
   );
 
+  const InfoCard = ({ label, children }) => (
+    <div className="bg-gray-900/50 border border-purple-500/20 backdrop-blur-md rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl">
+      {label && (
+        <div className="text-purple-400 text-xs sm:text-sm uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-3 sm:mb-5 font-semibold">
+          {label}
+        </div>
+      )}
+      {children}
+    </div>
+  );
+
   return (
     <Background>
       <div className="w-full max-w-7xl mx-auto px-4 py-6 space-y-8 sm:space-y-12">
         {/* Hero title */}
-        <div className="w-full h-screen flex items-center justify-center">
+        <div className="py-24 sm:py-32 md:py-40 flex h-screen items-center justify-center">
           <h1 className="text-5xl sm:text-7xl md:text-9xl font-black text-center text-purple-400 tracking-widest uppercase drop-shadow-[0_0_40px_rgba(168,85,247,0.9)]">
             Runes
           </h1>
         </div>
+        <InfoCard>
+          <RuneSection
+            title="Skills"
+            runes={normalSkills}
+            titleColor="text-yellow-400"
+            borderColor="border-purple-500/40"
+            iconBorder="border-purple-400"
+          />
+        </InfoCard>
 
-        <RuneSection
-          title="Skills"
-          runes={normalSkills}
-          titleColor="text-yellow-400"
-          borderColor="border-purple-500/40"
-          iconBorder="border-purple-400"
-        />
-        <RuneSection
-          title="QTE"
-          runes={qteSkills}
-          titleColor="text-cyan-400"
-          borderColor="border-cyan-500/40"
-          iconBorder="border-cyan-400"
-        />
-        <RuneSection
-          title="Ultimate"
-          runes={ultimateSkills}
-          titleColor="text-red-400"
-          borderColor="border-red-500/40"
-          iconBorder="border-red-400"
-        />
+        <InfoCard>
+          <RuneSection
+            title="QTE"
+            runes={qteSkills}
+            titleColor="text-cyan-400"
+            borderColor="border-cyan-500/40"
+            iconBorder="border-cyan-400"
+          />
+        </InfoCard>
+
+        <InfoCard>
+          <RuneSection
+            title="Ultimate"
+            runes={ultimateSkills}
+            titleColor="text-red-400"
+            borderColor="border-red-500/40"
+            iconBorder="border-red-400"
+          />
+        </InfoCard>
       </div>
     </Background>
   );
