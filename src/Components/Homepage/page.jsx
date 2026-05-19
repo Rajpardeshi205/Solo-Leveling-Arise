@@ -20,9 +20,9 @@ export default function Homepage() {
         </div>
         <div className="w-full flex items-center justify-center">
           <img
-            src="/sung-jinwoo.png"
+            src="https://resources.vortexgaming.io/upload/post/2026/05/10/4a641924d08d47e7b531623c40ff1ad0.webp"
             alt="Sung Jinwoo"
-            className="object-contain w-auto max-w-full scale-150"
+            className="object-contain w-auto max-w-full scale-90"
           />
         </div>
       </section>
